@@ -1,0 +1,235 @@
+section 
+    .container 
+        .teacher-control.teacher-control-add-course
+            include ../teacher-control-nav/nav.pug
+            .teacher-control__content   
+                h2.teacher-control__personal-title Английский для начинающих
+                p.teacher-control__header-text
+                    | Создавайте темы, занятия, вопросы и ответы на них. Не забывайте про ограничения: размер загружаемых картинок не может быть более 5 Мб, размер загружаемого видео не может быть более 50 Мб. В случае необходимости используйте электронные хранилища данных (Google drive...). Для выбора правильных вариантов ответа, поставьте галочку напротив них
+                a(href="#add-topic-modal").btn.btn_blue.popup-with-form.teacher-control__add-topic Создать тему 
+                -var materials=['','Present Simple Настоящее Простое','Present Simple вопросы и отрицания','This That These Those указательные местоимения','Еще немного о Present Simple','Предлоги и Союзы'];
+                -var buttons=['','Present Simple Настоящее Простое','Present Simple вопросы и отрицания','This That These Those указательные местоимения','Еще немного о Present Simple','Предлоги и Союзы'];
+                .materials
+                        .materials_group.act
+                            .materials_group_header
+                                .d_flex
+                                    .materials_group_title
+                                        span Введение
+                                .count 
+                                    button.teacher-control__add-course-teachers__btn Редактировать
+                            .materials_group_body
+                                ul.materials_list
+                                    -for(var m=1;m<=5;m++)
+                                        li
+                                            div.d_flex
+                                                .material_name
+                                                    picture
+                                                        if m===1 || m===5
+                                                            img(src="img/icons/Document.svg")
+                                                        else if m===3
+                                                            img(src="img/icons/play-button.svg")
+                                                        else
+                                                            img(src="img/icons/approval.svg")
+                                                    span= materials[m]
+                                                        if m===3
+                                            .time 02:35
+                                                img(src="img/icons/Edit.svg", alt="")
+                                ul.materials_list
+                                    li 
+                                        div.d_flex
+                                            .material_name
+                                                button(href="#teacher-control-create-lesson").teacher-control__add-course-teachers__btn.popup-with-form Создать занятие
+                                        .time 
+                                            button(href="#teacher-control-create-test").teacher-control__add-course-teachers__btn.popup-with-test Создать тестирование
+
+                        .materials_group
+                            .materials_group_header
+                                .d_flex
+                                    .materials_group_title
+                                        span Произношение
+                                    
+                                //- .count 16 занятий
+                            .materials_group_body
+                                ul.materials_list
+                                    
+                                        li
+                                            div.d_flex
+                                                .material_name
+                                                    button(href="#teacher-control-create-lesson").teacher-control__add-course-teachers__btn.popup-with-form Создать занятие
+                                                    
+                                            .time 
+                                                button(href="#teacher-control-create-test").teacher-control__add-course-teachers__btn.popup-with-test Создать тестирование
+                .teacher-control__add-topic--icon 
+                    button(href="#add-topic-modal").teacher-control__add-course-teachers__btn.popup-with-form Создать тему
+                .teacher-control__material-control-group
+                    button.teacher-control__return-btn Назад
+                    a(href="#").btn.btn_blue Создать курс
+
+//- Создание темы модальное окно
+#add-topic-modal.modal_window
+    <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+    h1 Создание темы
+    form(action="#")
+        .input-group 
+            input(type="text",placeholder="Название темы",name="teacherControlAddTopic")
+        button.btn.btn_blue Создать тему
+
+
+//- Создание занятия модальное окно
+#teacher-control-create-lesson.modal_window
+    button(title="Close (Esc)",type="button").mfp-close ×
+    h1 Создание занятия
+    form(action="#") 
+        .input-group 
+            input(type="text",placeholder="Название занятия",name="teacherControlAddTopic")
+        .input-group 
+            label(for="create-lesson-area") Описание занятия
+            textarea(id="create-lesson-area",name="create-lesson-area")
+        .file-input-group
+            label(for="create-lesson-area-file-upload")
+                .file-input-group__img 
+                    img(src="img/icons/folder.svg", alt="")
+                p
+                    span Нажмите сюда
+                    |  - чтобы выбрать файлы или 
+                    br
+                    | перетащите их в выделенную область
+                input(type="file",id="create-lesson-area-file-upload",name="create-lesson-area-file-upload")
+        span.file-input-group-subtitle 
+            | Файлы должны быть в форматах: .doc, .jpg, .mp4 
+        button.btn.btn_blue Создать занятие
+
+
+//- Создание теста модальное окно
+#teacher-control-create-test.modal_window
+    button(title="Close (Esc)",type="button").mfp-close ×
+    .container
+        .create-test-modal__body
+            h1 Создание теста
+            .create-test-modal__header 
+                p.create-test-modal__header-topic
+                    | Тема:  
+                    span Название темы
+                p.create-test-modal__header-course
+                    | Курс:  
+                    span Название курса
+            .create-test-modal__content 
+                .create-test-modal__headline 
+                    h3 Тест
+                    .create-test-modal__headline-block 
+                        .create-test-modal__input-group 
+                            input(type="text", placeholder="Введите название теста")
+                        .create-test-modal__required-answers
+                            span Количество правильных ответов для зачета:
+                            .create-test-modal-counter 18
+                    .create-test-modal__col-name 
+                        span Список вопросов
+                        span Варианты ответов
+                    .create-test-modal__row.create-test-modal__row--first
+                        
+                        .create-test-modal__col
+                            .create-test-modal__col-item
+                                .create-test-modal-counter 1
+                                .create-test-modal__input-group-area 
+                                    textarea(placeholder='Выберите верное определение слову "Windows"')
+                                button.create-test-modal__garbage
+                        .create-test-modal__col
+                            .create-test-modal__col-item
+                                .create-test-modal-counter 1.1
+                                .create-test-modal__input-group 
+                                    input(type="text", placeholder="Игра для компьютера")
+                                button.create-test-modal__garbage
+                            .create-test-modal__col-item
+                                .create-test-modal-counter 1.2
+                                .create-test-modal__input-group 
+                                    input(type="text", placeholder="Операционная система")
+                                button.create-test-modal__garbage
+                            .create-test-modal__col-item
+                                .create-test-modal-counter 1.3
+                                .create-test-modal__input-group 
+                                    input(type="text", placeholder="Не знаю")
+                                button.create-test-modal__garbage
+                            button.create-test-modal__add-one Добавить ещё
+                    .create-test-modal__row 
+                        .create-test-modal__col
+                            .create-test-modal__col-item
+                                .create-test-modal-counter 3
+                                .create-test-modal__input-group-area 
+                                    textarea(placeholder='Сколько лет назад появилась первая Windows')
+                                button.create-test-modal__garbage
+                        .create-test-modal__col
+                            .create-test-modal__col-item
+                                .create-test-modal-counter 3.1
+                                .create-test-modal__input-group 
+                                    input(type="text", placeholder="25 лет назад")
+                                button.create-test-modal__garbage
+                            .create-test-modal__col-item
+                                .create-test-modal-counter 3.2
+                                .create-test-modal__input-group 
+                                    input(type="text", placeholder="35 лет назад")
+                                button.create-test-modal__garbage
+                            button.create-test-modal__add-one Добавить ещё
+                    .create-test-modal__row 
+                        .create-test-modal__col
+                            .create-test-modal__col-item
+                                .create-test-modal-counter.create-test-modal-counter--active 2
+                                .create-test-modal__input-group-area 
+                                    textarea(placeholder='Сколько лет назад появилась первая Windows')
+                                button.create-test-modal__garbage
+                        .create-test-modal__col
+                            .create-test-modal__col-item
+                                .create-test-modal-counter 3.1
+                                .create-test-modal__input-group 
+                                    input(type="text", placeholder="25 лет назад")
+                                button.create-test-modal__garbage
+                            .create-test-modal__col-item
+                                .create-test-modal-counter 3.2
+                                .create-test-modal__input-group 
+                                    input(type="text", placeholder="35 лет назад")
+                                button.create-test-modal__garbage
+                            button.create-test-modal__add-one Добавить ещё
+                    .create-test-modal__row 
+                        .create-test-modal__col
+                            .create-test-modal__col-item
+                                .create-test-modal-counter.create-test-modal-counter--active 2
+                                .create-test-modal__input-group-area 
+                                    textarea(placeholder='Сколько лет назад появилась первая Windows')
+                                button.create-test-modal__garbage
+                        .create-test-modal__col
+                            .create-test-modal__col-item
+                                .create-test-modal-counter 3.1
+                                .create-test-modal__input-group 
+                                    input(type="text", placeholder="25 лет назад")
+                                button.create-test-modal__garbage
+                            .create-test-modal__col-item
+                                .create-test-modal-counter 3.2
+                                .create-test-modal__input-group 
+                                    input(type="text", placeholder="35 лет назад")
+                                button.create-test-modal__garbage
+                            button.create-test-modal__add-one Добавить ещё
+                    .create-test-modal__row 
+                        .create-test-modal__col
+                            .create-test-modal__col-item
+                                .create-test-modal-counter 4
+                                .create-test-modal__input-group-area 
+                                    textarea(placeholder='Введите вопрос')
+                                button.create-test-modal__garbage
+                        .create-test-modal__col
+                            .create-test-modal__col-item
+                                .create-test-modal-counter 4.1
+                                .create-test-modal__input-group 
+                                    input(type="text", placeholder="Введите вариант ответа")
+                                button.create-test-modal__garbage
+                            button.create-test-modal__add-one Добавить ещё
+                    .create-test-modal__row
+                        .create-test-modal__col
+                            button.create-test-modal__add-one.create-test-modal__add-one--last Добавить вопрос
+                        .create-test-modal__col
+                            .create-test-modal__buttons 
+                                .create-test-modal__buttons-wrap 
+                                    button.btn.btn_blue Применить 
+                                    button.btn.btn_blue Завершить
+                                span *Номера вопросов не могут быть одинаковыми
+            .create-test-modal__footer 
+                a(href="#").btn-grey Отменить
+                a(href="#").btn.btn_blue Назад к курсу

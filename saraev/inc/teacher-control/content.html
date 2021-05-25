@@ -1,0 +1,117 @@
+
+<section> 
+  <div class="container"> 
+    <div class="teacher-control"> 
+      <div class="teacher-control__nav">
+        <div class="teacher-control__header"> 
+          <div class="teacher-control__header-img"> <img src="img/teacher-control/teacher-avatar.png" alt=""/></div>
+          <h2 class="teacher-control__header-name">Приходько<br/>Владимир</h2>
+        </div>
+        <nav class="teacher-control__nav-block"> 
+          <ul class="teacher-control__nav-list">
+            <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link teacher-control__nav-list-item-link--active" href="#">Личные данные</a></li>
+            <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Мои курсы</a></li>
+            <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Избранное</a></li>
+            <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Баланс</a></li>
+            <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Сообщения</a></li>
+            <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Справка и поддержка</a></li>
+            <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Безопасность</a></li>
+            <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Выйти</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="teacher-control__content">
+        <h2 class="teacher-control__personal-title">Личные данные</h2>
+        <form class="teacher-control__personal-form" action="">
+          <div class="teacher-control__personal-form-row">
+            <div class="teacher-control__personal-form-item">
+              <h3 class="teacher-control__personal-form-item-title">ФИО</h3>
+              <div class="teacher-control__personal-form-input-group"> 
+                <input name="authorFamilyName" type="text" placeholder="Ваша фамилия"/>
+              </div>
+              <div class="teacher-control__personal-form-input-group"> 
+                <input name="authorName" type="text" placeholder="Ваше имя"/>
+              </div>
+              <div class="teacher-control__personal-form-input-group"> 
+                <input name="authorSecondName" type="text" placeholder="Ваше отчество"/>
+              </div>
+            </div>
+            <div class="teacher-control__personal-form-item">
+              <h3 class="teacher-control__personal-form-item-title">Социальные сети</h3>
+              <div class="teacher-control__personal-form-input-group"> 
+                <div class="teacher-control__personal-form-social-icon"> <img src="img/icons/vk.svg" alt=""/></div>
+                <input name="authorVk" type="text" placeholder="vk.com/"/>
+              </div>
+              <div class="teacher-control__personal-form-input-group">
+                <div class="teacher-control__personal-form-social-icon"> <img src="img/icons/facebook.svg" alt=""/></div>
+                <input name="authorFacebook" type="text" placeholder="facebook.com/"/>
+              </div>
+              <div class="teacher-control__personal-form-input-group">
+                <div class="teacher-control__personal-form-social-icon"> <img src="img/icons/linkedin.svg" alt=""/></div>
+                <input name="authorLinkedin" type="text" placeholder="linkedin.com/"/>
+              </div>
+            </div>
+          </div>
+          <div class="teacher-control__personal-form-row"> 
+            <div class="teacher-control__personal-form-item">
+              <h3 class="teacher-control__personal-form-item-title">Дата рождения</h3>
+              <div class="teacher-control__personal-form-input-group-date-wrapper"> 
+                <div class="teacher-control__personal-form-input-group-date"> 
+                  <input type="text" placeholder="00"/>
+                </div>
+                <div class="teacher-control__personal-form-input-group-date"> 
+                  <select name="authorMonth">
+                    <option value="Сентябрь" disabled="disabled" selected="selected">Сентябрь  </option>
+                    <option value="Январь">Январь</option>
+                    <option value="Февраль">Февраль</option>
+                    <option value="Март">Март</option>
+                    <option value="Апрель ">Апрель </option>
+                    <option value="Май ">Май </option>
+                    <option value="Июнь ">Июнь </option>
+                    <option value="Июль ">Июль </option>
+                    <option value="Август ">Август </option>
+                    <option value="Сентябрь ">Сентябрь </option>
+                    <option value="Октябрь ">Октябрь </option>
+                    <option value="Ноябрь ">Ноябрь </option>
+                    <option value="Декабрь ">Декабрь </option>
+                  </select>
+                </div>
+                <div class="teacher-control__personal-form-input-group-date"> 
+                  <input type="text" placeholder="0000"/>
+                </div>
+              </div>
+            </div>
+            <div class="teacher-control__personal-form-item">
+              <h3 class="teacher-control__personal-form-item-title">Мой канал</h3>
+              <div class="teacher-control__personal-form-input-group">
+                <div class="teacher-control__personal-form-social-icon"> <img src="img/icons/youtube.svg" alt=""/></div>
+                <input name="authorYoutube" type="text" placeholder="youtube.com/"/>
+              </div>
+            </div>
+          </div>
+          <div class="teacher-control__personal-form-row"> 
+            <div class="teacher-control__personal-form-item">
+              <h3 class="teacher-control__personal-form-item-title">Из города</h3>
+              <div class="teacher-control__personal-form-input-group"> 
+                <input name="authorCity" type="text" placeholder="Город"/>
+              </div>
+              <div class="teacher-control__promo-agreement">
+                <input class="teacher-control__promo-checkbox" type="checkbox" name="teacherPromo" id="teacherPromo" checked="checked"/>
+                <label class="teacher-control__promo-checkbox-label" for="teacherPromo">Я согласен участвовать в промо-акциях ресурса </label>
+              </div>
+              <button class="btn btn_blue" type="submit">Сохранить </button>
+            </div>
+            <div class="teacher-control__personal-form-item">
+              <h3 class="teacher-control__personal-form-item-title teacher-control__personal-form-item-title-about">О себе
+                <div class="teacher-control__personal-form-item-title-about__tooltip"><span>
+                     В этом поле Вам необходимо указать<br/>свое образование, квалификацию,<br/>опыт работы</span></div>
+                <div class="teacher-control__personal-form-item-title-question" style="background: center / cover no-repeat url('../img/icons/aboutQuestion.svg')"></div>
+              </h3>
+              <textarea name="teacherControlAboutMe" id="teacherControlAboutMe" cols="40" rows="8"> </textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

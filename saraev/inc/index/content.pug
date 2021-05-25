@@ -1,0 +1,132 @@
+
+.main_banner(style="background-image:url(img/examples/pexels-olia-danilevich-50881881.png)")
+    .container
+        .main_banner_content
+            .title Начни учиться с INVESTIN прямо <span class="line">сейчас!</span>
+            .sub_title Выбери интересующую тему и зарегистрируйся
+            a.btn.btn_orange(href="#") Приступить
+
+-var f_nav=['Бизнес','ИТ и ПО','Дизайн','Стиль жизни','Музыка','Фитнес'];
+section.bg_light
+    .container
+        .text_center
+            .h2.line Курсы онлайн
+            .sub_title Мы собрали для Вас самые актуальные онлайн-курсы на любой вкус
+        ul.c_nav
+            for f_nav_item , index in f_nav
+                if index===0
+                    li.active
+                        a(href="#")=f_nav_item
+                else
+                    li
+                        a(href="#")=f_nav_item
+
+        .row.cards_grid
+            -for(var c=1;c<=3;c++)
+                .col
+                    .card_item
+                        a.card_item_img(href="#" style="background-image:url(img/examples/c_"+c+".png)")
+                            if c===2
+                                .label.discount Скидка
+                        .card_item_body
+                            div
+                                if c===2
+                                    a.card_item_name(href="#") Corporate Finance Management
+                                else
+                                    a.card_item_name(href="#") HTML5, CSS и  JavaScript для начинающих
+                                if c===2
+                                    .teachers Владимир Приходько
+                                else
+                                    .teachers Владимир Приходько, Денис Грушевский, Катерина Кулакова
+                            div
+                                .rating
+                                    strong 4,5
+                                    span.stars
+                                        span.star
+                                        span.star
+                                        span.star
+                                        span.star
+                                        span.star.empty
+                                    .counter 12 отзывов
+                                .price_box
+                                    .price 1 560 бел. руб.
+                                    if c!==2
+                                        .old_price 1 680 бел. руб.
+
+        .text_center
+            a.btn.btn_blue(href="#") Показать все курсы
+
+
+
+section
+    .container
+        .text_center
+            .h2.line.mb_55 Рекомендуемые курсы
+        .row.cards_grid.cards_slider
+            -for(var c=1;c<=6;c++)
+                .col
+                    .card_item
+                        a.card_item_img(href="#" style="background-image:url(img/examples/c_"+c+".png)")
+                            if c===2
+                                .label.discount Скидка
+                        .card_item_body
+                            div
+                                if c===2
+                                    a.card_item_name(href="#") Corporate Finance Management
+                                else
+                                    a.card_item_name(href="#") HTML5, CSS и  JavaScript для начинающих
+                                if c===2
+                                    .teachers Владимир Приходько
+                                else
+                                    .teachers Владимир Приходько, Денис Грушевский, Катерина Кулакова
+                            div
+                                .rating
+                                    strong 4,5
+                                    span.stars
+                                        span.star
+                                        span.star
+                                        span.star
+                                        span.star
+                                        span.star.empty
+                                    .counter 12 отзывов
+                                .price_box
+                                    .price 1 560 бел. руб.
+                                    if c!==2
+                                        .old_price 1 680 бел. руб.
+
+
+
+
+include ../blocks/become_section
+include ../blocks/popular
+
+
+section.bg_light
+    .container
+        .text_center
+            .h2.line.mb_55 Что о нас говорят<br> наши студенты
+        .row.reviews_grid.cards_slider
+            -for(var c=1;c<=6;c++)
+                .col
+                    .review_item
+                        div
+                            .author_photo(style="background-image:url(img/examples/Ellipse8.png)")
+                                span.quotes
+                            .review_text
+                                if c===2
+                                    p Специалисты по подбору кадров обратили внимание на профессиональный сертификат в моей профиле LinkedIn.
+                                else
+                                    p Специалисты по подбору кадров обратили внимание на профессиональный сертификат в моей профиле LinkedIn. На собеседовании они сказали, что полученные мной знания впечатляют. Меня приняли на работу!
+
+                        div
+                           hr
+                           .review_author_name Приходько Владимир
+                           .review_author_position Директор веб-студии
+
+
+
+
+
+
+
+

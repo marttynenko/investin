@@ -1,0 +1,70 @@
+section
+    .container
+        h1.page_title Английский Язык для Начинающих на все 100!
+        a.btn.btn_blue.popup-with-form(href="#test-123") Оставь отзыв об этом курсе!
+        a.btn.btn_blue.popup-with-form(href="#order" ) Подтверждение заказа
+
+        
+
+
+        #modal_review.modal_window
+            <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+            .h2 Оставь отзыв об этом курсе!
+            .modal_author
+                .author_photo(style="background-image:url(img/examples/Ellipse4.png)")
+                div
+                    span.small Автор
+                    div.text Денис Грушевский
+            .cours_name
+                span.small Курс
+                .text Английский Язык для Начинающих на все 100!
+            form.modal_form
+                .field
+                    label Ваша оценка
+                    #reviewStars-input
+                        input(id="star-4" type="radio" name="stars" value="5")
+                        label(title="gorgeous" for="star-4")
+                        input(id="star-3" type="radio" name="stars" value="4")
+                        label(title="good" for="star-3")
+                        input(id="star-2" type="radio" name="stars" value="3")
+                        label(title="regular" for="star-2")
+                        input(id="star-1" type="radio" name="stars" value="2")
+                        label(title="poor" for="star-1")
+                        input(id="star-0" type="radio" name="stars" value="1")
+                        label(title="bad" for="star-0")
+                    .clear
+                .field
+                    .review_textarea
+
+                        textarea.form_control(placeholder="Опишите ваши впечатления здесь" id="limitInput")
+                        .symbols_counter
+                            #typeChars 0
+                            span /
+                            #leftChars  1000
+
+                .field.btn_box
+                    button.btn.btn_light Не хочу
+                    button.btn.btn_blue(type="submit") Оставить отзыв
+
+
+        #order.modal_window
+            <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+            .h2 Подтверждение заказа
+            .modal_author
+                .author_photo(style="background-image:url(img/examples/Ellipse4.png)")
+                div
+                    span.small Автор
+                    div.text Денис Грушевский
+            .cours_name
+                span.small Курс
+                .text Английский Язык для Начинающих на все 100!
+            .price
+                span.small Сумма к оплате
+                .text 220 бел. руб.
+                span.small Цена в USD: <b>$100</b>
+
+            .row.btn_group
+                .col
+                    a.btn.btn_blue(href="#") Оплатить
+                .col
+                    a.btn.btn_light(href="#") Отказаться

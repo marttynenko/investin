@@ -1,0 +1,41 @@
+#header-sign-up.modal_window
+            .header-login__header
+                .header-login__header-text-block 
+                    h2.header-login__title Регистрация
+                    p.header-login__subtitle Добро пожаловать на INVESTIN! 
+                .header-login__header-logo
+                    img(src="img/logo-modals.svg", alt="")
+            <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+            .header-login__body
+                .header-login__nav
+                    span.header-login__nav-title Кто Вы?
+                    ul.c_nav
+                        li.active 
+                            a(href="#") Я ученик
+                        li 
+                            a(href="#") Я преподаватель
+                form(action="#").header-login__form
+                    span.header-login__form-title Ваши учетные данные
+                    .header-login__input-group.header-login__input-group--small
+                        input(type="text",placeholder="Имя", name="signUpEmail")
+
+                    .header-login__input-group.header-login__input-group--small 
+                        input(type="text",placeholder="Фамилия", name="signUpFamilyName")
+
+                    .header-login__input-group
+                        input(type="text",placeholder="Email", name="signUpEmail")
+
+                    .header-login__input-group 
+                        input(type="password",placeholder="Пароль", name="signUpPswd")
+
+                    .teacher-control__promo-agreement
+                        input(type="checkbox", name="teacherPromo", id="signUpCheckbox",checked).teacher-control__promo-checkbox
+                        label(for="signUpCheckbox").teacher-control__promo-checkbox-label Я согласен участвовать в промо-акциях ресурса
+                    a(href="").btn.btn_blue Зарегистрироваться
+                .header-login__policy-block 
+                    span 
+                        | Зарегистрировавшись, вы соглашаетесь с 
+                        a Правилами обработки персональных данных
+                .header-login__info-block 
+                    span Уже зарегистрировались?
+                    a(href="#") Вход

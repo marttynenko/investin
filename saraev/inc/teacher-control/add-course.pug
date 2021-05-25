@@ -1,0 +1,118 @@
+section 
+    .container 
+        .teacher-control.teacher-control-add-course
+            include ../teacher-control-nav/nav.pug
+            .teacher-control__content
+                h2.teacher-control__personal-title Создание курса
+                .teacher-control__promo-agreement
+                        input(type="checkbox", name="teacherPromo", id="signUpCheckbox",checked).teacher-control__promo-checkbox
+                        label(for="signUpCheckbox").teacher-control__promo-checkbox-label Я согласен участвовать в промо-акциях ресурса
+                form(action="#").teacher-control__add-course
+                    .teacher-control__add-course-general-left 
+                        h3.teacher-control__add-course-general-title Общая информация
+                        .teacher-control__add-course-input-group 
+                            label(for="courseName") Название курса 
+                            input(type="text",id="courseName")
+                        .teacher-control__add-course-input-group 
+                            label(for="courseCategory") Категория курса 
+                            select(name="courseCategory",id="courseCategory", )
+                                        option(value="ИТ и ПО", disabled, selected) ИТ и ПО  
+                                        option(value="ИТ и ПО") ИТ и ПО
+                                        option(value="Фасоль")  Фасоль
+                        .teacher-control__add-course-input-group 
+                            label(for="courseCategory") Подкатегория курса 
+                            select(name="courseCategory",id="courseCategory", )
+                                        option(value="ИТ и ПО", disabled, selected) Вёрстка
+                                        option(value="ИТ и ПО") Вёрстка
+                                        option(value="Фасоль")  Фасоль
+                        .teacher-control__add-course-input-group 
+                            label(for="courseCategory") Уровень курса 
+                            select(name="courseCategory",id="courseCategory", )
+                                        option(value="ИТ и ПО", disabled, selected) Любой
+                                        option(value="ИТ и ПО") Любой
+                                        option(value="Фасоль")  Фасоль
+                        .teacher-control__add-course-input-group 
+                            label(for="courseCategory") Язык курса 
+                            select(name="courseCategory",id="courseCategory", )
+                                        option(value="ИТ и ПО", disabled, selected) Русский  
+                                        option(value="ИТ и ПО") Русский
+                                        option(value="Фасоль")  Фасоль
+                        .teacher-control__add-course-input-group--hemi-wrapper 
+                            .teacher-control__add-course-input-group.teacher-control__add-course-input-group--hemi 
+                                label(for="courseName") Цена 
+                                input(type="text",id="courseName",placeholder="BYN")
+                            .teacher-control__add-course-input-group.teacher-control__add-course-input-group--hemi 
+                                label(for="courseName") Старая цена 
+                                input(type="text",id="courseName",placeholder="BYN")
+                        .teacher-control__add-course-input-group--hemi-wrapper 
+                            .teacher-control__add-course-input-group.teacher-control__add-course-input-group--hemi 
+                                label(for="courseName") Цена 
+                                input(type="text",id="courseName",placeholder="USD")
+                            .teacher-control__add-course-input-group.teacher-control__add-course-input-group--hemi 
+                                label(for="courseName") Старая цена 
+                                input(type="text",id="courseName",placeholder="USD")
+                        .teacher-control__add-course-teachers 
+                            span.teacher-control__add-course-teachers-title Авторы курса
+                            .teacher-control__add-course-teachers-avatar 
+                                .teacher-control__add-course-teachers-avatar-img 
+                                    img(src="img/teacher-control/teacher-avatar.png", alt="")
+                                span.teacher-control__add-course-teachers-avatar__name Приходько Владимир
+                            button.teacher-control__add-course-teachers__btn Добавить ещё
+                        .teacher-control__add-course-input-group 
+                            label(for="courseName") Чему научатся 
+                            input(type="text",id="courseName",placeholder="Теги")
+                            button.teacher-control__add-course-teachers__btn Добавить ещё
+                    .teacher-control__add-course-general-right
+                        .teacher-control__add-course-input-group.teacher-control__add-course-input-group-course-descr 
+                            label(for="courseDescr") Краткое описание 
+                            textarea(name="courseDescr",id="courseDescr") 
+                            button.teacher-control__add-course-teachers__btn Добавить превью курса
+                            button.teacher-control__add-course-teachers__btn Добавить промо-видео курса
+                        .teacher-control__add-course-input-group.teacher-control__add-course-input-group-include 
+                            label(for="courseDuration") Курс включает 
+                            .teacher-control__promo-agreement
+                                input(type="checkbox", name="courseVideo", id="courseVideo",checked).teacher-control__promo-checkbox
+                                label(for="courseVideo").teacher-control__promo-checkbox-label Видео-материалы
+                            input(type="text",id="courseDuration",placeholder="Количество часов")
+
+                        .teacher-control__add-course-input-group.teacher-control__add-course-input-group-include 
+                            .teacher-control__promo-agreement
+                                input(type="checkbox", name="courseDurationCheckbox", id="courseDurationCheckbox",checked).teacher-control__promo-checkbox
+                                label(for="courseDurationCheckbox").teacher-control__promo-checkbox-label Доступен до
+                            input(type="text",id="courseEndDate",placeholder="Дата")
+                            .teacher-control__promo-agreement
+                                input(type="checkbox", name="courseExtraMaterials", id="courseExtraMaterials",checked).teacher-control__promo-checkbox
+                                label(for="courseExtraMaterials").teacher-control__promo-checkbox-label Дополнительные материалы
+                            .teacher-control__promo-agreement(id="courseTests-wrap")
+                                input(type="checkbox", name="courseTests", id="courseTests",checked).teacher-control__promo-checkbox
+                                label(for="courseTests").teacher-control__promo-checkbox-label Тесты
+                            .teacher-control__promo-agreement(id="courseSubtitles-wrap")
+                                input(type="checkbox", name="courseSubtitles", id="courseSubtitles",checked).teacher-control__promo-checkbox
+                                label(for="courseSubtitles").teacher-control__promo-checkbox-label Субтитры
+                        .teacher-control__add-course-input-group 
+                            select(name="courseCategory",id="courseCategory", )
+                                        option(value="ИТ и ПО", disabled, selected) Русский  
+                                        option(value="ИТ и ПО") Русский
+                                        option(value="Фасоль")  Фасоль
+                        .teacher-control__add-course-input-group.teacher-control__add-course-input-group-include 
+                            .teacher-control__promo-agreement
+                                input(type="checkbox", name="courseAuthorComm", id="courseAuthorComm",checked).teacher-control__promo-checkbox
+                                label(for="courseAuthorComm").teacher-control__promo-checkbox-label Общение с автором
+
+                        .teacher-control__add-course-input-group 
+                            label(for="courseName") Предполагаемая длительность 
+                            input(type="text",id="courseName", placeholder="Количество недель")
+                    .teacher-control__add-course-general-fluid
+                        h3.teacher-control__add-course-general-title Общая информация
+                        .teacher-control__add-course-input-group.teacher-control__add-course-input-group-course-descr.teacher-control__add-course-input-group-course-descr--fluid 
+                            label(for="courseConditions") Требования 
+                            textarea(name="courseConditions",id="courseConditions") 
+
+                        .teacher-control__add-course-input-group.teacher-control__add-course-input-group-course-descr.teacher-control__add-course-input-group-course-descr--fluid 
+                            label(for="courseDescrFull") Описание 
+                            textarea(name="courseDescrFull",id="courseDescrFull") 
+                    .teacher-control__add-course-general-fluid-btn-block 
+                        button.teacher-control__btn-cancel Отменить
+                        .teacher-control__add-course-general-fluid-btn-block-wrap
+                            button(type="submit").teacher-control__btn-save.btn.btn_blue Сохранить
+                            a(href="#add-course-next").btn.btn_blue.popup-with-form Далее

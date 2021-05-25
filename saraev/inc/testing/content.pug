@@ -1,0 +1,75 @@
+section
+    .container
+        h1.page_title Английский Язык для Начинающих на все 100!
+        .row
+            .col.main_content_left
+                p Тестирование
+                .h3 This That These Those указательные местоимения
+                form
+                    .testing_container
+                        if page.title ==='Тестирование'
+                            ul.steps
+                                -for (var s = 1; s <= 10; s++)
+                                    if s === 1 || s === 2 || s === 3 || s === 4 || s === 5
+                                        li
+                                            a.right(href="#") #{s}
+                                    else if s === 6
+                                        li
+                                            a.wrong(href="#") #{s}
+                                    else
+                                        li
+                                            a(href="#") #{s}
+                            p
+                                strong Выберите из указанных предложений верное:
+                            ul.questions
+                                -for (var q = 1; q <= 4; q++)
+                                    li
+                                        .custom_checkbox
+                                            input(type="checkbox" id="checkbox_" + q + "")
+                                            label(for="checkbox_" + q + "") This is a beatiful day for the fishing
+                        else if page.title ==='Тестирование 1'
+                            ul.steps
+                                -for (var s = 1; s <= 10; s++)
+
+                                    if s === 6
+                                        li
+                                            a.wrong(href="#") #{s}
+                                    else
+                                        li
+                                            a.right(href="#") #{s}
+                            .successfully
+                                img(src="img/fireworks.svg")
+                                p
+                                    strong Поздравляем!
+                                p Вы успешно завершили тестирование и можете<br> перейти к следующему занятию
+                        else if page.title ==='Тестирование 2'
+                            ul.steps
+                                -for (var s = 1; s <= 10; s++)
+                                    if s === 3||s === 6||s === 9
+                                        li
+                                            a.wrong(href="#") #{s}
+                                    else
+                                        li
+                                            a.right(href="#") #{s}
+                            .not_successful
+                                img(src="img/sad.png")
+                                p
+                                    strong Вы не прошли тест
+                                p К сожалению, вы не прошли тест.<br> <a href="#">Попробуйте еще раз</a>
+
+
+                    .b_btns
+                        .left
+                            a.btn.btn_light(href="#") Назад к занятию
+                            a.btn.btn_light(href="#") Завершить
+                        .right
+                            button.btn.btn_blue(type="submit") Ответить
+            .col.sidebar_right
+                .about_testing
+                    p
+                        strong Памятка
+                    p Для успешного прохождения тестирования вам необходимо правильно ответить на 10 из 12 вопросов.
+                    p За каждый правильный ответ ... .
+                    p Много текста о требованиях к прохождению тестирования по конкретному занятию, теме и конкретному курсу.
+                    p Универсальные правила или пользователь заполняет для каждого занятия / темы / курса?
+                    p Подробнее <a href="#">Справка</a> и <a href="#">Поддержка</a>

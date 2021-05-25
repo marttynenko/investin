@@ -1,0 +1,10 @@
+-var s_menu=['О сервисе','Справка и поддержка','Стать преподавателем','Наши контакты','Пользовательское соглашение','Договор комиссии'];
+
+ul.sidebar_menu
+    for s_menu_item, index in s_menu
+        if s_menu_item===page.title
+            li.active
+                a(href="#")=s_menu_item
+        else
+            li
+                a(href="#")=s_menu_item

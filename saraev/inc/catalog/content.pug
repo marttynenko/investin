@@ -1,0 +1,60 @@
+section.title_box(style="background-image:url(img/bgs/Rectangle26.png)")
+    .container
+        h1 Выбирайте интересующую категорию и начинайте заниматься уже <span class="line">сегодня</span>
+
+-var courses=['Бизнес','ИТ и ПО','Финансы и бухгалтерия','Маркетинг и реклама','Здоровье и фитнес','Архитектура и дизайн','Стиль жизни','Фотография','Музыка','Академические дисциплины','Иностранные языки','Другие'];
+section.catalog
+    .container
+        .row.categories
+            for courses_item , index in courses
+                .col
+                    a.category_item(href="#" style="background-image:url(img/examples/c_0.png)")
+                        .category_item_content
+                            picture
+                                img(src="img/icons/c_"+index+".svg")
+                            .category_item_name=courses_item
+
+
+
+
+
+
+include ../blocks/become_section
+
+section
+    .container
+        .text_center
+            .h2.line.mb_55 Популярные курсы
+        .row.cards_grid
+            -for(var c=1;c<=3;c++)
+                .col
+                    .card_item
+                        a.card_item_img(href="#" style="background-image:url(img/examples/c_"+c+".png)")
+                            if c===2
+                                .label.discount Скидка
+                        .card_item_body
+                            div
+                                if c===2
+                                    a.card_item_name(href="#") Corporate Finance Management
+                                else
+                                    a.card_item_name(href="#") HTML5, CSS и  JavaScript для начинающих
+                                if c===2
+                                    .teachers Владимир Приходько
+                                else
+                                    .teachers Владимир Приходько, Денис Грушевский, Катерина Кулакова
+                            div
+                                .rating
+                                    strong 4,5
+                                    span.stars
+                                        span.star
+                                        span.star
+                                        span.star
+                                        span.star
+                                        span.star.empty
+                                    .counter 12 отзывов
+                                .price_box
+                                    .price 1 560 бел. руб.
+                                    if c!==2
+                                        .old_price 1 680 бел. руб.
+
+

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+html
+    head
+        - var page = { title: 'Страница курса с видео в сайдбаре' }
+        include inc/head.pug
+    body.course_page
+        include inc/header.pug
+        main
+            include inc/course_page_with_video_in_the_sidebar/content.pug
+        include inc/footer.pug
+        include inc/scripts.pug

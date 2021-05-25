@@ -1,0 +1,176 @@
+.teacher-control
+    &__btn
+        &-save
+            margin-right: 20px
+        &-cancel
+            display: inline-block
+            color: #7a89a6
+            padding: 18px 35px
+            background: #f6f8fc
+            border-radius: 3px
+            border: none
+            margin-right: auto
+            &:hover
+                background: #eaeef4
+                color: #617293
+    &-add-course
+        .teacher-control__personal-title
+            margin-bottom: 20px
+        .teacher-control__promo-agreement
+            margin-bottom: 15px
+    &__add-course
+        &-teachers
+            display: flex
+            flex-direction: column
+            margin-bottom: 30px
+            &__btn
+                border: none
+                background: transparent
+                display: flex
+                color: #F47920
+                font-weight: 500
+                font-size: 20px
+                line-height: 1.66
+                position: relative
+                padding-left: 36px
+                margin-top: 19px
+                &::before
+                    content: ""
+                    font-size: 10px
+                    position: absolute
+                    left: 0
+                    top: 4px
+                    display: block
+                    height: 2.6em
+                    width: 2.6em
+                    background: center / cover no-repeat url("../img/icons/Add_User.svg")
+            &-title
+                font-weight: 400
+                font-size: 16px
+                line-height: 1.68
+                color: #747474
+                margin-bottom: 10px
+            &-avatar
+                display: flex
+                align-items: center
+                &__name
+                    font-weight: 600
+                    font-size: 20px
+                    line-height: 1.7
+                    color: #262626
+                &-img
+                    font-size: 10px
+                    width: 9em
+                    height: 9em
+                    border-radius: 50%
+                    overflow: hidden
+                    margin-right: 30px
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+        &-general
+            &-left
+                flex: 0 0 49%
+            &-right
+                flex: 0 0 49%
+                .teacher-control__add-course-input-group
+                    &:first-child
+                        @media screen and ( min-width: 1200px )
+                            padding-top: 75px
+            &-fluid
+                flex: 0 0 100%
+                &-btn
+                    &-block
+                        display: flex
+                        align-items: flex-start
+                        justify-content: space-between
+                        flex: 0 0 100%
+            &-title
+                font-weight: 500
+                font-size: 20px
+                line-height: 1.7
+                color: #262626
+                margin-bottom: 20px
+        &-input-group
+            display: flex
+            flex-direction: column
+            margin-bottom: 20px
+            &-include
+                .teacher-control__promo-agreement
+                    input
+                        display: none
+                label
+                    &:first-child
+                        margin-bottom: 20px
+                    margin-bottom: 20px
+            .teacher-control__promo-checkbox-label
+                padding-left: 45px
+                font-size: 18px
+                &::before
+                    left: 0
+            &-course-descr
+                &--fluid
+                margin-bottom: 30px
+                .teacher-control__add-course-teachers__btn
+                    font-size: 20px
+                    &:last-child
+                        margin-top: 25px
+            .teacher-control__add-course-teachers__btn
+                margin-top: 18px
+                &::before
+                    width: 2.6em
+                    height: 2.6em
+                    background: center / cover no-repeat url("../img/icons/Plus.svg")
+            &--hemi
+                flex: 0 0 48%
+                input
+                    &::placeholder
+                        text-align: right   
+                        padding-right: 20px
+                        color: #747474 !important
+                &:first-child
+                    label
+                        &::after
+                            content: "*"
+                            color: red
+                &-wrapper
+                    display: flex
+                    justify-content: space-between
+                    margin-bottom: 10px
+                    &:last-child
+                        margin-bottom: 0
+                
+            label
+                font-size: 16px
+                line-height: 1.68
+                color: #747474
+                margin-bottom: 10px
+                
+#courseDescr
+    height: 272px
+#courseEndDate
+    margin-bottom: 20px
+#courseSubtitles-wrap
+    margin-top: 5px
+    margin-bottom: 0
+#courseTests-wrap
+    margin-top: 5px
+
+@media (max-width: 576px)
+    .teacher-control__add-course-teachers__btn
+        font-size: 16px
+        margin-top: 10px
+
+        &:before
+            top: 0
+            
+    .teacher-control__add-course-input-group-course-descr .teacher-control__add-course-teachers__btn
+        font-size: 16px
+
+    .teacher-control .materials .materials_group .materials_group_header .materials_group_title
+        font-size: 16px
+        margin-bottom: 0
+
+    .teacher-control .materials_group_body
+        padding-top: 0

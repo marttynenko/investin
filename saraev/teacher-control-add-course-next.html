@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Создание курса</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/styless.css"/>
+    <link rel="stylesheet" href="css/style.css"/><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <div class="timer_box">
+      <div class="hide"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col col_left"><span>Цены всего от <strong> 12,99$</strong></span><span>Получите новые навыки без риска</span></div>
+          <div class="col col_right"><span>Закончится через</span>
+            <div class="timer">
+              <!--<script src="//megatimer.ru/get/2b67b12420473af57a28135d4f37dce1.js"></script>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header>
+      <div class="h_row">
+        <div class="h_col_left">
+          <div class="logo"><a href="#"><img src="img/logo.svg"/></a></div>
+          <div class="h_menu">
+            <button class="btn h_menu_toggler">Курсы</button>
+            <div class="h_menu_nav">
+              <ul>
+                <li><a href="#">Бизнес</a></li>
+                <li><a href="#">ИТ и ПО</a></li>
+                <li><a href="#">Финансы и бухгалтерия</a></li>
+                <li><a href="#">Маркетинг и реклама</a></li>
+                <li><a href="#">Здоворье и фитнес</a></li>
+                <li><a href="#">Архитектура и дизайн</a></li>
+                <li><a href="#">Стиль жизни </a></li>
+                <li><a href="#">Фотография</a></li>
+                <li><a href="#">Музыка</a></li>
+                <li><a href="#">Академические дисциплины</a></li>
+                <li><a href="#">Иностранные языки</a></li>
+                <li><a href="#">Другие</a></li>
+                <li><a href="#">Управление проектами</a></li>
+                <li><a href="#">Финансовый анализ</a></li>
+                <li><a href="#">HTML5, CSS и  JavaScript для начинающих</a></li>
+                <li><a href="#">Управление проектами</a></li>
+                <li><a href="#">Финансовый анализ</a></li>
+                <li><a href="#">HTML5, CSS и  JavaScript для начинающих</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="h_col_center">
+          <button class="h_user_dropdown"><img src="img/icons/user.svg"/>
+          </button>
+          <button class="h_search_toggler"></button>
+          <div class="h_search">
+            <form class="h_form">
+              <button class="btn_submit" type="submit"></button>
+              <input class="search_input" type="text" placeholder="Чему бы вы хотели научиться? "/>
+              <button class="btn_reset" type="reset"></button>
+            </form>
+          </div>
+        </div>
+        <div class="h_col_right">
+          <div class="become_teacher_box"><a class="become_teacher_link" href="#">Стать преподавателем</a></div>
+          <div class="h_user_box">
+            <ul class="h_account_menu">
+              <li><a class="whish_link" href="#"></a></li>
+              <li><a class="messages_link" href="#"></a></li>
+              <li class="position-relative">
+                <button class="dropdown_toggler">
+                  <div class="user_photo" style="background-image:url(img/examples/Ellipse14.png)"></div>
+                </button>
+                <ul class="dropdown_menu">
+                  <li><a href="#">Личные данные</a></li>
+                  <li><a href="#">Моё обучение</a></li>
+                  <li><a href="#">История оплаты</a></li>
+                  <li><a href="#">Выйти</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <button class="h_search_toggler"></button>
+          <div class="h_search">
+            <form class="h_form">
+              <button class="btn_submit" type="submit"></button>
+              <input class="search_input" type="text" placeholder="Чему бы вы хотели научиться? "/>
+              <button class="btn_reset" type="reset"></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal_window" id="header-login">
+        <div class="header-login__header">
+          <div class="header-login__header-text-block"> 
+            <h2 class="header-login__title">Вход</h2>
+            <p class="header-login__subtitle">Добро пожаловать на INVESTIN! </p>
+          </div>
+          <div class="header-login__header-logo"><img src="img/logo-modals.svg" alt=""/></div>
+        </div><button title="Close (Esc)" type="button" class="mfp-close">×</button>
+        <div class="header-login__body"> 
+          <form class="header-login__form" action="#">
+            <div class="header-login__input-group">
+              <input type="text" placeholder="Email" name="loginEmail"/>
+            </div>
+            <div class="header-login__input-group"> 
+              <input type="password" placeholder="Пароль" name="loginPswd"/>
+            </div>
+            <div class="teacher-control__promo-agreement">
+              <input class="teacher-control__promo-checkbox" type="checkbox" name="teacherPromo" id="logInCheckbox" checked="checked"/>
+              <label class="teacher-control__promo-checkbox-label" for="logInCheckbox">Запомнить меня</label>
+            </div><a class="header-login__pswd-loss" href="#">Забыли пароль?</a><a class="btn btn_blue" href="">Войти</a>
+          </form>
+          <div class="header-login__info-block"> <span>Не зарегистрированы?</span><a href="#">Регистрация</a></div>
+        </div>
+      </div>
+      <div class="modal_window" id="header-sign-up">
+        <div class="header-login__header">
+          <div class="header-login__header-text-block"> 
+            <h2 class="header-login__title">Регистрация</h2>
+            <p class="header-login__subtitle">Добро пожаловать на INVESTIN! </p>
+          </div>
+          <div class="header-login__header-logo"><img src="img/logo-modals.svg" alt=""/></div>
+        </div><button title="Close (Esc)" type="button" class="mfp-close">×</button>
+        <div class="header-login__body">
+          <div class="header-login__nav"><span class="header-login__nav-title">Кто Вы?</span>
+            <ul class="c_nav">
+              <li class="active"> <a href="#">Я ученик</a></li>
+              <li> <a href="#">Я преподаватель</a></li>
+            </ul>
+          </div>
+          <form class="header-login__form" action="#"><span class="header-login__form-title">Ваши учетные данные</span>
+            <div class="header-login__input-group header-login__input-group--small">
+              <input type="text" placeholder="Имя" name="signUpEmail"/>
+            </div>
+            <div class="header-login__input-group header-login__input-group--small"> 
+              <input type="text" placeholder="Фамилия" name="signUpFamilyName"/>
+            </div>
+            <div class="header-login__input-group">
+              <input type="text" placeholder="Email" name="signUpEmail"/>
+            </div>
+            <div class="header-login__input-group"> 
+              <input type="password" placeholder="Пароль" name="signUpPswd"/>
+            </div>
+            <div class="teacher-control__promo-agreement">
+              <input class="teacher-control__promo-checkbox" type="checkbox" name="teacherPromo" id="signUpCheckbox" checked="checked"/>
+              <label class="teacher-control__promo-checkbox-label" for="signUpCheckbox">Я согласен участвовать в промо-акциях ресурса</label>
+            </div><a class="btn btn_blue" href="">Зарегистрироваться</a>
+          </form>
+          <div class="header-login__policy-block"> <span>
+               Зарегистрировавшись, вы соглашаетесь с <a>Правилами обработки персональных данных</a></span></div>
+          <div class="header-login__info-block"> <span>Уже зарегистрировались?</span><a href="#">Вход</a></div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section> 
+        <div class="container"> 
+          <div class="teacher-control teacher-control-add-course">
+            <div class="teacher-control__nav">
+              <div class="teacher-control__header"> 
+                <div class="teacher-control__header-img"> <img src="img/teacher-control/teacher-avatar.png" alt=""/></div>
+                <h2 class="teacher-control__header-name">Приходько<br/>Владимир</h2>
+              </div>
+              <nav class="teacher-control__nav-block"> 
+                <ul class="teacher-control__nav-list">
+                  <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link teacher-control__nav-list-item-link--active" href="#">Личные данные</a></li>
+                  <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Мои курсы</a></li>
+                  <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Избранное</a></li>
+                  <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Баланс</a></li>
+                  <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Сообщения</a></li>
+                  <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Справка и поддержка</a></li>
+                  <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Безопасность</a></li>
+                  <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Выйти</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="teacher-control__content">  
+              <h2 class="teacher-control__personal-title">Английский для начинающих</h2>
+              <p class="teacher-control__header-text">Создавайте темы, занятия, вопросы и ответы на них. Не забывайте про ограничения: размер загружаемых картинок не может быть более 5 Мб, размер загружаемого видео не может быть более 50 Мб. В случае необходимости используйте электронные хранилища данных (Google drive...). Для выбора правильных вариантов ответа, поставьте галочку напротив них</p><a class="btn btn_blue popup-with-form teacher-control__add-topic" href="#add-topic-modal">Создать тему </a>
+              <div class="materials">
+                <div class="materials_group act">
+                  <div class="materials_group_header">
+                    <div class="d_flex">
+                      <div class="materials_group_title"><span>Введение</span></div>
+                    </div>
+                    <div class="count"> 
+                      <button class="teacher-control__add-course-teachers__btn">Редактировать</button>
+                    </div>
+                  </div>
+                  <div class="materials_group_body">
+                    <ul class="materials_list">
+                      <li>
+                        <div class="d_flex">
+                          <div class="material_name">
+                            <picture><img src="img/icons/Document.svg"/>
+                            </picture><span>Present Simple Настоящее Простое</span>
+                          </div>
+                        </div>
+                        <div class="time">02:35<img src="img/icons/Edit.svg" alt=""/></div>
+                      </li>
+                      <li>
+                        <div class="d_flex">
+                          <div class="material_name">
+                            <picture><img src="img/icons/approval.svg"/>
+                            </picture><span>Present Simple вопросы и отрицания</span>
+                          </div>
+                        </div>
+                        <div class="time">02:35<img src="img/icons/Edit.svg" alt=""/></div>
+                      </li>
+                      <li>
+                        <div class="d_flex">
+                          <div class="material_name">
+                            <picture><img src="img/icons/play-button.svg"/>
+                            </picture><span>This That These Those указательные местоимения</span>
+                          </div>
+                        </div>
+                        <div class="time">02:35<img src="img/icons/Edit.svg" alt=""/></div>
+                      </li>
+                      <li>
+                        <div class="d_flex">
+                          <div class="material_name">
+                            <picture><img src="img/icons/approval.svg"/>
+                            </picture><span>Еще немного о Present Simple</span>
+                          </div>
+                        </div>
+                        <div class="time">02:35<img src="img/icons/Edit.svg" alt=""/></div>
+                      </li>
+                      <li>
+                        <div class="d_flex">
+                          <div class="material_name">
+                            <picture><img src="img/icons/Document.svg"/>
+                            </picture><span>Предлоги и Союзы</span>
+                          </div>
+                        </div>
+                        <div class="time">02:35<img src="img/icons/Edit.svg" alt=""/></div>
+                      </li>
+                    </ul>
+                    <ul class="materials_list">
+                      <li> 
+                        <div class="d_flex">
+                          <div class="material_name">
+                            <button class="teacher-control__add-course-teachers__btn popup-with-form" href="#teacher-control-create-lesson">Создать занятие</button>
+                          </div>
+                        </div>
+                        <div class="time"> 
+                          <button class="teacher-control__add-course-teachers__btn popup-with-test" href="#teacher-control-create-test">Создать тестирование</button>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="materials_group">
+                  <div class="materials_group_header">
+                    <div class="d_flex">
+                      <div class="materials_group_title"><span>Произношение</span></div>
+                    </div>
+                  </div>
+                  <div class="materials_group_body">
+                    <ul class="materials_list">
+                      <li>
+                        <div class="d_flex">
+                          <div class="material_name">
+                            <button class="teacher-control__add-course-teachers__btn popup-with-form" href="#teacher-control-create-lesson">Создать занятие</button>
+                          </div>
+                        </div>
+                        <div class="time"> 
+                          <button class="teacher-control__add-course-teachers__btn popup-with-test" href="#teacher-control-create-test">Создать тестирование</button>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="teacher-control__add-topic--icon"> 
+                <button class="teacher-control__add-course-teachers__btn popup-with-form" href="#add-topic-modal">Создать тему</button>
+              </div>
+              <div class="teacher-control__material-control-group">
+                <button class="teacher-control__return-btn">Назад</button><a class="btn btn_blue" href="#">Создать курс</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="modal_window" id="add-topic-modal"><button title="Close (Esc)" type="button" class="mfp-close">×</button>
+        <h1>Создание темы</h1>
+        <form action="#">
+          <div class="input-group"> 
+            <input type="text" placeholder="Название темы" name="teacherControlAddTopic"/>
+          </div>
+          <button class="btn btn_blue">Создать тему</button>
+        </form>
+      </div>
+      <div class="modal_window" id="teacher-control-create-lesson">
+        <button class="mfp-close" title="Close (Esc)" type="button">×</button>
+        <h1>Создание занятия</h1>
+        <form action="#"> 
+          <div class="input-group"> 
+            <input type="text" placeholder="Название занятия" name="teacherControlAddTopic"/>
+          </div>
+          <div class="input-group"> 
+            <label for="create-lesson-area">Описание занятия</label>
+            <textarea id="create-lesson-area" name="create-lesson-area"></textarea>
+          </div>
+          <div class="file-input-group">
+            <label for="create-lesson-area-file-upload">
+              <div class="file-input-group__img"> <img src="img/icons/folder.svg" alt=""/></div>
+              <p><span>Нажмите сюда</span> - чтобы выбрать файлы или <br/>перетащите их в выделенную область</p>
+              <input type="file" id="create-lesson-area-file-upload" name="create-lesson-area-file-upload"/>
+            </label>
+          </div><span class="file-input-group-subtitle">
+             Файлы должны быть в форматах: .doc, .jpg, .mp4 </span>
+          <button class="btn btn_blue">Создать занятие</button>
+        </form>
+      </div>
+      <div class="modal_window" id="teacher-control-create-test">
+        <button class="mfp-close" title="Close (Esc)" type="button">×</button>
+        <div class="container">
+          <div class="create-test-modal__body">
+            <h1>Создание теста</h1>
+            <div class="create-test-modal__header"> 
+              <p class="create-test-modal__header-topic">Тема:  <span>Название темы</span></p>
+              <p class="create-test-modal__header-course">Курс:  <span>Название курса</span></p>
+            </div>
+            <div class="create-test-modal__content"> 
+              <div class="create-test-modal__headline"> 
+                <h3>Тест</h3>
+                <div class="create-test-modal__headline-block"> 
+                  <div class="create-test-modal__input-group"> 
+                    <input type="text" placeholder="Введите название теста"/>
+                  </div>
+                  <div class="create-test-modal__required-answers"><span>Количество правильных ответов для зачета:</span>
+                    <div class="create-test-modal-counter">18</div>
+                  </div>
+                </div>
+                <div class="create-test-modal__col-name"> <span>Список вопросов</span><span>Варианты ответов</span></div>
+                <div class="create-test-modal__row create-test-modal__row--first">
+                  <div class="create-test-modal__col">
+                    <div class="create-test-modal__col-item">
+                      <div class="create-test-modal-counter">1</div>
+                      <div class="create-test-modal__input-group-area"> 
+                        <textarea placeholder="Выберите верное определение слову &quot;Windows&quot;"></textarea>
+                      </div>
+                      <button class="create-test-modal__garbage"></button>
+                    </div>
+                  </div>
+                  <div class="create-test-modal__col">
+                    <div class="create-test-modal__col-item">
+                      <div class="create-test-modal-counter">1.1</div>
+                      <div class="create-test-modal__input-group"> 
+                        <input type="text" placeholder="Игра для компьютера"/>
+                      </div>
+                      <button class="create-test-modal__garbage"></button>
+                    </div>
+                    <div class="create-test-modal__col-item">
+                      <div class="create-test-modal-counter">1.2</div>
+                      <div class="create-test-modal__input-group"> 
+                        <input type="text" placeholder="Операционная система"/>
+                      </div>
+                      <button class="create-test-modal__garbage"></button>
+                    </div>
+                    <div class="create-test-modal__col-item">
+                      <div class="create-test-modal-counter">1.3</div>
+                      <div class="create-test-modal__input-group"> 
+                        <input type="text" placeholder="Не знаю"/>
+                      </div>
+                      <button class="create-test-modal__garbage"></button>
+                    </div>
+                    <button class="create-test-modal__add-one">Добавить ещё</button>
+                  </div>
+                </div>
+                <div class="create-test-modal__row"> 
+                  <div class="create-test-modal__col">
+                    <div class="create-test-modal__col-item">
+                      <div class="create-test-modal-counter">3</div>
+                      <div class="create-test-modal__input-group-area"> 
+                        <textarea placeholder="Сколько лет назад появилась первая Windows"></textarea>
+                      </div>
+                      <button class="create-test-modal__garbage"></button>
+                    </div>
+                  </div>
+                  <div class="create-test-modal__col">
+                    <div class="create-test-modal__col-item">
+                      <div class="create-test-modal-counter">3.1</div>
+                      <div class="create-test-modal__input-group"> 
+                        <input type="text" placeholder="25 лет назад"/>
+                      </div>
+                      <button class="create-test-modal__garbage"></button>
+                    </div>
+                    <div class="create-test-modal__col-item">
+                      <div class="create-test-modal-counter">3.2</div>
+                      <div class="create-test-modal__input-group"> 
+                        <input type="text" placeholder="35 лет назад"/>
+                      </div>
+                      <button class="create-test-modal__garbage"></button>
+                    </div>
+                    <button class="create-test-modal__add-one">Добавить ещё</button>
+                  </div>
+                </div>
+                <div class="create-test-modal__row"> 
+                  <div class="create-test-modal__col">
+                    <div class="create-test-modal__col-item">
+                      <div class="create-test-modal-counter create-test-modal-counter--active">2</div>
+                      <div class="create-test-modal__input-group-area"> 
+                        <textarea placeholder="Сколько лет назад появилась первая Windows"></textarea>
+                      </div>
+                      <button class="create-test-modal__garbage"></button>
+                    </div>
+                  </div>
+                  <div class="create-test-modal__col">
+                    <div class="create-test-modal__col-item">
+                      <div class="create-test-modal-counter">3.1</div>
+                      <div class="create-test-modal__input-group"> 
+                        <input type="text" placeholder="25 лет назад"/>
+                      </div>
+                      <button class="create-test-modal__garbage"></button>
+                    </div>
+                    <div class="create-test-modal__col-item">
+                      <div class="create-test-modal-counter">3.2</div>
+                      <div class="create-test-modal__input-group"> 
+                        <input type="text" placeholder="35 лет назад"/>
+                      </div>
+                      <button class="create-test-modal__garbage"></button>
+                    </div>
+                    <button class="create-test-modal__add-one">Добавить ещё</button>
+                  </div>
+                </div>
+                <div class="create-test-modal__row"> 
+                  <div class="create-test-modal__col">
+                    <div class="create-test-modal__col-item">
+                      <div class="create-test-modal-counter create-test-modal-counter--active">2</div>
+                      <div class="create-test-modal__input-group-area"> 
+                        <textarea placeholder="Сколько лет назад появилась первая Windows"></textarea>
+                      </div>
+                      <button class="create-test-modal__garbage"></button>
+                    </div>
+                  </div>
+                  <div class="create-test-modal__col">
+                    <div class="create-test-modal__col-item">
+                      <div class="create-test-modal-counter">3.1</div>
+                      <div class="create-test-modal__input-group"> 
+                        <input type="text" placeholder="25 лет назад"/>
+                      </div>
+                      <button class="create-test-modal__garbage"></button>
+                    </div>
+                    <div class="create-test-modal__col-item">
+                      <div class="create-test-modal-counter">3.2</div>
+                      <div class="create-test-modal__input-group"> 
+                        <input type="text" placeholder="35 лет назад"/>
+                      </div>
+                      <button class="create-test-modal__garbage"></button>
+                    </div>
+                    <button class="create-test-modal__add-one">Добавить ещё</button>
+                  </div>
+                </div>
+                <div class="create-test-modal__row"> 
+                  <div class="create-test-modal__col">
+                    <div class="create-test-modal__col-item">
+                      <div class="create-test-modal-counter">4</div>
+                      <div class="create-test-modal__input-group-area"> 
+                        <textarea placeholder="Введите вопрос"></textarea>
+                      </div>
+                      <button class="create-test-modal__garbage"></button>
+                    </div>
+                  </div>
+                  <div class="create-test-modal__col">
+                    <div class="create-test-modal__col-item">
+                      <div class="create-test-modal-counter">4.1</div>
+                      <div class="create-test-modal__input-group"> 
+                        <input type="text" placeholder="Введите вариант ответа"/>
+                      </div>
+                      <button class="create-test-modal__garbage"></button>
+                    </div>
+                    <button class="create-test-modal__add-one">Добавить ещё</button>
+                  </div>
+                </div>
+                <div class="create-test-modal__row">
+                  <div class="create-test-modal__col">
+                    <button class="create-test-modal__add-one create-test-modal__add-one--last">Добавить вопрос</button>
+                  </div>
+                  <div class="create-test-modal__col">
+                    <div class="create-test-modal__buttons"> 
+                      <div class="create-test-modal__buttons-wrap"> 
+                        <button class="btn btn_blue">Применить </button>
+                        <button class="btn btn_blue">Завершить</button>
+                      </div><span>*Номера вопросов не могут быть одинаковыми</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="create-test-modal__footer"> <a class="btn-grey" href="#">Отменить</a><a class="btn btn_blue" href="#">Назад к курсу</a></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="f_row">
+          <div class="f_col_left">
+            <div class="logo"><a href="#"><img src="img/e-invest_12.svg"/></a></div>
+            <ul>
+              <li><a href="#">Пользовательское соглашение</a></li>
+              <li><a href="#">Договор комиссии</a></li>
+            </ul>
+            <div class="copyright">© Investin LTD., 2020 Все права защищены.</div>
+          </div>
+          <div class="f_col_center">
+            <div class="row f_menu_row">
+              <div class="col">
+                <div class="f_title">Курсы</div>
+                <ul class="column3">
+                  <li><a href="#">Бизнес</a></li>
+                  <li><a href="#">Музыка</a></li>
+                  <li><a href="#">Стиль жизни</a></li>
+                  <li><a href="#">Дизайн</a></li>
+                  <li><a href="#">ИТ и ПО</a></li>
+                  <li><a href="#">Фитнес</a></li>
+                </ul><a class="show_all" href="#">Все категории</a>
+              </div>
+              <div class="col">
+                <div class="f_title">Общее</div>
+                <ul class="column2">
+                  <li><a href="#">О проекте</a></li>
+                  <li><a href="#">Стать преподавателем</a></li>
+                  <li><a href="#">Справка и поддержка</a></li>
+                  <li><a href="#">Наши контакты</a></li>
+                </ul>
+              </div>
+            </div>
+            <ul class="pay_list">
+              <li><img src="img/Visa.png"/></li>
+              <li><img src="img/Mastercard.png"/></li>
+              <li><img src="img/BASE.png"/></li>
+            </ul>
+          </div>
+          <div class="f_col_right"><a class="btn btn_blue" href="#">Написать нам</a>
+            <ul class="social_menu">
+              <li><a href="#"><img class="icon" src="img/icons/mail.svg"/></a></li>
+              <li><a href="#"><img class="icon" src="img/icons/telegarm.svg"/></a></li>
+              <li><a href="#"><img class="icon" src="img/icons/facebook.svg"/></a></li>
+              <li><a href="#"><img class="icon" src="img/icons/vk.svg"/></a></li>
+              <li><a href="#"><img class="icon" src="img/icons/instagram.svg"/></a></li>
+            </ul>
+            <div class="dev"><img src="img/icons/dev.svg"/>
+              <div class="text">Разработка сайта <br>Farba Studio</div>
+            </div>
+          </div>
+        </div>
+        <div class="f_bottom">Индивидуальный предприниматель Авонькин Денис Алексеевич, УНП 121215454, Свидетельство выдано горисполкомом г. Минска 10.10.2020 г.</div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/select2.min.js"></script>
+    <script src="js/slick.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

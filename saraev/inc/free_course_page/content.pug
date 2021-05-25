@@ -1,0 +1,234 @@
+section.paid_course_header(style="background-image:url(img/examples/8896a055fd705543f678cf6619c3ba8d.jpg)")
+    .container
+        .paid_course_header_content
+            ul.breadcrumb
+                li
+                    a(href="#") Иностранные языки
+
+                li
+                    a(href="#") Английский язык
+            .h1 Английский Язык для<br> Начинающих на <span class="line">все 100!</span>
+            .sub_title Доступный Английский на Результат! Курс, который подойдет каждому
+            .rating
+                .label Лидер продаж
+                strong 4,5
+                span.stars
+                    span.star
+                    span.star
+                    span.star
+                    span.star
+                    span.star.empty
+                .counter 12 отзывов
+            .authors
+                span Авторы:
+                a(href="#") Денис Грушевский ,
+                a(href="#") Катерина Кулакова
+-var adv=['','Любой уровень','3 ч 45 мин','Русский язык','Есть субтитры'];
+section.course_adv
+    .container
+        .course_adv_row
+            -for(var ad=1;ad<=4;ad++)
+                .item
+                    picture
+                        img(src="img/icons/a"+ad+".svg")
+                    .text=adv[ad]
+
+
+
+section.course_page_content
+    .container
+        .row
+            .col.course_main_content
+                .h3 Об этом курсе
+                p Задания и Устные Переводы на каждом уроке, благодаря которым Вы начинаете говорить уже в самом начале обучения. Когда Вы говорите по-английски, Вы переводите свои мысли. Для беглой речи <b>НЕОБХОДИМО</b> уметь переводить на автомате. Чему Вы скоро и научитесь!
+                p Простое и Доступное объяснение уроков через Аналогии, Ассоциации и Языковые сравнения.
+                p
+                    b 100% БЕЗ  ЗУБРЁЖКИ!
+                p Запоминаем <b>65% новых слов</b> уже к концу урока. Таблица новых слов у Вас перед глазами на каждом задании и переводах.
+                p
+                    b + 2 классных Бонуса
+
+                .more(style="display:none")
+                    p Задания и Устные Переводы на каждом уроке, благодаря которым Вы начинаете говорить уже в самом начале обучения. Когда Вы говорите по-английски, Вы переводите свои мысли. Для беглой речи <b>НЕОБХОДИМО</b> уметь переводить на автомате. Чему Вы скоро и научитесь!
+                button.show_more(onclick="$(this).hide().prev().slideDown();") Подробнее
+                .h3.mt Требования
+                p Желание говорить по-английски
+                .h3.mt Чему вы научитесь
+                ul.skills
+                    li
+                        a(href="#") Амекаринский акцент
+                    li
+                        a(href="#") Грамотная речь
+                    li
+                        a(href="#") IT терминология
+
+                .h3.mt Материалы курса
+                -var materials=['','Present Simple Настоящее Простое','Present Simple вопросы и отрицания','This That These Those указательные местоимения','Еще немного о Present Simple','Предлоги и Союзы'];
+                .materials
+                    .materials_group.act
+                        .materials_group_header
+                            .d_flex
+                                .materials_group_title
+                                    span Введение
+                            .count 25 занятий
+                        .materials_group_body
+                            ul.materials_list
+                                -for(var m=1;m<=5;m++)
+                                    li
+                                        div.d_flex
+                                            .material_name
+                                                picture
+                                                    if m===1 || m===5
+                                                        img(src="img/icons/Document.svg")
+                                                    else if m===3
+                                                        img(src="img/icons/play-button.svg")
+                                                    else
+                                                        img(src="img/icons/approval.svg")
+                                                span=materials[m]
+                                                    if m===3
+                                                        img(src="img/icons/free.svg")
+                                            if m===3
+                                                a.watch(href="#")
+                                                    span Смотреть
+                                        .time 02:35
+                    .materials_group
+                        .materials_group_header
+                            .d_flex
+                                .materials_group_title
+                                    span Произношение
+                            .count 16 занятий
+                        .materials_group_body
+                            ul.materials_list
+                                -for (var m = 1; m <= 5; m++)
+                                    li
+                                        div.d_flex
+                                            .material_name
+                                                picture
+                                                    if m === 1 || m === 5
+                                                        img(src="img/icons/Document.svg")
+                                                    else if m === 3
+                                                        img(src="img/icons/play-button.svg")
+                                                    else
+                                                        img(src="img/icons/approval.svg")
+                                                span=materials[m]
+                                            if m === 3
+                                                a.watch(href="#") Смотреть
+                                        .time 02:35
+
+
+
+
+
+                .h3.mt Авторы курса
+                .users_list
+                    -for(var a=1;a<=1;a++)
+                        .users_item
+                            .users_item_header
+                                .author_photo(style="background-image:url(img/examples/Ellipse4.png)")
+                                div
+                                    .users_name Денис Грушевский
+                                    .rating
+                                        strong 4,5
+                                        span.stars
+                                            span.star
+                                            span.star
+                                            span.star
+                                            span.star
+                                            span.star.empty
+                                        .counter 12 отзывов
+                            .users_item_body
+                                .text Для бесплатного курса для новичков - всё отлично. Но полбалла всё-таки снимаю за то, что есть небольшие нестыковки в занятиях (например, сам автор в некоторых лекциях говорит, что "это мы проходили в прошлом занятии", хотя по факту в прошлом занятии этого нет). Возможно, это из-за того, что курс как-то редактировался со временем.
+                                .more(style="display:none") Для бесплатного курса для новичков - всё отлично. Но полбалла всё-таки снимаю за то, что есть небольшие нестыковки в занятиях (например, сам автор в некоторых лекциях говорит, что "это мы проходили в прошлом занятии", хотя по факту в прошлом занятии этого нет). Возможно, это из-за того, что курс как-то редактировался со временем.
+                                button.show_more(onclick="$(this).hide().prev().slideDown();") Подробнее
+
+                .reviews_sort
+                    .h3.mt Отзывы
+                    select.reviews_sort_select
+                        option(selected) Все
+                        option(value="5") 5,0
+                        option(value="4") 4,0
+                        option(value="3") 3,0
+                        option(value="2") 2,0
+                        option(value="1") 1,0
+                .users_list
+                    -for(var a=1;a<=2;a++)
+                        .users_item.d_flex
+                            .author_photo(style="background-image:url(img/examples/Ellipse8.png)")
+                                span.quotes
+                            div
+                                .users_item_header
+                                    div
+                                        .users_name Денис Грушевский
+                                        .rating
+                                            strong 4,5
+                                            span.stars
+                                                span.star
+                                                span.star
+                                                span.star
+                                                span.star
+                                                span.star.empty
+                                            .counter 12 отзывов
+                                    div
+                                        a.complain(href="#") Пожаловаться
+                                .users_item_body
+                                    .text Для бесплатного курса для новичков - всё отлично. Но полбалла всё-таки снимаю за то, что есть небольшие нестыковки в занятиях (например, сам автор в некоторых лекциях говорит, что "это мы проходили в прошлом занятии", хотя по факту в прошлом занятии этого нет). Возможно, это из-за того, что курс как-то редактировался со временем.
+                                    .more(style="display:none") Для бесплатного курса для новичков - всё отлично. Но полбалла всё-таки снимаю за то, что есть небольшие нестыковки в занятиях (например, сам автор в некоторых лекциях говорит, что "это мы проходили в прошлом занятии", хотя по факту в прошлом занятии этого нет). Возможно, это из-за того, что курс как-то редактировался со временем.
+                                    button.show_more(onclick="$(this).hide().prev().slideDown();") Подробнее
+                                    if a===1
+                                        .answer_list
+                                            .answer_item
+                                                .answer_item_content
+                                                    .author_photo(style="background-image:url(img/examples/Ellipse4.png)")
+                                                    div.d_flex
+
+                                                        .text
+                                                            .users_name Денис Грушевский
+                                                            .user_info
+                                                                span Автор курса
+                                                                span |
+                                                                span 2 месяца назад
+                                                        div
+                                                            a.complain(href="#") Пожаловаться
+                                                        .answer_item_text Спасибо! Будем рады вам на других наших курсах!
+
+
+
+            .col.course_page_sidebar
+                .course_sidebar
+                    .course_sidebar_header
+                        .img(style="background-image:url(img/examples/Rectangle33.png)")
+
+                    .course_sidebar_body
+                        .price_box
+                            .free Бесплатно
+                            p.text_center Для прохождения, пожалуйста, зарегистрируйтесь
+                        a.btn.btn_blue(href="#") Регистрация
+                        -var inc=['','3 часа видео','Дополнительные материалы','Пожизненный доступ','Задания и тестирования','Общение с автором курса','Сертификат об окончании'];
+                        p.title Курс включает:
+                        ul.course_includes
+                            -for(var i=1;i<=6;i++)
+                                li
+                                    picture
+                                        img(src="img/icons/inc"+i+".svg")
+                                    if i===6
+                                        .text
+                                            strong=inc[i]
+                                    else
+                                        .text=inc[i]
+
+                        .share_box
+                            span Поделиться
+                            ul.share_list
+                                -for(var sh=1;sh<=5;sh++)
+                                    li
+                                        a(href="#")
+                                            img(src="img/icons/sh"+sh+".svg")
+
+
+
+include ../blocks/become_section
+include ../blocks/popular
+
+
+
+

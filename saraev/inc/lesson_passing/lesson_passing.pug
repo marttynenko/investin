@@ -1,0 +1,100 @@
+section
+    .container
+        h1.page_title Английский Язык для Начинающих на все 100!
+        .row
+            .col.main_content_left
+                .lesson
+                    video(class="video-js" controls preload="none"  poster="http://vjs.zencdn.net/v/oceans.png" data-setup="{}")
+                        source(src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4")
+                        source(src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm")
+                        source(src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg")
+                .lesson_name_nav
+                    .lesson_name Занятие: <strong>This That These Those указательные местоимения</strong>
+                    .lesson_nav
+                        a.lesson_prev.disabled(href="#")
+                        a.lesson_next(href="#")
+                .stage_time
+                    .stage.passed Пройден
+                    .time 24:01
+                .lesson_materials
+                    p
+                        strong Материалы к занятию
+                    ul.documents
+                        li
+                            a(href="#") Видео
+                        li
+                            a(href="#") Текстовый документ
+                        li
+                            a(href="#") Презентация
+                ul.lesson_botton_nav
+                    li
+                        a.btn.btn_blue(href="#") Начать тестирование
+                    li
+                        a.btn.btn_light(href="#") Пропустить тестирование
+                    li
+                        a.show_more(href="#") Сообщение автору
+
+            .col.sidebar_right
+                -var materials=['','Present Simple Настоящее Простое','Present Simple вопросы и отрицания','This That These Those указательные местоимения','Еще немного о Present Simple','Предлоги и Союзы'];
+                .materials
+                    .materials_group.act
+                        .materials_group_header
+                            .d_flex
+                                .materials_group_title
+                                    span Введение
+
+
+                        .materials_group_body
+                            ul.materials_list
+                                -for (var m = 1; m <= 5; m++)
+                                    li
+                                        div.d_flex
+                                            .material_name
+                                                picture
+                                                    if m === 1 || m === 5
+                                                        img(src="img/icons/Document.svg")
+                                                    else if m === 3
+                                                        img(src="img/icons/play-button.svg")
+                                                    else
+                                                        img(src="img/icons/approval.svg")
+                                                span=materials[m]
+                                                    if m === 3
+                                                        img(src="img/icons/free.svg")
+                                            if m === 3
+                                                .stage.during В процессе
+                                            else if m === 1
+                                                .stage.passed Пройден
+                                            else if m === 5
+                                                .stage.not_passed Не пройден
+                                        .time 02:35
+                    .materials_group
+                        .materials_group_header
+                            .d_flex
+                                .materials_group_title
+                                    span Произношение
+
+
+                        .materials_group_body
+                            ul.materials_list
+                                -for (var m = 1; m <= 5; m++)
+                                    li
+                                        div.d_flex
+                                            .material_name
+                                                picture
+                                                    if m === 1 || m === 5
+                                                        img(src="img/icons/Document.svg")
+                                                    else if m === 3
+                                                        img(src="img/icons/play-button.svg")
+                                                    else
+                                                        img(src="img/icons/approval.svg")
+                                                span=materials[m]
+                                                    if m === 3
+                                                        img(src="img/icons/free.svg")
+                                            if m === 3
+                                                .stage.during В процессе
+                                            else if m === 1
+                                                .stage.passed Пройден
+                                            else if m === 5
+                                                .stage.not_passed Не пройден
+                                        .time 02:35
+

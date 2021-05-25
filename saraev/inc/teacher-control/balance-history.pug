@@ -1,0 +1,140 @@
+section 
+    .container 
+        .teacher-control.teacher-control-balance-sales.teacher-control-balance-history
+            include ../teacher-control-nav/nav.pug
+            .teacher-control__content
+                .teacher-control-balance-sales__header 
+                    h1.teacher-block-title Баланс
+                    .teacher-control-balance-sales__header-controls
+                        ul.c_nav 
+                            li.active 
+                                a(href="#") Продажи
+                            li
+                                a(href="#") Движение средств
+                        .teacher-control-balance-sales__header-balance-info
+                            .teacher-current-balance
+                                span.teacher-grey-text Текущий баланс
+                                span.teacher-black-text-r-28 1505 BYN
+                            a(href="#teacher-control-withdraw").teacher-blue-btn.popup-with-form Вывод средств
+                .teacher-control-balance-history__block
+                    .teacher-control-balance-history__block-headline
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--left
+                            span.teacher-grey-text Статус
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--left-middle
+                            span.teacher-grey-text Сумма
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--right-middle
+                            span.teacher-grey-text Дата и время операции
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--right
+                            span.teacher-grey-text Примечания
+                    .teacher-control-balance-history__row.teacher-control-balance-history__row--first 
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--left
+                            .teacher-history-icon
+                                img(src="img/icons/teacher-pending.svg", alt="")
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--left-middle
+                            span.teacher-black-text-s 1505 BYN
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--right-middle
+                            span.teacher-black-text-s 20:15 12.10.2020
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--right
+                            span.teacher-black-text-s На рассмотрении
+                    .teacher-control-balance-history__row
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--left
+                            .teacher-history-icon
+                                img(src="img/icons/teacher-receipt.svg", alt="")
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--left-middle
+                            span.teacher-black-text-s 1505 BYN
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--right-middle
+                            span.teacher-black-text-s 20:15 12.10.2020
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--right
+                            span.teacher-black-text-s Подтверждено
+                    .teacher-control-balance-history__row
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--left
+                            .teacher-history-icon
+                                img(src="img/icons/teacher-receipt.svg", alt="")
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--left-middle
+                            span.teacher-black-text-s 1505 BYN
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--right-middle
+                            span.teacher-black-text-s 20:15 12.10.2020
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--right
+                            span.teacher-black-text-s Подтверждено
+                    .teacher-control-balance-history__row
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--left
+                            .teacher-history-icon
+                                img(src="img/icons/teacher-pending.svg", alt="")
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--left-middle
+                            span.teacher-black-text-s 1505 BYN
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--right-middle
+                            span.teacher-black-text-s 20:15 12.10.2020
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--right
+                            span.teacher-black-text-s На рассмотрении
+                    .teacher-control-balance-history__row
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--left
+                            .teacher-history-icon
+                                img(src="img/icons/teacher-pending.svg", alt="")
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--left-middle
+                            span.teacher-black-text-s 1505 BYN
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--right-middle
+                            span.teacher-black-text-s 20:15 12.10.2020
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--right
+                            span.teacher-black-text-s Превышен баланс
+                    .teacher-control-balance-history__row
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--left
+                            .teacher-history-icon
+                                img(src="img/icons/teacher-receipt.svg", alt="")
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--left-middle
+                            span.teacher-black-text-s 1505 BYN
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--right-middle
+                            span.teacher-black-text-s 20:15 12.10.2020
+                        .teacher-control-balance-history__block-col.teacher-control-balance-history__block-col--right
+                            span.teacher-black-text-s Подтверждено
+                .pagination 
+                        ul 
+                            li 
+                                a(href="#").page_prev.disabled
+                            li 
+                                a(href="#") 1
+                            li 
+                                a(href="#") 2
+                            li 
+                                a(href="#") 3
+                            li 
+                                a(href="#") ...
+                            li 
+                                a(href="#") 7
+                            li   
+                                a(href="#").page_next
+#teacher-control-balance.modal_window
+    button(title="Close (Esc)",type="button").mfp-close ×
+    .balance-sales-modal
+        .balance-sales-modal__customer 
+            span.teacher-grey-text Курс приобрёл
+            .balance-sales-modal__customer-avatar 
+                .balance-sales-modal__customer-img 
+                    img(src="img/examples/Ellipse-18.png", alt="")
+                span.balance-sales-modal__customer-name Денис Грушевский
+        p.balance-sales-modal__course Английский Язык для Начинающих на все 100!
+        .balance-sales-modal__info 
+            .balance-sales-modal__price 
+                span.teacher-grey-text Цена
+                span.balance-sales-modal__price-price 1505 BYN
+            .balance-sales-modal__date 
+                span.teacher-black-text-s 20:15 12.10.2020
+#teacher-control-withdraw.modal_window
+    button(title="Close (Esc)",type="button").mfp-close ×
+    .balance-withdraw-modal
+        h1.balance-withdraw-modal__title.teacher-block-title Вывод средств
+        h2.balance-withdraw-modal__subtitle.teacher-black-text-s Выберите количество средств, которое хотите перевести 
+        form(action="#").balance-withdraw-modal__form
+            .balance-withdraw-modal__current-amount 
+                span.withdraw-current 1505 BYN
+                span.withdraw-notice.teacher-grey-text текущий баланс
+            .balance-withdraw-modal__how-much 
+                span Сумма к выводу
+                .balance-withdraw-modal__input-group 
+                    input(type="text",placeholder="20000")
+                span BYN
+            .balance-withdraw-modal__checkbox 
+                input(type="checkbox",id="withdrawCheckBox",checked)
+                label(for="withdrawCheckBox").balance-withdraw-modal__checkbox-label Я согласен с правилами вывода средств
+            .balance-withdraw-modal__buttons 
+                a(href="#").teacher-blue-btn Вывести средства
+                a(href="#").teacher-grey-btn Отменить вывод

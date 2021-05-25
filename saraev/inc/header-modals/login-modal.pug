@@ -1,0 +1,22 @@
+#header-login.modal_window
+            .header-login__header
+                .header-login__header-text-block 
+                    h2.header-login__title Вход
+                    p.header-login__subtitle Добро пожаловать на INVESTIN! 
+                .header-login__header-logo
+                    img(src="img/logo-modals.svg", alt="")
+            <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+            .header-login__body 
+                form(action="#").header-login__form
+                    .header-login__input-group
+                        input(type="text",placeholder="Email", name="loginEmail")
+                    .header-login__input-group 
+                        input(type="password",placeholder="Пароль", name="loginPswd")
+                    .teacher-control__promo-agreement
+                        input(type="checkbox", name="teacherPromo", id="logInCheckbox",checked).teacher-control__promo-checkbox
+                        label(for="logInCheckbox").teacher-control__promo-checkbox-label Запомнить меня
+                    a(href="#").header-login__pswd-loss Забыли пароль?
+                    a(href="").btn.btn_blue Войти
+                .header-login__info-block 
+                    span Не зарегистрированы?
+                    a(href="#") Регистрация

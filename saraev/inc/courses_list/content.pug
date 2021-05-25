@@ -1,0 +1,199 @@
+section.title_box(style="background-image:url(img/bgs/Rectangle261.png)")
+    .container
+        h1 Курсы в категории <span class="line">«‎Бизнес»</span>
+
+
+
+-var subcat=['Финансовый анализ','Управление проектами','Инвестирование','Основы бизнеса','FOREX','Торговля на бирже','Бизнес-анализ','Создание компании','Финансовое моделирование','Основы финансов','Бизнес-анализ','Торговля на бирже','FOREX','Управление проектами','Бизнес-анализ','Торговля на бирже']
+section.bg_light.page_section
+    .container
+        .h3 Популярные категории
+        ul.subcategory_list
+            -for (var s = 1; s <= 15; s++)
+                if s===1
+                    li.active
+                        a.btn(href="#")=subcat[s]
+                else if  s>10
+                    li.d_none
+                        a.btn(href="#")=subcat[s]
+                else
+                    li
+                        a.btn(href="#")=subcat[s]
+
+            li.last
+                span.show_more(onclick="$('.subcategory_list li').removeClass('d_none');$(this).hide();") Показать больше
+
+
+section.page_section.border
+    .container
+        .h3 Популярные преподаватели
+        .row.popular_teachers
+            -for(var t=1;t<=3;t++)
+                .col
+                    .popular_teachers_item
+                        .photo(style="background-image:url(img/examples/Rectangledfsf9.png)")
+                        .popular_teachers_item_info
+                            strong Приходько Владимир
+                            .rating
+                                strong 4,5
+                                span.stars
+                                    span.star
+                                span.counter 12 отзывов
+                            .cours_amount 1 курс
+
+
+-var fg_title=['Рейтинг','Объем видео','Стоимость курса','Уровень'];
+-var check1=['4,5 и выше','4,0 - 4,5','3,0 - 3,5','3,0 и ниже'];
+-var check2=['0 - 1,5 часа','2 - 3 часа','3,5 - 5 часа','5 часов и выше'];
+-var check3=['Бесплатные','до 30 руб.','30 - 60 руб.','от 60 руб.'];
+-var check4=['Начальный','Средний','Профессиональный','Все уровни'];
+section.page_content
+    .container
+        .row
+            .col.sidebar
+                .filter_box
+                    .filter_title(onclick="$(this).toggleClass('act').next().slideToggle();") Фильтр
+                    .filter_groups
+                        for fg_item, index in fg_title
+                            .filter_group
+                                .filter_group_title=fg_item
+                                ul
+                                    -for(var f=0;f<=3;f++)
+                                        if index===0
+                                            li
+                                                .custom_checkbox
+                                                    input(type="checkbox" id="checkbox_"+index+"_"+f+"")
+                                                    label(for="checkbox_"+index+"_"+f+"")=check1[f]
+
+                                        else if index===2
+                                            li
+                                                .custom_checkbox
+                                                    input(type="checkbox" id="checkbox_" + index + "_" + f + "")
+                                                    label(for="checkbox_" + index + "_" + f + "")=check2[f]
+                                        else if index===3
+                                            li
+                                                .custom_checkbox
+                                                    input(type="checkbox" id="checkbox_" + index + "_" + f + "")
+                                                    label(for="checkbox_" + index + "_" + f + "")=check3[f]
+                                        else
+                                            li
+                                                .custom_checkbox
+                                                    input(type="checkbox" id="checkbox_" + index + "_" + f + "")
+                                                    label(for="checkbox_" + index + "_" + f + "")=check4[f]
+
+
+
+            .col.main_content
+                .sort_box
+                    .item
+                        select.custom_select
+                            option Самые популярные
+                            option С наивыcшим рейтингом
+                            option Самые популярные
+                            option Новинки
+
+                    .item.on_page
+                        span На странице:
+                        select.custom_select
+                            option 10
+                            option 20
+                            option 50
+                .row.cards_list
+                    -for (var c = 1; c <= 10; c++)
+                        .col
+                            .card_item
+                                a.card_item_img(href="#" style="background-image:url(img/examples/c_1.png)")
+                                    if c === 2
+                                        .label.discount Скидка
+                                .card_item_body
+                                    div
+                                        if c === 2
+                                            a.card_item_name(href="#") Corporate Finance Management
+                                                img(src="img/icons/crown.svg")
+                                        else
+                                            a.card_item_name(href="#") HTML5, CSS и  JavaScript для начинающих
+                                        p Оценка эффективности инвестиций, расчет основных показателей
+                                        if c === 2
+                                            .d_flex
+                                                .teachers Владимир Приходько
+                                                .time 3,5 часа <br>Начальный уровень
+                                        else
+                                            .d_flex
+                                                .teachers Владимир Приходько<br> Денис Грушевский
+                                                .time 3,5 часа <br>Начальный уровень
+                                    div
+                                        .rating
+                                            strong 4,5
+                                            span.stars
+                                                span.star
+                                                span.star
+                                                span.star
+                                                span.star
+                                                span.star.empty
+                                            .counter 12 отзывов
+                                        .price_box
+                                            .price 1 560 бел. руб.
+                                            if c !== 2
+                                                .old_price 1 680 бел. руб.
+
+                .pagination
+                    ul
+                        li
+                            a.page_prev.disabled(href="#")
+                        li
+                            a(href="#") 1
+                        li
+                            a.active(href="#") 2
+                        li
+                            a(href="#") 3
+                        li
+                            span ...
+                        li
+                            a(href="#") 7
+                        li
+                            a.page_next(href="#")
+
+
+
+
+
+
+
+section.bg_light
+    .container
+        .text_center
+            .h2.line.mb_55 Популярные курсы
+        .row.cards_grid
+            -for(var c=1;c<=3;c++)
+                .col
+                    .card_item
+                        a.card_item_img(href="#" style="background-image:url(img/examples/c_"+c+".png)")
+                            if c===2
+                                .label.discount Скидка
+                        .card_item_body
+                            div
+                                if c===2
+                                    a.card_item_name(href="#") Corporate Finance Management
+
+                                else
+                                    a.card_item_name(href="#") HTML5, CSS и  JavaScript для начинающих
+                                if c===2
+                                    .teachers Владимир Приходько
+                                else
+                                    .teachers Владимир Приходько, Денис Грушевский, Катерина Кулакова
+                            div
+                                .rating
+                                    strong 4,5
+                                    span.stars
+                                        span.star
+                                        span.star
+                                        span.star
+                                        span.star
+                                        span.star.empty
+                                    .counter 12 отзывов
+                                .price_box
+                                    .price 1 560 бел. руб.
+                                    if c!==2
+                                        .old_price 1 680 бел. руб.
+
+

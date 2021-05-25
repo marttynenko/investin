@@ -1,0 +1,40 @@
+section
+    .container
+        .row
+            .col.sidebar.w_25
+                include ../blocks/sidebar_menu
+            .col.main_content.contact_content
+                h1.page_title Контакты
+                .row.contact_row
+                    .col
+                        ul.contacts_list
+                            li
+                                .d_flex
+                                    picture
+                                        img(src="img/icons/Location.svg")
+                                    .text
+                                        p <strong>Наш офис:</strong>  г. Минск, ул. Сурганова, д.24, оф.5
+                                        p <strong>Почтовый адрес:</strong>  Республика Беларусь, г. Минск,<br> 246050, а/я 86
+                            li
+                                .d_flex
+                                    picture
+                                        img(src="img/icons/Call.svg")
+                                    .text
+                                        p <strong>Контактный телефон:</strong> +375 44 760-45-20
+                                        p <strong>Техническая поддержка:</strong> +375 44 760-45-20
+                    .col
+                        .contact_form
+                            form
+                                .f_title Форма обратной связи
+                                .field
+                                    input.form_control(type="text" placeholder="Ваше имя" required="required")
+                                .field
+                                    input.form_control(type="text" placeholder="Контактный e-mail" required="required")
+                                .field
+                                    textarea.form_control(placeholder="Сообщение" required="required")
+                                .field
+                                    .custom_checkbox
+                                        input(type="checkbox" id="checkbox1" checked='checked')
+                                        label(for="checkbox1") Согласен в <a href="#"><strong>правилами обработки персональных данных</strong></a>
+                                .field
+                                    button.btn.btn_blue(type="submit") Отправить сообщение

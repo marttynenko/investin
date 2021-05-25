@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+html
+    head
+        - var page = { title: 'Избранное' }
+        include inc/head.pug 
+    body
+        include inc/header.pug
+        main
+            include inc/customer-control/featured.pug
+        include inc/footer.pug
+        include inc/scripts.pug

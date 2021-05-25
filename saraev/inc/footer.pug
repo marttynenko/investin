@@ -1,0 +1,66 @@
+footer
+    .container
+        .f_row
+            .f_col_left
+                .logo
+                    a(href="#")
+                        img(src="img/e-invest_12.svg")
+                ul
+                    li
+                        a(href="#") Пользовательское соглашение
+                    li
+                        a(href="#") Договор комиссии
+
+                .copyright © Investin LTD., 2020 Все права защищены.
+
+            .f_col_center
+                .row.f_menu_row
+                    .col
+                        .f_title Курсы
+                        -var f_menu=['Бизнес','Музыка','Стиль жизни','Дизайн','ИТ и ПО','Фитнес'];
+                        ul.column3
+                            for f_menu_item, index in f_menu
+                                li
+                                    a(href="#")=f_menu_item
+                        a.show_all(href="#") Все категории
+                    .col
+                        .f_title Общее
+                        -var f_menu1=['О проекте','Стать преподавателем','Справка и поддержка','Наши контакты'];
+                        ul.column2
+                            for f_menu_item1, index in f_menu1
+                                li
+                                    a(href="#")=f_menu_item1
+                ul.pay_list
+                    li
+                        img(src="img/Visa.png")
+                    li
+                        img(src="img/Mastercard.png")
+                    li
+                        img(src="img/BASE.png")
+
+            .f_col_right
+                a.btn.btn_blue(href="#") Написать нам
+                ul.social_menu
+                    li
+                        a(href="#")
+                            img.icon(src="img/icons/mail.svg")
+                    li
+                        a(href="#")
+                            img.icon(src="img/icons/telegarm.svg")
+                    li
+                        a(href="#")
+                            img.icon(src="img/icons/facebook.svg")
+                    li
+                        a(href="#")
+                            img.icon(src="img/icons/vk.svg")
+                    li
+                        a(href="#")
+                            img.icon(src="img/icons/instagram.svg")
+                .dev
+                    img(src="img/icons/dev.svg")
+                    .text Разработка сайта <br>Farba Studio
+
+        .f_bottom Индивидуальный предприниматель Авонькин Денис Алексеевич, УНП 121215454, Свидетельство выдано горисполкомом г. Минска 10.10.2020 г.
+
+
+

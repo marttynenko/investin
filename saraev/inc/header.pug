@@ -1,0 +1,82 @@
+.timer_box
+    .hide
+    .container
+        .row
+            .col.col_left
+                span Цены всего от <strong> 12,99$</strong>
+                span Получите новые навыки без риска
+            .col.col_right
+                span Закончится через
+                .timer
+                    //<script src="//megatimer.ru/get/2b67b12420473af57a28135d4f37dce1.js"></script>
+-var catalog1=['Бизнес','ИТ и ПО','Финансы и бухгалтерия','Маркетинг и реклама','Здоворье и фитнес','Архитектура и дизайн','Стиль жизни ','Фотография','Музыка','Академические дисциплины','Иностранные языки','Другие','Управление проектами','Финансовый анализ','HTML5, CSS и  JavaScript для начинающих','Управление проектами','Финансовый анализ','HTML5, CSS и  JavaScript для начинающих'];
+header
+    .h_row
+        .h_col_left
+            .logo
+                a(href="#")
+                    img(src="img/logo.svg")
+            .h_menu
+                button.btn.h_menu_toggler Курсы
+                .h_menu_nav
+                    ul
+                        for c_item, index in catalog1
+                            li
+                                a(href="#")=c_item
+
+
+
+        .h_col_center
+            button.h_user_dropdown
+                if page.title ==='Главная'
+                    img(src="img/icons/lock.svg")
+                else
+                    img(src="img/icons/user.svg")
+
+            button.h_search_toggler
+            .h_search
+                form.h_form
+                    button.btn_submit(type="submit")
+                    input.search_input(type="text" placeholder="Чему бы вы хотели научиться? ")
+                    button.btn_reset(type="reset")
+        .h_col_right
+            .become_teacher_box
+                a.become_teacher_link(href="#") Стать преподавателем
+            .h_user_box
+                if page.title ==='Главная'
+                    ul.h_user_menu
+                        li
+                            a.btn.has_border.popup-with-form(href="#header-login") Вход
+                        li
+                            a.btn.btn_blue.popup-with-form(href="#header-sign-up") Регистрация
+                else
+                    ul.h_account_menu
+                        li
+                            a.whish_link(href="#")
+                        li
+                            a.messages_link(href="#")
+                        li.position-relative
+                            button.dropdown_toggler
+                                .user_photo(style="background-image:url(img/examples/Ellipse14.png)")
+                            ul.dropdown_menu
+                                li
+                                    a(href="#") Личные данные
+                                li
+                                    a(href="#") Моё обучение
+                                li
+                                    a(href="#") История оплаты
+                                li
+                                    a(href="#") Выйти
+            button.h_search_toggler
+            .h_search
+                form.h_form
+                    button.btn_submit(type="submit")
+                    input.search_input(type="text" placeholder="Чему бы вы хотели научиться? ")
+                    button.btn_reset(type="reset")
+    include ../inc/header-modals/login-modal
+    include ../inc/header-modals/sign-up-modal
+
+
+
+
+

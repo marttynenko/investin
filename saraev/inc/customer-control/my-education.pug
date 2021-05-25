@@ -1,0 +1,116 @@
+section 
+    .container 
+        .teacher-control.customer-control-my-education
+            include ../customer-control-nav/nav.pug
+            .teacher-control__content
+                .customer-control-my-education__header 
+                    h1.teacher-block-title Моё обучение
+                    ul.c_nav 
+                        li.active 
+                            a(href="#") Все
+                        li 
+                            a(href="#") Активные
+                        li 
+                            a(href="#") Завершённые
+                .customer-control-my-education__block 
+                    .customer-control-my-education__row 
+                        .customer-control-my-education__col
+                            .card_item
+                                a(href="#",style="background-image:url(img/examples/c_1.png)").card_item_img
+                                .card_item_body 
+                                    div 
+                                        a(href="#").card_item_name HTML5, CSS и  JavaScript для начинающих
+                                        .teachers   
+                                            | Владимир Приходько
+                                    div
+                                        .rating 
+                                            strong 4.5
+                                            span.stars 
+                                                span.star 
+                                                span.star 
+                                                span.star 
+                                                span.star 
+                                                span.star.empty 
+                                            .counter 12 отзывов
+                                        .price_box 
+                                            .price 160 бел. руб.
+                        .customer-control-my-education__col
+                            .card_item
+                                a(href="#",style="background-image:url(img/examples/c_2.png)").card_item_img
+                                    .label.discount Скидка
+                                .card_item_body 
+                                    div 
+                                        a(href="#").card_item_name Corporate Finance Management
+                                        .teachers   
+                                            | Владимир Приходько, Денис Грушевский, Катерина Кулакова
+                                    div
+                                        .rating 
+                                            strong 4.5
+                                            span.stars 
+                                                span.star 
+                                                span.star 
+                                                span.star 
+                                                span.star 
+                                                span.star.empty 
+                                            .counter 12 отзывов
+                                        .price_box 
+                                            .price 220 бел. руб.
+                                            .old_price 160 бел. руб.
+                    .customer-control-my-education__row 
+                        .customer-control-my-education__col
+                            .card_item
+                                a(href="#",style="background-image:url(img/examples/c_3.png)").card_item_img
+                                .card_item_body 
+                                    div 
+                                        a(href="#").card_item_name Продажи. Linkedin и другие каналы
+                                        .teachers   
+                                            | Катерина Кулакова
+                                    div
+                                        .rating 
+                                            strong 4.5
+                                            span.stars 
+                                                span.star 
+                                                span.star 
+                                                span.star 
+                                                span.star 
+                                                span.star.empty 
+                                            .counter 12 отзывов
+                                        .price_box 
+                                            .price 1 560 бел. руб.
+                                            .old_price 1 680 бел. руб.
+                        .customer-control-my-education__col
+                            .card_item
+                                a(href="#",style="background-image:url(img/examples/c_7.png)").card_item_img
+                                .card_item_body 
+                                    div 
+                                        a(href="#").card_item_name HTML5, CSS и  JavaScript для начинающих
+                                        .teachers   
+                                            | Владимир Приходько
+                                    div
+                                        .rating 
+                                            strong 4.5
+                                            span.stars 
+                                                span.star 
+                                                span.star 
+                                                span.star 
+                                                span.star 
+                                                span.star.empty 
+                                            .counter 12 отзывов
+                                        .price_box 
+                                            .price 160 бел. руб.
+                .pagination 
+                        ul 
+                            li 
+                                a(href="#").page_prev.disabled
+                            li 
+                                a(href="#") 1
+                            li 
+                                a(href="#") 2
+                            li 
+                                a(href="#") 3
+                            li 
+                                a(href="#") ...
+                            li 
+                                a(href="#") 7
+                            li   
+                                a(href="#").page_next

@@ -1,0 +1,93 @@
+section 
+    .container 
+        .teacher-control.teacher-control-my-courses
+            include ../teacher-control-nav/nav.pug
+            .teacher-control__content 
+                .teacher-control-my-courses__btn-block 
+                    h2.teacher-control__personal-title Мои курсы
+                    ul.c_nav 
+                        li.active 
+                            a(href="#") Все
+                        li
+                            a(href="#") Активные
+                        li
+                            a(href="#") Архив
+                a(href="#").btn.btn_blue.btn_create_course Создать курс 
+                        
+                .teacher-control-my-courses__cards-block 
+                    .teacher-control-my-courses__cards-item 
+                        .card_item
+                            a(href="#",style="background-image:url(img/examples/c_1.png").card_item_img 
+                            .card_item_body 
+                                .card_headline 
+                                    a(href="").card_item_name Corporate Finance Management
+                                    p
+                                        | Пошаговая инструкция по управлению проектами
+                                .card__courses-control-block 
+                                    a(href="#").card__btn-edit Редактировать
+                                    a(href="#").card__btn-go-to На страницу курса
+                                    a(href="#").card__btn-archive Поместить в архив
+                        .card_item
+                            a(href="#",style="background-image:url(img/examples/c_1.png").card_item_img 
+                            .card_item_body 
+                                .card_headline 
+                                    a(href="").card_item_name Финансовый анализ
+                                    p
+                                        | Оценка эффективности инвестиций, расчет основных 
+                                        br
+                                        | показателей
+                                .card__courses-control-block 
+                                    a(href="#").card__btn-edit Редактировать
+                                    a(href="#").card__btn-go-to На страницу курса
+                                    a(href="#").card__btn-archive Поместить в архив
+                        .card_item
+                            a(href="#",style="background-image:url(img/examples/c_1.png").card_item_img 
+                            .card_item_body 
+                                .card_headline 
+                                    a(href="").card_item_name Управление проектами
+                                    p
+                                        | Оценка эффективности инвестиций, расчет основных 
+                                        br
+                                        | показателей
+                                .card__courses-control-block 
+                                    a(href="#").card__btn-edit Редактировать
+                                    a(href="#").card__btn-go-to На страницу курса
+                                    a(href="#").card__btn-archive Поместить в архив
+                        .card_item
+                            a(href="#",style="background-image:url(img/examples/c_1.png").card_item_img 
+                            .card_item_body 
+                                .card_headline 
+                                    a(href="").card_item_name Финансовый анализ
+                                    p
+                                        | Оценка эффективности инвестиций, расчет основных показателей
+                                .card__courses-control-block 
+                                    a(href="#").card__btn-edit Редактировать
+                                    a(href="#").card__btn-go-to На страницу курса
+                                    a(href="#").card__btn-archive Поместить в архив
+                        .card_item
+                            a(href="#",style="background-image:url(img/examples/c_1.png").card_item_img 
+                            .card_item_body 
+                                .card_headline 
+                                    a(href="").card_item_name Corporate Finance Management
+                                    p
+                                        | Пошаговая инструкция по управлению проектами
+                                .card__courses-control-block 
+                                    a(href="#").card__btn-edit Редактировать
+                                    a(href="#").card__btn-go-to На страницу курса
+                                    a(href="#").card__btn-archive Поместить в архив
+                .pagination 
+                    ul 
+                        li 
+                            a(href="#").page_prev.disabled
+                        li 
+                            a(href="#") 1
+                        li 
+                            a(href="#") 2
+                        li 
+                            a(href="#") 3
+                        li 
+                            a(href="#") ...
+                        li 
+                            a(href="#") 7
+                        li   
+                            a(href="#").page_next

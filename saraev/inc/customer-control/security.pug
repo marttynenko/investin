@@ -1,0 +1,43 @@
+section 
+    .container 
+        .teacher-control.customer-control-my-education.customer-security
+            include ../customer-control-nav/nav.pug
+            .teacher-control__content
+                .customer-control-my-education__header 
+                    h1.teacher-block-title Безопасность
+                .customer-security__block 
+                    ul.contacts_list
+                        li 
+                            .d_flex 
+                                picture 
+                                    img(src="img/icons/Call.svg", alt="")
+                                .text 
+                                    p 
+                                        strong Номер телефона
+                                        | Ваш номер телефона не будет виден другим пользователям, он используется только для защиты вашего профиля. 
+                                    .customer-input-group
+                                        input(type="text",placeholder="Введите номер")
+                        li 
+                            .d_flex 
+                                picture 
+                                    img(src="img/icons/mail.svg", alt="")
+                                .text 
+                                    p 
+                                        strong E-mail адрес
+                                        | Ваш e-mail будет использоваться как логин для вашей учетной записи
+                                    .customer-input-group
+                                        input(type="text",placeholder="Введите e-mail")
+                        li 
+                            .d_flex 
+                                picture 
+                                    img(src="img/icons/Password.svg", alt="")
+                                .text 
+                                    p 
+                                        strong Пароль
+                                        | Рекомендуем создать надежный пароль. Не используйте популярные варианты, которые можно легко подобрать. 
+                                    .customer-input-group
+                                        input(type="text",placeholder="Введите пароль")
+                    .custom_checkbox 
+                        input.error(type="checkbox",checked,id="customer-security")
+                        label(for="customer-security") Нажимая кнопку "Сохранить" вы даете согласие на использование ваших персональных данных
+                    button.teacher-blue-btn Сохранить

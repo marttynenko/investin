@@ -1,0 +1,135 @@
+// Заголовок блока
+.teacher-block-title
+    font-weight: 600
+    font-size: 40px
+    line-height: 1.4
+    color: #262626
+// маленький серый текст
+.teacher-grey-text
+    font-weight: 400
+    font-size: 16px
+    line-height: 1.68
+    color: #8d8d8d
+// Средний черный текст
+.teacher-black-text-m
+    font-weight: 600
+    font-size: 20px
+    line-height: 1.4
+    color: #262626 
+// Обычный черный текст
+.teacher-black-text-r
+    font-weight: 600
+    font-size: 18px
+    line-height: 1.38
+    color: #262626 
+// Обычный черный текст 28px
+.teacher-black-text-r-28
+    font-weight: 600
+    font-size: 28px
+    line-height: 1.42
+    color: #262626 
+// Тонкий черный текст
+.teacher-black-text-s
+    font-weight: 400
+    font-size: 18px
+    line-height: 1.38
+    color: #333333
+// Серая кнопка
+.teacher-grey-btn
+    font-weight: 700
+    font-size: 16px
+    line-height: 1.25
+    color: #7a89a6
+    background-color: #f6f8fc
+    border-radius: 3px
+    display: flex
+    justify-content: center
+    align-items: center
+    transition: 0.2s linear all
+    text-decoration: none !important
+    border: none
+    &:hover
+        background-color: darken(#f6f8fc,5% )
+        color: #7a89a6
+// Синяя кнопка
+.teacher-blue-btn
+    font-weight: 700
+    font-size: 16px
+    line-height: 1.25
+    color: #ffffff
+    background-color: #168ec4
+    border-radius: 3px
+    display: flex
+    justify-content: center
+    align-items: center
+    transition: 0.2s linear all
+    text-decoration: none !important
+    border: none
+    &:focus
+        color: #ffffff 
+    &:hover
+        background-color: darken(#168ec4,5% )
+        color: #ffffff
+// Кнопка посмотреть 
+.teacher-watch-btn
+    position: relative
+    font-weight: 500
+    font-size: 18px
+    line-height: 1.66
+    color: #F47920
+    text-decoration: none
+    border: none
+    padding-left: 36px
+    outline: none
+    text-decoration: none !important
+    background-color: transparent
+    &:focus
+        color: #F47920
+        
+    &:hover
+        color: #F47920
+    &::before
+        content: ""
+        position: absolute
+        font-size: 10px
+        width: 2.6em    
+        height: 2.6em
+        left: 0
+        top: 0
+        background: center / cover no-repeat url("../img/icons/teacher-watch.svg")
+// Купленный товар
+.teacher-good-link
+    padding-left: 28px
+    position: relative
+    color: #168EC4
+    font-weight: 700
+    font-size: 18px
+    line-height: 1.66
+    text-decoration: none
+    background-color: transparent
+    
+    &::before
+        content: ""
+        position: absolute
+        left: 0
+        top: 0
+        transform: translateY(40%)
+        font-size: 10px
+        width: 1.8em
+        height: 1.8em
+        background: center / cover no-repeat url("../img/icons/teacher-cart.svg")
+// Иконка истории денежных средств
+.teacher-history-icon
+    font-size: 10px
+    width: 3em
+    height: 3em
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+// Сумма вывода средств
+.withdraw-current
+    font-weight: 600
+    font-size: 50px
+    line-height: 1.4
+    color: #168EC4

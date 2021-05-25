@@ -1,0 +1,66 @@
+section 
+    .container 
+        .teacher-control.customer-control-info
+            include ../customer-control-nav/nav.pug
+            .teacher-control__content
+                .customer-control-info__header 
+                    h1.teacher-block-title Личные данные
+                .customer-control-info__block 
+                    .customer-control-info__row 
+                        .customer-control-info__col
+                            span.customer-subtitle ФИО
+                            .customer-input-group
+                                input(type="text",placeholder="Ваша фамилия",name="customerSecondName")
+                            .customer-input-group
+                                input(type="text",placeholder="Ваше имя",name="customerName")
+                            .customer-input-group
+                                input(type="text",placeholder="Ваше отчество",name="customerFartherName")
+                        .customer-control-info__col.customer-control-info__col--social-block
+                            span.customer-subtitle Социальные сети
+                            .customer-input-group-with-icon
+                                .customer-input-group-with-icon__icon 
+                                    img(src="img/icons/vk.svg", alt="")
+                                input(type="text",placeholder="vk.com/",name="customerVk")
+                            .customer-input-group-with-icon
+                                .customer-input-group-with-icon__icon 
+                                    img(src="img/icons/facebook.svg", alt="")
+                                input(type="text",placeholder="facebook.com/",name="customerFacebook")
+                            .customer-input-group-with-icon
+                                .customer-input-group-with-icon__icon 
+                                    img(src="img/icons/linkedin.svg", alt="")
+                                input(type="text",placeholder="linkedin.com/",name="customerLinkedIn")
+                    .customer-control-info__row 
+                        .customer-control-info__col
+                            span.customer-subtitle Дата рождения
+                            .customer-control-info__birth-wrap
+                                .customer-input-group
+                                    input(type="text",placeholder="00",name="customerBirthDay")
+                                .customer-input-group-select
+                                    select(name="customerBirthMonth")
+                                            option(value="Сентябрь", disabled, selected) Сентябрь  
+                                            option(value="Январь") Январь
+                                            option(value="Февраль") Февраль
+                                            option(value="Март") Март
+                                            option(value="Апрель ") Апрель 
+                                            option(value="Май ") Май 
+                                            option(value="Июнь ") Июнь 
+                                            option(value="Июль ") Июль 
+                                            option(value="Август ") Август 
+                                            option(value="Сентябрь ") Сентябрь 
+                                            option(value="Октябрь ") Октябрь 
+                                            option(value="Ноябрь ") Ноябрь 
+                                            option(value="Декабрь ") Декабрь
+                                .customer-input-group
+                                    input(type="text",placeholder="0000",name="customerBirthYear")
+                        .customer-control-info__col
+                            span.customer-subtitle Мой канал
+                            .customer-input-group-with-icon
+                                .customer-input-group-with-icon__icon 
+                                    img(src="img/icons/youtube.svg", alt="")
+                                input(type="text",placeholder="youtube.com/",name="customerYoutube")
+                    .customer-control-info__row 
+                        .customer-control-info__col
+                            span.customer-subtitle Из города
+                            .customer-input-group
+                                input(type="text",placeholder="Город",name="customerCity")
+                button.teacher-blue-btn Сохранить

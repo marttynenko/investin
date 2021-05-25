@@ -1,0 +1,40 @@
+section 
+    .container 
+        .teacher-control.teacher-control-message
+            include ../teacher-control-nav/nav.pug
+            .teacher-control__content
+                .teacher-control-message__header 
+                    h1.teacher-block-title Сообщения
+                .teacher-control-message__block 
+                    .teacher-control-message__block-headline 
+                        .teacher-control-message__block-sender 
+                            span.teacher-grey-text От кого
+                            .teacher-control-message__avatar-block
+                                .teacher-control-message__avatar-img 
+                                    img(src="img/examples/Ellipse-18.png", alt="")
+                                span.teacher-black-text-m Денис Грушевский
+                        .teacher-control-message__date
+                            .teacher-control-message__date-full.teacher-grey-text 12.10.2020 
+                            span.teacher-grey-text.teacher-control-message__date-divider в  
+                            .teacher-control-message__date-time.teacher-grey-text 23:00
+                    .teacher-control-message__block-topic-message
+                        span.teacher-grey-text.teacher-control-message__block-topic-message__theme Тема
+                        span.teacher-black-text-r.teacher-control-message__block-topic-message__theme-name HTML5, CSS и JavaScript для начинающих
+                        p.teacher-black-text-s.teacher-control-message__block-topic-message__text У меня есть вопрос по поводу порядка прохождения занятий в курсе. Я бы сказал, что необходимо изменить порядок уроков 2, 7 и 11, так как они затрагивают похожую тематику. Возможно это было сделано с умыслом повторения освоенного материала, но как по мне - это мешает постепенному прохождению курса. В прикрепленном файле можно посмотреть мой вариант прохождения данного курса. Спасибо.
+                    .teacher-control-message__block-response
+                        textarea(placeholder="Введите сообщение")
+                        .teacher-control-message__block-response__controls
+                            .teacher-control-message__block-response__controls-icons 
+                                .teacher-control-message__block-response__controls-icons__img
+                                    img(src="img/icons/control-smile.svg", alt="")
+                                .teacher-control-message__block-response__controls-icons__img
+                                    label(for="teacherResponseUpload") 
+                                        input(type="file",name="teacherResponseUpload",id="teacherResponseUpload")
+                                        img(src="img/icons/control-file.svg", alt="")
+                            .teacher-control-message__block-response__controls-counter 
+                                .teacher-control-message__block-response__controls-counter__current 0
+                                .teacher-control-message__block-response__controls-counter__divider /
+                                .teacher-control-message__block-response__controls-counter__max 1000
+                    .teacher-control-message__block-buttons 
+                        a(href="#").teacher-grey-btn Удалить
+                        a(href="#").teacher-blue-btn Ответить

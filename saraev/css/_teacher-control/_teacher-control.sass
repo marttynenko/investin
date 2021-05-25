@@ -1,0 +1,855 @@
+// Отдельные элементы
+@import "_elements"
+
+// Блоки
+// Блок - сообщение
+@import "_message"
+// Блок - баланс-продажи
+@import "_balance-sales"
+// Блок - баланс-движение-средств
+@import "_balance-history"
+
+.teacher-control
+    display: flex
+    justify-content: space-between
+    .materials_group_header
+        .teacher-control__add-course-teachers__btn
+            &::before
+                background: center / cover no-repeat url("../img/icons/Edit.svg") !important
+    
+    &-messages
+        &__payeer
+            display: flex
+            flex: 0 0 100%
+            &-img
+                font-size: 10px
+                width: 4.5em
+                height: 4.5em
+                border-radius: 50%
+                overflow: hidden
+                margin-right: 15px
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+        .c_nav
+            justify-content: flex-start
+            margin-top: 20px
+        &__body
+            margin-bottom: 20px
+            margin-top: 36px
+            box-shadow: 0px 22px 145px rgba(157, 160, 184, 0.1), 0px 2.75474px 18.1562px rgba(151, 156, 193, 0.07)
+            border-radius: 20px
+            padding: 30px 40px 20px 40px
+            &-row
+                display: flex
+                justify-content: space-between 
+                &-main
+                    &--active
+                        span
+                            font-weight: 600 !important
+                    padding-bottom: 20px
+                    border-bottom: 1px dashed #DBDBDC
+                    .teacher-control-messages__body-col
+                        span
+                            color: #262626
+
+            &-col
+                display: flex
+                justify-content: space-between
+                flex: 0 0 50%
+                align-items: center
+                span
+                    color: #8D8D8D
+                    font-size: 16px
+                    line-height: 1.68
+                    font-weight: 400
+                &-item
+                    flex: 0 0 50%
+    &-my-courses
+        .card__courses-control-block
+            display: flex
+            justify-content: space-between
+            .card__btn-edit
+                padding-left: 28px
+                font-weight: 500
+                font-size: 16px
+                line-height: 1.68
+                color: #F47920
+                position: relative
+                margin-right: 60px
+                &::before
+                    content: ""
+                    position: absolute
+                    font-size: 10px
+                    width: 1.8em    
+                    height: 1.8em   
+                    top: 5px
+                    left: 0
+                    background: center / cover no-repeat url("../img/icons/edit.svg")
+            .card__btn-go-to
+                font-weight: 500
+                font-size: 16px
+                line-height: 1.68
+                color: #F47920
+                position: relative
+                padding-left: 28px
+                margin-right: 60px
+                &::before
+                    content: ""
+                    position: absolute
+                    font-size: 10px
+                    width: 1.8em    
+                    height: 1.8em   
+                    top: 5px
+                    left: 0
+                    background: center / cover no-repeat url("../img/icons/goto.svg")
+            .card__btn-archive
+                padding-left: 28px
+                font-weight: 500
+                font-size: 16px
+                line-height: 1.68
+                color: #FF3838
+                position: relative
+                &::before
+                    content: ""
+                    position: absolute
+                    font-size: 10px
+                    width: 1.8em    
+                    height: 1.8em   
+                    top: 5px
+                    left: 0
+                    background: center / cover no-repeat url("../img/icons/archive.svg")
+        .card_item
+            display: flex
+            margin-bottom: 30px
+        .card_item_img
+            flex: 0 0 30%
+            min-height: 100%
+            background-size: cover
+            background-repeat: no-repeat
+        &__cards-block
+            flex: 0 0 100%
+        &__btn-block
+            margin-right: auto
+            .c_nav
+                margin-top: 43px
+                li
+                    padding: 0
+                    margin-right: 20px
+                    &:last-child
+                        margin-right: 0
+    &__return-btn
+        color: #7A89A6
+        background-color: #F6F8FC
+        font-weight: 700
+        font-size: 20px
+        line-height: 1.2
+        border: none
+        outline: none
+        width: 152px
+    &__material-control-group
+        display: flex
+        justify-content: space-between
+        margin-top: 50px
+        .btn_blue
+            width: 230px    
+            text-align: center
+    &__add-topic
+        &--icon
+            margin-top: 32px
+            .teacher-control__add-course-teachers__btn
+                &::before
+                    background: center/cover no-repeat url("../img/icons/Plus.svg")
+    .materials
+        margin-top: 50px
+        .teacher-control__add-course-teachers__btn
+            width: max-content
+            &::before
+                background: center/cover no-repeat url("../img/icons/Plus.svg")
+        .time
+            img
+                margin-left: 12px
+    &__add-topic
+        width: 231px
+        text-align: center
+    &__header-text
+        font-size: 18px
+        line-height: 1.66
+        font-weight: 400
+        margin-top: 26px 
+        display: block
+        margin-bottom: 25px
+    &__promo-checkbox
+        opacity: 0
+        visibility: hidden
+        &:checked ~
+            .teacher-control__promo-checkbox-label
+                &::before
+                    background: #F47920  url("../img/icons/checkbox.svg") center / contain no-repeat
+                    background-size: 16px 12px 
+        &-label
+            position: relative
+            cursor: pointer
+            padding-left: 25px
+            &::before
+                position: absolute
+                content: " "
+                font-size: 10px
+                width: 2.6em
+                height: 2.6em
+                background-color: #F47920
+                left: -20px
+                top: 0
+                border-radius: 2px
+    &__content
+        margin-top: -24px
+        flex: 0 0 73%
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        .btn_create_course
+            width: 236px
+            height: 65px
+            text-align: center
+            margin-top: 20px
+        .pagination
+            margin: auto
+    &__header
+        display: flex
+        margin-bottom: 33px
+        &-img
+            margin-right: 20px
+            width: 70px
+            height: 70px
+            border-radius: 100%
+            overflow: hidden
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover
+        &-name
+            font-size: 24px
+            font-weight: 600
+            line-height: 1.375
+            margin-top: 2px
+    &__nav
+        box-shadow: 0px 22px 145px rgba(157, 160, 184, 0.1), 0px 2.75474px 18.1562px rgba(151, 156, 193, 0.07)
+        background-color: #fff
+        border-radius: 20px
+        padding-top: 40px
+        padding-left: 40px
+        padding-bottom: 30px
+        flex: 0 0 23.5%
+        overflow: hidden
+        max-height: 700px
+        &-list
+            &-item
+                margin-bottom: 35px
+                &:last-child
+                    margin-bottom: 0
+                &-link
+                    color: #333333
+                    text-decoration: none
+                    font-size: 20px
+                    line-height: 1.7
+                    width: 100% 
+                    display: inline-block
+                    position: relative
+                    &::after
+                            content: ""
+                            position: absolute
+                            right: 0
+                            top: 0
+                            border-radius: 50px
+                            display: block
+                            height: 200%
+                            width: 3px
+                            background-color: #168EC4
+                            opacity: 0
+                            transition: .3s ease opacity
+                    &:hover
+                        text-decoration: none
+                        &::after
+                            opacity: 1
+                    &--active
+                        color: #168EC4
+                        font-weight: 700
+                        &::after
+                            content: ""
+                            position: absolute
+                            right: 0
+                            top: 0
+                            border-radius: 50px
+                            display: block
+                            height: 200%
+                            transform: translate(-1px, -27%)
+                            width: 3px
+                            background-color: #168EC4
+                            opacity: 1
+    &__personal
+        &-title
+            font-weight: 600
+            font-size: 40px
+            line-height: 1.4
+            margin-bottom: 5px
+    &__personal-form
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        .btn_blue
+            width: 202px
+            margin-top: 40px
+        &-row
+            display: flex
+            justify-content: space-between
+            flex: 0 0 100%
+            margin-bottom: 5px
+            &:last-child
+                margin-bottom: 0
+        &-item
+            &__city
+                h3
+                    margin-top: 0
+                .teacher-control__promo-agreement
+                    margin-top: 35px
+                    input
+                        display: none
+                    label
+                        padding-left: 45px
+                        &::before
+                            left: 0
+                            top: -2px
+            &__about
+                h3
+                    margin-top: 0
+            flex: 0 0 49%
+            textarea
+                resize: none
+                outline: none
+                border: 1px solid #DFDEE2
+                border-radius: 5px
+                height: 122px
+                width: 500px
+            &-title
+                font-size: 20px
+                line-height: 1.7
+                color: #262626
+                font-weight: 500
+                margin-bottom: 10px
+                &-about 
+                    display: inline-block
+                    &__tooltip
+                        background-color: #fff
+                        border: 1px solid #DFDEE2
+                        border-radius: 5px
+                        opacity: 0
+                        z-index: -123
+                        position: absolute
+                        width: 290px
+                        height: 95px
+                        justify-content: center
+                        align-items: center
+                        top: -450%
+                        left: -45%
+                        transition: .2s ease opacity 
+                        display: none
+                        &::after
+                            content: ""
+                            position: absolute
+                            display: block
+                            width: 10px
+                            height: 10px
+                            border: 1px solid #DFDEE2
+                            bottom: 0
+                            left: 8%
+                            border-top: none
+                            border-left: none
+                            transform: rotate(45deg) translateY(80%)
+                            
+                        span
+                            color: #333333
+                            font-size: 13px
+                            line-height: 2
+                &-question
+                    font-size: 10px
+                    width: 2.4em
+                    height: 2.4em
+                    display: inline-block
+                    margin-left: 5px
+                    margin-bottom: -3px
+                    position: relative
+                    &:hover
+                        .teacher-control__personal-form-item-title-about__tooltip
+                            z-index: 123
+                            opacity: 1
+                            display: flex
+                        cursor: pointer
+        &-input-group
+            border: 1px solid #DFDEE2
+            border-radius: 5px
+            margin-bottom: 20px
+            display: flex
+            flex: 0 0 100%
+            height: 64px
+            overflow: hidden
+            &:last-child
+                margin-bottom: 0
+            &-date
+                border: 1px solid #DFDEE2
+                border-radius: 5px
+                display: flex
+                height: 64px
+                overflow: hidden
+                select
+                    padding-left: 20px
+                    appearance: none
+                    width: 100%
+                    border: none
+                    height: 100%
+                    color: #8D8D8D
+                    font-size: 18px
+                    line-height: 1.66
+                    cursor: pointer
+                &:last-child
+                    margin-right: 0
+                &-wrapper
+                    display: flex
+                    flex: 0 0 100%
+                    justify-content: space-between
+                    margin-bottom: 20px
+                input
+                    border: none
+                    outline: none
+                    padding-left: 20px
+                    padding-right: 20px
+                    height: 100%
+                    font-size: 19.4px
+                    width: 100%
+                    &::placeholder
+                        color: #8D8D8D
+                        font-size: 19.4px
+                        line-height: 1.66
+                &:nth-of-type(1)
+                    flex: 0 0 13%
+                &:nth-of-type(2)
+                    flex: 0 0 60%
+                    position: relative
+                    &:after
+                        content: ""
+                        position: absolute
+                        display: block
+                        width: 10px
+                        height: 10px
+                        border: 2px solid #8D8D8D
+                        border-top: none
+                        border-left: none
+                        right: 22px
+                        top: 22px
+                        transform: rotate(45deg)
+                        pointer-events: none
+                &:nth-of-type(3)
+                    flex: 0 0 18%
+            input
+                border: none
+                outline: none
+                padding-left: 20px
+                height: 100%
+                font-size: 19.4px
+                &::placeholder
+                    color: #8D8D8D
+                    font-size: 19.4px
+                    line-height: 1.66
+        &-social-icon
+            display: flex
+            justify-content: center
+            align-items: center
+            background-color: #F47920
+            font-size: 10px
+            width: 6.4em
+            height: 6.4em
+            border-radius: 5px
+            img
+                object-fit: contain
+                font-size: 10px
+                width: 3em
+                height: 3em
+
+    
+#add-topic-modal.modal_window
+    max-width: 640px
+    form
+        padding-left: 27px
+        padding-right: 27px
+    h1
+        text-align: center
+        font-weight: 600
+        font-size: 40px
+        line-height: 1.4
+        margin-bottom: 20px
+        margin-top: 20px
+    .input-group
+        width: 100%
+        margin-bottom: 18px
+        input
+            color: #8D8D8D
+            font-size: 18px
+            line-height: 1.66
+            font-weight: 40
+            border: 1px solid #DFDEE2
+            border-radius: 5px
+            width: 100%
+            padding: 16.5px 20px
+            &::placeholder
+                color: #8D8D8D
+                font-size: 18px
+                line-height: 1.66
+                font-weight: 40
+    .btn_blue
+        width: 100%
+        font-size: 20px
+        line-height: 1.2
+        font-weight: 700
+#teacher-control-create-lesson.modal_window
+    max-width: 900px
+    form
+        padding-left: 27px
+        padding-right: 27px
+    h1
+        text-align: center
+        font-weight: 600
+        font-size: 40px
+        line-height: 1.4
+        margin-bottom: 20px
+        margin-top: 20px
+    .input-group
+        width: 100%
+        margin-bottom: 18px
+        display: flex
+        flex-direction: column
+        label
+            font-size: 16px
+            color: #747474
+            line-height: 1.68
+            margin-bottom: 10px
+        textarea
+            height: 200px
+            resize: none
+            color: #8D8D8D
+            font-size: 19px
+            line-height: 1.66
+            font-weight: 40
+            border: 1px solid #DFDEE2
+            border-radius: 5px
+            width: 100%
+            padding: 16.5px 20px
+        input
+            color: #8D8D8D
+            font-size: 19px
+            line-height: 1.66
+            font-weight: 40
+            border: 1px solid #DFDEE2
+            border-radius: 5px
+            width: 100%
+            padding: 16.5px 20px
+            &::placeholder
+                color: #8D8D8D
+                font-size: 19px
+                line-height: 1.66
+                font-weight: 40
+    .file-input-group
+        border: 1px dashed #DFDEE2
+        border-radius: 5px
+        background: #F6F8FC
+        height: 260px
+        margin-bottom: 10px
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        cursor: pointer
+        &__img
+            font-size: 10px
+            width: 5.8em
+            height: 5.8em
+            position: relative
+            margin-top: 40px
+            display: inline-block
+            margin-bottom: 20px
+            &::after
+                content: ''
+                display: block
+                font-size: 10px
+                width: 3.5em
+                height: 3.5em
+                position: absolute
+                bottom: 0
+                right: 0
+                background: center / cover no-repeat url('../img/icons/Folder-file.svg')
+                transform: translate(30%,30%)
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover
+
+        &-subtitle
+            color: #333333
+            font-size: 13px
+            font-weight: 400
+            line-height: 1.23
+            margin-bottom: 20px
+            text-align: center
+            display: block
+        label
+            font-size: 16px
+            line-height: 1.68
+            color: #7A89A6
+            text-align: center
+            width: 100%
+            height: 100%
+            cursor: pointer
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-direction: column
+            span
+                font-weight: 700
+        input
+            outline: 0
+            opacity: 0
+            pointer-events: none
+            user-select: none
+    .btn_blue
+        width: 100%
+        font-size: 20px
+        line-height: 1.2
+        font-weight: 700
+
+#teacher-control-create-test.modal_window
+    .mfp-close
+        top: 55px
+        right: 38px
+    overflow-x: hidden
+    max-width: 1400px
+    h1
+        text-align: center
+        font-weight: 600
+        font-size: 40px
+        line-height: 1.4
+        margin-bottom: 15px
+        margin-top: 20px
+    .create-test-modal
+        &__footer
+            display: flex
+            justify-content: space-between
+            padding-top: 40px
+            padding-bottom: 60px
+            .btn_blue
+
+            .btn-grey
+                background: #F6F8FC
+                border-radius: 3px
+                color: #7A89A6
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 194px
+                height: 60px
+        &__buttons
+            // display: flex
+            // flex-direction: column
+            // flex: 0 0 40%
+            // align-self: flex-end
+            // flex-wrap: wrap
+            max-width: 75%
+            margin-left: auto
+            span
+                color: #EB5757
+                font-size: 16px
+                font-weight: 400
+                line-height: 1.68
+            &-wrap
+                display: flex
+                justify-content: space-between
+                margin-bottom: 5px
+                button
+                    width: 211px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    &:first-child
+                        margin-right: 25px
+        &__col-name
+            display: flex
+            justify-content: space-between
+            flex: 0 0 100%
+            align-items: center
+            margin-top: 48px
+            span
+                font-weight: 600
+                font-size: 20px
+                color: #262626
+                line-height: 1.4
+                flex: 0 0 49%
+        &__add-one
+            color: #F47920
+            font-weight: 500
+            font-size: 20px
+            line-height: 1.66
+            border: none
+            background: transparent
+            position: relative
+            padding-left: 20px
+            align-self: flex-start
+            margin-left: 100px
+            &--last
+                margin-left: 12px
+                margin-top: 15px
+            &::before
+                content: ""
+                font-size: 10px
+                position: absolute
+                left: -15px
+                top: 3px
+                width: 2.6em
+                height: 2.6em
+                background: center / cover no-repeat url("../img/icons/Plus.svg")
+        &__garbage
+            font-size: 10px
+            height: 2.4em
+            width: 1.5em
+            margin-top: 20px
+            border: none
+            background: center / cover no-repeat url("../img/icons/Garbage.svg")
+        &__row
+            padding-top: 35px
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+            padding-bottom: 35px
+            border-bottom: 3px dashed #DBDBDC
+            &--first
+                padding-top: 20px
+        &__col
+            flex: 0 0 48.5%
+            display: flex
+            flex-direction: column
+            height: fit-content
+            &-item
+                display: flex
+                flex: 0 0 100%
+            .create-test-modal__col-item
+                margin-bottom: 20px
+                &:last-of-type
+                    
+                    margin-bottom: 10px
+                justify-content: space-between
+                .create-test-modal__input-group
+                    flex: 0 0 80%
+                    
+        &__input-group
+            
+            &-area
+                display: flex
+                flex: 0 0 80%
+                textarea
+                    width: 100%
+                    border: 1px solid #DFDEE2
+                    border-radius: 5px
+                    padding-left: 20px
+                    padding-top: 16.5px
+                    resize: none
+                    color: #333333
+                    font-size: 20px
+                    line-height: 1.6
+                    font-weight: 400
+                    height: 112px   
+                    &::placeholder
+                        color: #333333
+            input
+                border: 1px solid #DFDEE2
+                border-radius: 5px
+                padding-left: 20px
+                padding-top: 16.5px
+                padding-bottom: 16.5px
+                color: #8D8D8D
+                font-size: 20px
+                line-height: 1.6
+                font-weight: 400
+                width: 100%
+                &::placeholder
+                    color: #8D8D8D
+            textarea
+                resize: none
+        &__body
+            padding-left: 10px
+            margin: auto
+            position: relative
+        &__header
+            display: flex
+            flex-direction: column
+            padding-bottom: 25px
+            position: relative
+            &::after
+                content: ""
+                position: absolute
+                bottom: -2px
+                width: 120%
+                transform: translateX(-5%)
+                height: 1px
+                background-color: #DBDBDC
+            &-topic
+                margin-bottom: 20px
+            p
+                font-size: 20px
+                line-height: 1.4
+                font-weight: 400
+            span
+                font-weight: 600
+        &__headline
+            h3
+                color: #262626
+                font-size: 20px
+                line-height: 1.7px
+                font-weight: 600
+                margin-bottom: 35px
+            &-block
+                display: flex
+                justify-content: space-between
+                .create-test-modal__input-group
+                    flex: 0 0 45%
+        &__content
+            padding-top: 35px
+            padding-right: 10px
+        &__required-answers
+            display: flex
+            justify-content: space-between
+            align-items: center
+            span
+                margin-right: 25px
+                color: #333333
+                font-size: 18px
+                line-height: 1.66
+                font-weight: 400
+        &-counter
+            display: flex
+            justify-content: center
+            align-items: center
+            font-size: 18px
+            line-height: 1.66
+            font-weight: 400
+            color: #8D8D8D
+            background-color: #fff
+            border: 1px solid #DFDEE2
+            border-radius: 5px
+            width: 64px
+            height: 64px
+            &--active
+                background: #FFF7F7
+                border: 1px solid #F41F1F
+.create-test-overlay.mfp-bg
+    opacity: 0
+.create-test-overlay
+    .mfp-container
+        top: 80px
+// Отдельное сообщение

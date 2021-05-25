@@ -1,0 +1,82 @@
+section.title_box.b_bottom
+    .container.text_left
+        h1.page_title #{page.title}
+        p По вашему запросу найдено 52 совпадения
+
+
+
+-var subcat=['','Бизнес','ИТ и ПО','Дизайн','Стиль жизни','Музыка','Фитнес']
+section.page_section.pb_30
+    .container
+        .h3 Категории
+        ul.subcategory_list
+            -for (var s = 1; s <= 6; s++)
+                if s===1
+                    li.active
+                        a.btn(href="#")=subcat[s]
+                else if  s>10
+                    li.d_none
+                        a.btn(href="#")=subcat[s]
+                else
+                    li
+                        a.btn(href="#")=subcat[s]
+
+
+
+section.pt_0
+    .container
+        .text_left
+            .h3 Курсы
+        .row.cards_grid
+            -for(var c=1;c<=9;c++)
+                .col
+                    .card_item
+                        a.card_item_img(href="#" style="background-image:url(img/examples/c_2.png)")
+                            if c===2
+                                .label.discount Скидка
+                        .card_item_body
+                            div
+                                if c===2
+                                    a.card_item_name(href="#") Corporate Finance Management
+                                else
+                                    a.card_item_name(href="#") HTML5, CSS и  JavaScript для начинающих
+                                if c===2
+                                    .teachers Владимир Приходько
+                                else
+                                    .teachers Владимир Приходько, Денис Грушевский, Катерина Кулакова
+                            div
+                                .rating
+                                    strong 4,5
+                                    span.stars
+                                        span.star
+                                        span.star
+                                        span.star
+                                        span.star
+                                        span.star.empty
+                                    .counter 12 отзывов
+                                .price_box
+                                    .price 1 560 бел. руб.
+                                    if c!==2
+                                        .old_price 1 680 бел. руб.
+
+        .pagination
+            ul
+                li
+                    a.page_prev.disabled(href="#")
+                li
+                    a(href="#") 1
+                li
+                    a.active(href="#") 2
+                li
+                    a(href="#") 3
+                li
+                    span ...
+                li
+                    a(href="#") 7
+                li
+                    a.page_next(href="#")
+
+include ../blocks/become_section
+include ../blocks/popular
+
+

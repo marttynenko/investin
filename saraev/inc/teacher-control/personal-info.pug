@@ -1,0 +1,83 @@
+section 
+    .container 
+        .teacher-control 
+            include ../teacher-control-nav/nav.pug
+            .teacher-control__content
+                h2.teacher-control__personal-title Личные данные
+                form(action="").teacher-control__personal-form
+                    .teacher-control__personal-form-row
+                        .teacher-control__personal-form-item
+                            h3.teacher-control__personal-form-item-title ФИО
+                            .teacher-control__personal-form-input-group 
+                                input(name="authorFamilyName",type="text",placeholder="Ваша фамилия")
+                            .teacher-control__personal-form-input-group 
+                                input(name="authorName",type="text",placeholder="Ваше имя")
+                            .teacher-control__personal-form-input-group 
+                                input(name="authorSecondName",type="text",placeholder="Ваше отчество")
+
+                        .teacher-control__personal-form-item
+                            h3.teacher-control__personal-form-item-title Социальные сети
+                            .teacher-control__personal-form-input-group 
+                                .teacher-control__personal-form-social-icon 
+                                    img(src="img/icons/vk.svg", alt="")
+                                input(name="authorVk", type="text",placeholder="vk.com/")
+                                
+                            .teacher-control__personal-form-input-group
+                                .teacher-control__personal-form-social-icon 
+                                    img(src="img/icons/facebook.svg", alt="")
+                                input(name="authorFacebook", type="text",placeholder="facebook.com/")
+                                
+                            .teacher-control__personal-form-input-group
+                                .teacher-control__personal-form-social-icon 
+                                    img(src="img/icons/linkedin.svg", alt="")
+                                input(name="authorLinkedin", type="text",placeholder="linkedin.com/")
+
+                    .teacher-control__personal-form-row 
+                        .teacher-control__personal-form-item
+                            h3.teacher-control__personal-form-item-title Дата рождения
+                            .teacher-control__personal-form-input-group-date-wrapper 
+                                .teacher-control__personal-form-input-group-date 
+                                    input(type="text",placeholder="00",name="authorBirth")
+                                .teacher-control__personal-form-input-group-date 
+                                    select(name="authorMonth")
+                                        option(value="Сентябрь", disabled, selected) Сентябрь  
+                                        option(value="Январь") Январь
+                                        option(value="Февраль") Февраль
+                                        option(value="Март") Март
+                                        option(value="Апрель ") Апрель 
+                                        option(value="Май ") Май 
+                                        option(value="Июнь ") Июнь 
+                                        option(value="Июль ") Июль 
+                                        option(value="Август ") Август 
+                                        option(value="Сентябрь ") Сентябрь 
+                                        option(value="Октябрь ") Октябрь 
+                                        option(value="Ноябрь ") Ноябрь 
+                                        option(value="Декабрь ") Декабрь 
+                                .teacher-control__personal-form-input-group-date 
+                                    input(type="text",placeholder="0000",name="authorBirthYear")
+                        .teacher-control__personal-form-item
+                            h3.teacher-control__personal-form-item-title Мой канал
+                            .teacher-control__personal-form-input-group
+                                .teacher-control__personal-form-social-icon 
+                                    img(src="img/icons/youtube.svg", alt="")
+                                input(name="authorYoutube", type="text",placeholder="youtube.com/")
+                    .teacher-control__personal-form-row 
+                        .teacher-control__personal-form-item.teacher-control__personal-form-item__city
+                            h3.teacher-control__personal-form-item-title Из города
+                            .teacher-control__personal-form-input-group 
+                                input(name="authorCity",type="text",placeholder="Город")
+                            .teacher-control__promo-agreement
+                                input(type="checkbox", name="teacherPromo", id="teacherPromo",checked).teacher-control__promo-checkbox
+                                label(for="teacherPromo").teacher-control__promo-checkbox-label Я согласен участвовать в промо-акциях ресурса 
+                            button(type="submit").btn.btn_blue Сохранить 
+                        .teacher-control__personal-form-item.teacher-control__personal-form-item__about
+                            h3.teacher-control__personal-form-item-title.teacher-control__personal-form-item-title-about О себе
+                            .teacher-control__personal-form-item-title-question(style="background: center / cover no-repeat url('../img/icons/aboutQuestion.svg')")
+                                .teacher-control__personal-form-item-title-about__tooltip
+                                    span 
+                                        | В этом поле Вам необходимо указать 
+                                        br
+                                        | свое образование, квалификацию, 
+                                        br
+                                        | опыт работы
+                            textarea(name="teacherControlAboutMe") 

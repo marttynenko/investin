@@ -1,0 +1,35 @@
+section
+    .container
+        .text_center
+            .h2.line.mb_55 Популярные курсы
+        .row.cards_grid
+            -for(var c=1;c<=3;c++)
+                .col
+                    .card_item
+                        a.card_item_img(href="#" style="background-image:url(img/examples/c_"+c+".png)")
+                            if c===2
+                                .label.discount Скидка
+                        .card_item_body
+                            div
+                                if c===2
+                                    a.card_item_name(href="#") Corporate Finance Management
+                                else
+                                    a.card_item_name(href="#") HTML5, CSS и  JavaScript для начинающих
+                                if c===2
+                                    .teachers Владимир Приходько
+                                else
+                                    .teachers Владимир Приходько, Денис Грушевский, Катерина Кулакова
+                            div
+                                .rating
+                                    strong 4,5
+                                    span.stars
+                                        span.star
+                                        span.star
+                                        span.star
+                                        span.star
+                                        span.star.empty
+                                    .counter 12 отзывов
+                                .price_box
+                                    .price 1 560 бел. руб.
+                                    if c!==2
+                                        .old_price 1 680 бел. руб.

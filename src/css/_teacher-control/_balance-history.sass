@@ -6,11 +6,11 @@
         display: flex
         flex-direction: column
         margin-bottom: 40px
-        max-height: 500px
         &-headline
             display: flex
             margin-bottom: 10px
         &-col
+            padding-left: 0 !important
             &--left
                 flex: 0 0 17%
             &--left-middle
@@ -23,10 +23,66 @@
         display: flex
         align-items: flex-start
         border-bottom: 1px dashed #DBDBDC !important
-        padding-bottom: 17px !important
-        padding-top: 19px !important
+        padding-bottom: 15px !important
+        padding-top: 15px !important
         &--first
             padding-top: 0 !important
         &:last-child
             border-bottom: none
             padding-bottom: 0
+
+@media (max-width: 1200px)
+    .teacher-control-balance-sales__header-controls
+        display: block
+
+        .c_nav
+            margin-bottom: 15px
+            display: block
+            text-align: left
+
+            li
+                display: inline-block
+                vertical-align: middle
+                padding: 0
+
+
+@media (max-width: 576px)
+    .teacher-control-balance-sales__header-controls
+        .c_nav
+            text-align: center
+            margin-bottom: 0
+
+    .teacher-control-balance-sales__header
+        text-align: center
+
+    .teacher-control-balance-sales__header-balance-info
+        display: block
+
+        .teacher-current-balance
+            display: block
+            margin-right: 0px
+            margin-bottom: 10px
+
+            span:first-child
+                margin-right: 8px
+
+    .teacher-control-balance-history__scroll
+        overflow-x: auto
+        max-width: 100%           
+    .teacher-control-balance-history__block
+        padding: 30px 20px
+        
+
+        &-col
+            width: auto
+            &--left
+                flex: 0 0 60px
+            &--left-middle
+                flex: 0 0 100px
+            &--right-middle
+                flex: 0 0 150px
+            &--right
+                flex: 0 0 160px
+    .teacher-control-balance-history__row,
+    .teacher-control-balance-history__headline
+        // min-width: 480px

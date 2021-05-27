@@ -1,0 +1,99 @@
+<!--#include file="inc/inc-header.html"-->
+<main>
+  <section> 
+    <div class="container"> 
+      <div class="teacher-control teacher-control-balance-sales">
+        <div class="teacher-control__nav">
+          <div class="teacher-control__header"> 
+            <div class="teacher-control__header-img"> <img src="img/teacher-control/teacher-avatar.png" alt=""/></div>
+            <h2 class="teacher-control__header-name">Приходько<br/>Владимир</h2>
+          </div>
+          <nav class="teacher-control__nav-block"> 
+            <ul class="teacher-control__nav-list">
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link teacher-control__nav-list-item-link--active" href="#">Личные данные</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Мои курсы</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Избранное</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Баланс</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Сообщения</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Справка и поддержка</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Безопасность</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Выйти</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="teacher-control__content">
+          <div class="teacher-control-balance-sales__header"> 
+            <h1 class="teacher-block-title">Баланс</h1>
+            <div class="teacher-control-balance-sales__header-controls">
+              <ul class="c_nav"> 
+                <li class="active"> <a href="#">Продажи</a></li>
+                <li><a href="#">Движение средств</a></li>
+              </ul>
+              <div class="teacher-control-balance-sales__header-balance-info">
+                <div class="teacher-current-balance"><span class="teacher-grey-text">Текущий баланс</span><span class="teacher-black-text-r-28">1505 BYN</span></div><a class="ui-btn popup-with-form" href="#teacher-control-withdraw">Вывод средств</a>
+              </div>
+            </div>
+          </div>
+          <div class="teacher-control-balance-sales__block">
+            <div class="teacher-control-balance-sales__block-headline">
+              <div class="teacher-control-balance-sales__block-headline-left"><span class="teacher-grey-text">Преобретенные курсы</span><span class="teacher-grey-text">Цена</span></div>
+              <div class="teacher-control-balance-sales__block-headline-right"><span class="teacher-grey-text">Дата</span></div>
+            </div>
+            <div class="teacher-control-balance-sales__row teacher-control-balance-sales__row--first"><a class="teacher-good-link">Английский Язык для Начинающих на все 100!</a><span class="teacher-black-text-s">1505 BYN  </span><span class="teacher-black-text-s">20:15 12.10.2020</span><a class="teacher-watch-btn popup-with-form" href="#teacher-control-balance">Посмотреть</a></div>
+            <div class="teacher-control-balance-sales__row"><a class="teacher-good-link">Английский Язык для Начинающих на все 100!</a><span class="teacher-black-text-s">1505 BYN  </span><span class="teacher-black-text-s">20:15 12.10.2020</span><a class="teacher-watch-btn popup-with-form" href="#teacher-control-balance">Посмотреть</a></div>
+            <div class="teacher-control-balance-sales__row"><a class="teacher-good-link">Английский Язык для Начинающих на все 100!</a><span class="teacher-black-text-s">1505 BYN  </span><span class="teacher-black-text-s">20:15 12.10.2020</span><a class="teacher-watch-btn popup-with-form" href="#teacher-control-balance">Посмотреть</a></div>
+            <div class="teacher-control-balance-sales__row"><a class="teacher-good-link">Английский Язык для Начинающих на все 100!</a><span class="teacher-black-text-s">1505 BYN  </span><span class="teacher-black-text-s">20:15 12.10.2020</span><a class="teacher-watch-btn popup-with-form" href="#teacher-control-balance">Посмотреть</a></div>
+            <div class="teacher-control-balance-sales__row"><a class="teacher-good-link">Английский Язык для Начинающих на все 100!</a><span class="teacher-black-text-s">1505 BYN  </span><span class="teacher-black-text-s">20:15 12.10.2020</span><a class="teacher-watch-btn popup-with-form" href="#teacher-control-balance">Посмотреть</a></div>
+          </div>
+          <div class="pagination"> 
+            <ul> 
+              <li> <a class="page_prev disabled" href="#"></a></li>
+              <li> <a href="#">1</a></li>
+              <li> <a href="#">2</a></li>
+              <li> <a href="#">3</a></li>
+              <li> <a href="#">...</a></li>
+              <li> <a href="#">7</a></li>
+              <li>  <a class="page_next" href="#"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="modal_window" id="teacher-control-balance">
+    <button class="mfp-close" title="Close (Esc)" type="button">×</button>
+    <div class="balance-sales-modal">
+      <div class="balance-sales-modal__customer"> <span class="teacher-grey-text">Курс приобрёл</span>
+        <div class="balance-sales-modal__customer-avatar"> 
+          <div class="balance-sales-modal__customer-img"> <img src="img/examples/Ellipse-18.png" alt=""/></div><span class="balance-sales-modal__customer-name">Денис Грушевский</span>
+        </div>
+      </div>
+      <p class="balance-sales-modal__course">Английский Язык для Начинающих на все 100!</p>
+      <div class="balance-sales-modal__info"> 
+        <div class="balance-sales-modal__price"> <span class="teacher-grey-text">Цена</span><span class="balance-sales-modal__price-price">1505 BYN</span></div>
+        <div class="balance-sales-modal__date"> <span class="teacher-black-text-s">20:15 12.10.2020</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal_window" id="teacher-control-withdraw">
+    <button class="mfp-close" title="Close (Esc)" type="button">×</button>
+    <div class="balance-withdraw-modal">
+      <h1 class="balance-withdraw-modal__title teacher-block-title">Вывод средств</h1>
+      <h2 class="balance-withdraw-modal__subtitle teacher-black-text-s">Выберите количество средств, которое хотите перевести </h2>
+      <form class="balance-withdraw-modal__form" action="#">
+        <div class="balance-withdraw-modal__current-amount"> <span class="withdraw-current">1505 BYN</span><span class="withdraw-notice teacher-grey-text">текущий баланс</span></div>
+        <div class="balance-withdraw-modal__how-much"> <span>Сумма к выводу</span>
+          <div class="balance-withdraw-modal__input-group"> 
+            <input type="text" placeholder="20000"/>
+          </div><span>BYN</span>
+        </div>
+        <div class="balance-withdraw-modal__checkbox"> 
+          <input type="checkbox" id="withdrawCheckBox" checked="checked"/>
+          <label class="balance-withdraw-modal__checkbox-label" for="withdrawCheckBox">Я согласен с правилами вывода средств</label>
+        </div>
+        <div class="balance-withdraw-modal__buttons"> <a class="teacher-blue-btn" href="#">Вывести средства</a><a class="teacher-grey-btn" href="#">Отменить вывод</a></div>
+      </form>
+    </div>
+  </div>
+</main>
+<!--#include file="inc/inc-footer.html"-->

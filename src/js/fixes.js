@@ -3,7 +3,8 @@ const FARBA = {
 	lazyLibraryLoad(scriptSrc,linkHref,callback) {
 		let script = document.createElement('script');
 		script.src = scriptSrc;
-		document.querySelector('body > script').after(script);
+		let scripts =document.querySelectorAll('script')
+		scripts[scripts.length - 1].after(script);
 
 		if (linkHref !== '') {
 			let style = document.createElement('link');
@@ -20,7 +21,34 @@ const FARBA = {
 	}
 }
 
+
+
 $(document).ready(function(){
+	$.fn.Tabs = function() {
+	var selector = this;
+
+	this.each(function() {
+		var obj = $(this); 
+		$(obj.attr('href')).hide();
+		$(obj).click(function() {
+			$(selector).removeClass('selected');
+			
+			$(selector).each(function(i, element) {
+				$($(element).attr('href')).hide();
+			});
+			
+			$(this).addClass('selected');
+			$($(this).attr('href')).fadeIn();
+			return false;
+		});
+	});
+
+	$(this).show();
+	$(this).first().click();
+	if(location.hash!='' && $('a[href="' + location.hash + '"]').length) {
+		$('a[href="' + location.hash + '"]').click();	
+	}
+};
 
 	//лениво тянем магнифик и инитим его
 	if ($('.ui-styler').length) {

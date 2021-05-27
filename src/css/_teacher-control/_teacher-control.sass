@@ -38,18 +38,20 @@
             margin-top: 20px
         &__body
             margin-bottom: 20px
-            margin-top: 36px
+            // margin-top: 36px
             box-shadow: 0px 22px 145px rgba(157, 160, 184, 0.1), 0px 2.75474px 18.1562px rgba(151, 156, 193, 0.07)
             border-radius: 20px
-            padding: 30px 40px 20px 40px
+            padding: 30px 40px 40px
             &-row
                 display: flex
                 justify-content: space-between 
+                line-height: 1.42
                 &-main
                     &--active
                         span
                             font-weight: 600 !important
-                    padding-bottom: 20px
+                    padding-bottom: 15px
+                    padding-top: 15px
                     border-bottom: 1px dashed #DBDBDC
                     .teacher-control-messages__body-col
                         span
@@ -60,13 +62,14 @@
                 justify-content: space-between
                 flex: 0 0 50%
                 align-items: center
+                padding-left: 0 !important
                 span
                     color: #8D8D8D
                     font-size: 16px
-                    line-height: 1.68
                     font-weight: 400
                 &-item
                     flex: 0 0 50%
+                    padding-left: 0 !important
     &-my-courses
         .card__courses-control-block
             display: flex
@@ -950,6 +953,12 @@
     .create-test-modal__col-name
         display: none
         visibility: hidden
+    .teacher-control__content
+        display: block
+        margin-top: 0
+
+        h1, .h1
+            margin-top: 0
 
 @media (max-width: 576px)
     #modal_create_test
@@ -963,3 +972,78 @@
 
     .teacher-control__header-text
         font-size: 16px
+
+    .teacher-control__nav
+        padding-left: 20px
+
+
+.msgs-list
+    &-labels
+        color: $font_2
+    &-label
+        padding-right: 15px
+    &-date
+        flex: 0 0 160px
+    &-from
+        flex: 0 0 235px
+
+.msgs-item
+    padding: 18px 0
+    border-bottom: 1px dashed #DBDBDC
+    align-items: center
+    line-height: 1.4
+
+    &-col
+        padding-right: 15px
+    &-notreaded
+        font-weight: 600
+
+    &-date,
+    &-time
+        display: block
+
+    &-author
+        &-ava
+            flex: 0 0 40px
+            max-width: 40px
+            margin-right: 10px
+
+    a 
+        color: $font
+        &:hover
+            color: $primary
+
+
+@media (max-width: 768px)
+    .msgs-list
+        &-labels
+            display: none !important
+        &-theme
+            flex: 0 0 100%
+            max-width: 100%
+            padding-top: 3px
+            margin-top: 3px
+            border-top: 1px dashed rgba(#eee,.5)
+        &-date,
+        &-from
+            font-size: 14px
+        &-date
+            flex: 0 0 135px
+        &-from
+            flex: 0 0 auto
+    .msgs-item
+        flex-wrap: wrap
+        &-date,
+        &-time
+            display: inline
+
+        &-author-ava
+            display: none
+
+    
+
+
+@media (max-width: 576px)
+    .teacher-control-messages .c_nav
+        margin-bottom: 20px
+

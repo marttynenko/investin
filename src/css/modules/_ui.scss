@@ -272,6 +272,8 @@ textarea.ui-input {
 	height: auto;
 	padding-top: 18px;
 	padding-bottom: 18px;
+	width: 100%;
+	@include fz($fontsize);
 }
 .ui-textarea-scrolled {
 	border: 1px solid $border;
@@ -279,6 +281,7 @@ textarea.ui-input {
 	padding: 10px 10px 10px 20px;
 
 	textarea {
+		width: 100%;
 		resize: none !important;
 		padding: 0px 15px 0px 0px;
 		border-radius: 0;
@@ -287,6 +290,7 @@ textarea.ui-input {
 		box-shadow: none;
 		margin: 0 !important;
 		overflow-y: auto !important;
+		@include fz($fontsize);
 	}
 }
 

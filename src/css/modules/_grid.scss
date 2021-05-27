@@ -15,6 +15,10 @@ $col_gutter: 15px;
   @return $result;
 }
 
+.wrapper {
+	overflow-x: hidden;
+	min-width: 100%;
+}
 .flex,
 %flex {
 	display: -webkit-box;
@@ -159,22 +163,25 @@ $col_gutter: 15px;
 		margin-right: -8px;
 	}
 }
-[class*="col-"] {
-	width: 100%;
-	padding-left: $col_gutter;
-	padding-right: $col_gutter;
+// [class*="col-"] {
+// 	width: 100%;
+// 	padding-left: $col_gutter;
+// 	padding-right: $col_gutter;
 
-	@media (max-width: 480px) {
-		padding-left: 8px;
-		padding-right: 8px;
-	}
-}
+// 	@media (max-width: 480px) {
+// 		padding-left: 8px;
+// 		padding-right: 8px;
+// 	}
+// }
 
 @for $i from 1 through 12 {
   .col-#{$i} {
     -ms-flex: (100% / 12 * $i);
     flex: (100% / 12 * $i);
     max-width: (100% / 12 * $i);
+    width: 100%;
+	padding-left: $col_gutter;
+	padding-right: $col_gutter;
   }
 }
 
@@ -186,6 +193,9 @@ $reverseBreakpoints: reverse($breakpoints);
         -ms-flex: (100% / 12 * $i);
         flex: (100% / 12 * $i);
         max-width: (100% / 12 * $i);
+        width: 100%;
+		padding-left: $col_gutter;
+		padding-right: $col_gutter;
       }
     }
     @if ($screen != 400) {

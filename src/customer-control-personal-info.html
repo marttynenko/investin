@@ -1,0 +1,141 @@
+<!--#include file="inc/inc-header.html"-->
+<main>
+  <section> 
+    <div class="container"> 
+      <div class="teacher-control"> 
+        <div class="teacher-control__nav">
+          <div class="teacher-control__header"> 
+            <div class="teacher-control__header-img"> <img src="img/teacher-control/teacher-avatar.png" alt=""/></div>
+            <h2 class="teacher-control__header-name">Приходько<br/>Владимир</h2>
+          </div>
+          <nav class="teacher-control__nav-block"> 
+            <ul class="teacher-control__nav-list">
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link teacher-control__nav-list-item-link--active" href="#">Личные данные</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Мои курсы</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Избранное</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Баланс</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Сообщения</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Справка и поддержка</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Безопасность</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Выйти</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="teacher-control__content">
+          <h2 class="teacher-control__personal-title">Личные данные</h2>
+          <form class="teacher-control__personal-form" action="">
+
+            <div class="row">
+              <div class="col-sm-6 col-12">
+                <div class="ui-field-group">
+                  <div class="personal-info-title">ФИО</div>
+                  <div class="ui-field">
+                    <input type="text" class="ui-input" placeholder="Ваша фамилия" name="authorFamilyName">
+                  </div>
+
+                  <div class="ui-field">
+                    <input type="text" class="ui-input" placeholder="Ваше имя" name="authorName">
+                  </div>
+
+                  <div class="ui-field">
+                    <input type="text" class="ui-input" placeholder="Ваше отчество" name="authorSecondName">
+                  </div>
+                </div>
+                
+
+                <div class="ui-field-group">
+                  <div class="personal-info-title">Дата рождения</div>
+                  <div class="ui-field"> 
+                    <div class="row">
+                      <div class="col-3">
+                        <input type="text" placeholder="00" class="ui-input" name="authorBirth"/>
+                      </div>
+                      <div class="col-6">
+                        <select name="authorMonth" class="ui-styler">
+                          <option value="Сентябрь" disabled="disabled" selected="selected">Сентябрь  </option>
+                          <option value="Январь">Январь</option>
+                          <option value="Февраль">Февраль</option>
+                          <option value="Март">Март</option>
+                          <option value="Апрель ">Апрель </option>
+                          <option value="Май ">Май </option>
+                          <option value="Июнь ">Июнь </option>
+                          <option value="Июль ">Июль </option>
+                          <option value="Август ">Август </option>
+                          <option value="Сентябрь ">Сентябрь </option>
+                          <option value="Октябрь ">Октябрь </option>
+                          <option value="Ноябрь ">Ноябрь </option>
+                          <option value="Декабрь ">Декабрь </option>
+                        </select>
+                      </div>
+                      <div class="col-3">
+                        <input type="text" placeholder="0000" name="authorBirthYear" class="ui-input"/>
+                      </div>
+                    </div><!--.row-->
+                  </div>
+                </div>
+
+                <div class="ui-field-group">
+                  <div class="personal-info-title">Из города</div>
+                  <div class="ui-field"> 
+                    <input class="ui-input" name="authorCity" type="text" placeholder="Город"/>
+                  </div>
+                </div>
+
+                <div class="ui-field-group">
+                  <div class="personal-info-title">Аватарка пользователя</div>
+                  <div class="ui-field">
+                    <input type="file" name="teacheAvatar" id="teacheAvatar" accept=".jpg,.jpeg,.png">
+                  </div>
+                </div>
+
+                <div class="ui-field-group">
+                  <div class="ui-field">
+                    <div class="ui-checkbox">
+                      <input type="checkbox" name="teacherPromo" id="teacherPromo" class="ui-checkbox-input" checked>
+                      <label for="teacherPromo" class="ui-checkbox-label">Я согласен участвовать в промо-акциях ресурса</label>
+                    </div>
+                  </div>
+                </div>
+                
+
+              </div><!--.col-sm-6-->
+
+              <div class="col-sm-6 col-12">
+                <div class="ui-field-group">
+                  <div class="personal-info-title">Социальные сети</div>
+
+                  <div class="ui-field"> 
+                    <div class="personal-info-input-iconed">
+                      <div class="personal-info-input-iconed-icon"><img src="img/icons/vk.svg" alt=""/></div>
+                      <input class="ui-input" name="authorVk" type="text" placeholder="vk.com/"/>
+                    </div>
+                    
+                  </div>
+                  <div class="ui-field">
+                    <div class="personal-info-input-iconed">
+                      <div class="personal-info-input-iconed-icon"><img src="img/icons/facebook.svg" alt=""/></div>
+                      <input class="ui-input" name="authorFacebook" type="text" placeholder="facebook.com/"/>
+                    </div>
+                  </div>
+
+                  <div class="ui-field">
+                    <div class="personal-info-input-iconed">
+                      <div class="personal-info-input-iconed-icon"><img src="img/icons/linkedin.svg" alt=""/></div>
+                      <input class="ui-input" name="authorLinkedin" type="text" placeholder="linkedin.com/"/>
+                    </div>
+                  </div>
+                </div><!--.group-->
+                
+              </div><!--.col-sm-6-->
+
+            </div><!--.row-->
+
+            <button class="ui-btn" type="submit">Сохранить</button>
+        
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!--#include file="inc/inc-footer.html"-->

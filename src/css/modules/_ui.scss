@@ -203,6 +203,11 @@ textarea {
 .ui-field {
 	padding-bottom: 20px;
 	clear: both;
+
+	&-group {
+		padding-bottom: 15px;
+		clear: both;
+	}
 }
 .ui-label {
 	display: block;
@@ -528,6 +533,7 @@ span.invalid {
 	input,
 	.jq-selectbox,
 	select {
+		display: block;
 		width: 100%;
 	}
 }
@@ -539,15 +545,17 @@ span.invalid {
 	display: inline-block;
 	vertical-align: middle;
 	margin-left: 5px;
-	width: 14px;
-	height: 14px;
-	line-height: 14px;
+	width: 18px;
+	height: 18px;
+	line-height: 16px;
 	padding-top: 0px;
 	text-align: center;
-	background: $primary;
-	color: #FFF;
+	background: #FFF;
+	border: 1px solid $border;
+	color: $font;
 	border-radius: 50%;
 	@include fz(10);
+	cursor: pointer;
 
 	.ui-tooltip-popup {
 		position: absolute;
@@ -564,17 +572,17 @@ span.invalid {
 		border: 1px solid $border_light;
 		transform: translate3d(0,-15px,0);
 		transition: all .15s $beizer;
-		// @include transform(translateY(-15px));
-		// @include transition(all .15s $beizer);
+		border-radius: 5px;
 		@include fz(12);
 		color: $font;
 		text-align: left;
 	}
 
 	&:hover {
-		background: $primary_hover;
+		background: $secondary;
 		color: #FFF;
 		z-index: 99;
+		border-color: $secondary_hover;
 
 		.ui-tooltip-popup {
 			transform: translate3d(0,0,0);
@@ -583,7 +591,7 @@ span.invalid {
 		}
 	}
 }
-.tooltip-popup {
+.ui-tooltip-popup {
 	&:before {
 		content: "";
 		position: absolute;
@@ -595,7 +603,7 @@ span.invalid {
 		height: 0;
 		border-style: solid;
 		border-width: 10px 6px 0 6px;
-		border-color: $border_light transparent transparent transparent;
+		border-color: $border transparent transparent transparent;
 	}
 	&:after {
 		content: "";
@@ -810,8 +818,8 @@ span.invalid {
 		}
 	}
 	&__dropdown {
-		max-height: 240px;
-		overflow-y: auto;
+		// max-height: 240px;
+		// overflow-y: auto;
 		background: #FFF;
 		border: 1px solid $border;
 		border-radius: 5px;
@@ -819,11 +827,17 @@ span.invalid {
 		width: 100%;
 		min-width: 150px;
 		z-index: 99;
-		padding: 5px 0;
+		padding: 0;
 
 		&[style*="top: auto;"] {
 			margin-top: 0;
 			margin-bottom: 10px;
+			padding: 5px 0;
+		}
+
+		ul {
+			// overflow: unset !important;
+			// max-height: none !important;
 		}
 
 		li {
@@ -851,6 +865,57 @@ span.invalid {
 		}
 		.jq-selectbox__select {
 			border-color: $secondary;
+		}
+	}
+}
+
+.ui-checkbox {
+	display: inline-block;
+	position: relative;
+
+	&-input {
+		position: absolute;
+		left: 0;
+		top: 0;
+		opacity: 0;
+		width: 100%;
+		visibility: hidden;
+	}
+	&-input:checked + &-label {
+		&:after {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+
+	&-label {
+		display: inline-block;
+		position: relative;
+		padding-left: 40px;
+		cursor: pointer;
+
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 26px;
+			height: 26px;
+			background: url(../img/icons/checkbox.svg) center no-repeat;
+    		background-size: 16px 12px;
+    		opacity: 0;
+    		transform: scale(0);
+    		transition: opacity .15s, transform .15s;
+		}
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 26px;
+			height: 26px;
+			background: $secondary;
+			border-radius: 2px;
 		}
 	}
 }

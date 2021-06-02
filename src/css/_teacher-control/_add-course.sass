@@ -34,6 +34,10 @@
                 position: relative
                 padding-left: 36px
                 margin-top: 19px
+                &:hover
+                    text-decoration: none
+                    color: $secondary_hover
+
                 &::before
                     content: ""
                     font-size: 10px
@@ -141,21 +145,14 @@
                     &:last-child
                         margin-bottom: 0
                 
-            label
-                font-size: 16px
-                line-height: 1.68
-                color: #747474
-                margin-bottom: 10px
-                
-#courseDescr
-    height: 272px
-#courseEndDate
-    margin-bottom: 20px
+
 #courseSubtitles-wrap
     margin-top: 5px
     margin-bottom: 0
 #courseTests-wrap
     margin-top: 5px
+#courseDescr
+    height: 272px
 
 @media (max-width: 576px)
     .teacher-control__add-course-teachers__btn
@@ -174,3 +171,60 @@
 
     .teacher-control .materials_group_body
         padding-top: 0
+
+.authors-list
+    max-height: 400px
+    overflow-y: auto
+    margin-bottom: 30px
+    margin-right: -10px
+    padding-right: 10px
+
+.author-item
+    position: relative
+    display: block
+    display: flex
+    align-items: center
+    padding: 15px 50px 15px 15px
+    border: 1px solid $border
+    cursor: pointer
+    font-size: 18px
+
+    &-ava
+        flex: 0 0 50px
+        max-width: 50px
+        height: 50px
+        margin-right: 15px
+
+        img
+            display: block
+            border-radius: 50px
+            max-height: 50px
+    &-input
+        position: absolute
+        opacity: 0
+    &-check
+        position: absolute
+        right: 20px
+        top: 50%
+        margin-top: -13px
+        width: 26px
+        height: 26px
+        background: $secondary
+        border-radius: 2px
+
+        &:after
+            content: ""
+            position: absolute
+            left: 0
+            top: 0
+            width: 100%
+            height: 100%
+            background: url(../img/icons/checkbox.svg) center no-repeat
+            background-size: 16px 12px
+            opacity: 0
+            transform: scale(0)
+            transition: opacity .15s, transform .15s
+
+    &-input:checked + &-check:after
+        opacity: 1
+        transform: scale(1)

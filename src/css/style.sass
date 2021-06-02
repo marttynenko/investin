@@ -231,7 +231,7 @@ a, button
 a
   color: $blue
   text-decoration: none
-  &:hover, &:focus
+  &:hover
     color: $blue_hover
     text-decoration: underline
 
@@ -707,7 +707,7 @@ header
     +box-shadow(0 22px 145px rgba(131, 134, 163, 0.1))
     +border-radius(5px)
     background: #fff
-    z-index: 3
+    z-index: 999
     min-width: 700px
     padding: 15px 0
     @media (max-width: 1100px)
@@ -2159,13 +2159,13 @@ section.border
 
 
 .select2-dropdown
-  border: 0
-  margin-top: 10px
-  width: auto !important
+  // border: 0
+  // margin-top: 10px
+  // width: auto !important
   .select2-results__options
     max-height: 300px
-    border: 1px solid #DFDEE2
-    +border-radius(5px)
+    // border: 1px solid #DFDEE2
+    // +border-radius(5px)
     //min-width: 260px
     background: #fff
     &::-webkit-scrollbar
@@ -2181,17 +2181,17 @@ section.border
     li
       width: 100%
       color: #333333
-      font-size: 14px/$f+rem
-      padding: 5px 45px 5px 20px
+      // font-size: 14px/$f+rem
+      padding: 15px 20px
       position: relative
-      white-space: nowrap
+      // white-space: nowrap
       &:hover
         background: rgba(22, 142, 196, 0.05)
-        font-weight: 600
+        // font-weight: 600
         color: $blue
       &[aria-selected="true"]
         background: rgba(22, 142, 196, 0.05)
-        font-weight: 600
+        // font-weight: 600
         color: $blue
         &:before
           +b_a
@@ -2203,7 +2203,9 @@ section.border
           height: 12px
           background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M15.7657 0.234328C15.4533 -0.0781094 14.9468 -0.0781094 14.6343 0.234328L5.04983 9.81892L1.3657 6.1348C1.0533 5.82236 0.546797 5.82239 0.234328 6.1348C-0.0781094 6.4472 -0.0781094 6.9537 0.234328 7.26614L4.48414 11.5159C4.79645 11.8283 5.30333 11.8281 5.61552 11.5159L15.7657 1.3657C16.0781 1.0533 16.0781 0.546766 15.7657 0.234328Z' fill='%23168EC4'/%3e%3c/svg%3e ")
 
-
+.select2-container--default .select2-results__option--highlighted[aria-selected]
+    background: $primary
+    // font-weight: 600
 
 .select2-container--default
   &.select2-container--open

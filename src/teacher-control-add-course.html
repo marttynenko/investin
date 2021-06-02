@@ -1,202 +1,281 @@
 <!--#include file="inc/inc-header.html"-->
-    <main>
-      <section> 
-        <div class="container"> 
-          <div class="teacher-control teacher-control-add-course">
-            <div class="teacher-control__nav">
-              <div class="teacher-control__header"> 
-                <div class="teacher-control__header-img"> <img src="img/teacher-control/teacher-avatar.png" alt=""/></div>
-                <h2 class="teacher-control__header-name">Приходько<br/>Владимир</h2>
-              </div>
-              <nav class="teacher-control__nav-block"> 
-                <ul class="teacher-control__nav-list">
-                  <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link teacher-control__nav-list-item-link--active" href="#">Личные данные</a></li>
-                  <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Мои курсы</a></li>
-                  <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Избранное</a></li>
-                  <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Баланс</a></li>
-                  <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Сообщения</a></li>
-                  <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Справка и поддержка</a></li>
-                  <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Безопасность</a></li>
-                  <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Выйти</a></li>
-                </ul>
-              </nav>
-            </div>
-            <div class="teacher-control__content">
-              <h2 class="teacher-control__personal-title">Создание курса</h2>
-              <div class="teacher-control__promo-agreement">
-                <input class="teacher-control__promo-checkbox" type="checkbox" name="teacherPromo" id="signUpCheckbox" checked="checked"/>
-                <label class="teacher-control__promo-checkbox-label" for="signUpCheckbox">Я согласен участвовать в промо-акциях ресурса</label>
-              </div>
-
-              <div class="teacher-control__add-course">
-                <form class="teacher-control__form" action="#">
-                  <h3 class="teacher-control__add-course-general-title">Общая информация</h3>
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                        
-                        <div class="teacher-control__add-course-input-group"> 
-                          <label for="courseName">Название курса </label>
-                          <input type="text" id="courseName" class="ui-input"/>
-                        </div>
-                        <div class="teacher-control__add-course-input-group"> 
-                          <label for="courseCategory">Категория курса </label>
-                          <select name="courseCategory" id="courseCategory" class="ui-styler">
-                            <option value="ИТ и ПО" disabled="disabled" selected="selected">ИТ и ПО  </option>
-                            <option value="ИТ и ПО">ИТ и ПО</option>
-                            <option value="Фасоль"> Фасоль</option>
-                          </select>
-                        </div>
-                        <div class="teacher-control__add-course-input-group"> 
-                          <label for="courseCategory">Подкатегория курса </label>
-                          <select name="courseCategory" id="courseCategory" class="ui-styler">
-                            <option value="ИТ и ПО" disabled="disabled" selected="selected">Вёрстка</option>
-                            <option value="ИТ и ПО">Вёрстка</option>
-                            <option value="Фасоль"> Фасоль</option>
-                          </select>
-                        </div>
-                        <div class="teacher-control__add-course-input-group"> 
-                          <label for="courseCategory">Уровень курса </label>
-                          <select name="courseCategory" id="courseCategory" class="ui-styler">
-                            <option value="ИТ и ПО" disabled="disabled" selected="selected">Любой</option>
-                            <option value="ИТ и ПО">Любой</option>
-                            <option value="Фасоль"> Фасоль</option>
-                          </select>
-                        </div>
-                        <div class="teacher-control__add-course-input-group"> 
-                          <label for="courseCategory">Язык курса </label>
-                          <select name="courseCategory" id="courseCategory" class="ui-styler">
-                            <option value="ИТ и ПО" disabled="disabled" selected="selected">Русский  </option>
-                            <option value="ИТ и ПО">Русский</option>
-                            <option value="Фасоль"> Фасоль</option>
-                          </select>
-                        </div>
-                        <div class="teacher-control__add-course-input-group">
-
-                          <div class="row">
-                            <div class="col-6">
-                              <label for="courseName">Цена </label>
-                              <input type="text" id="courseName" placeholder="BYN"/ class="ui-input">
-                            </div>
-                            <div class="col-6">
-                              <label for="courseName">Старая цена </label>
-                              <input type="text" id="courseName" placeholder="BYN"/ class="ui-input">
-                            </div>
-                          </div> 
-                        </div>
-
-                        <div class="teacher-control__add-course-input-group">
-                          <div class="row">
-                            <div class="col-6">
-                              <label for="courseName">Цена </label>
-                              <input type="text" id="courseName" placeholder="USD" class="ui-input"/>
-                            </div>
-                            <div class="col-6">
-                              <label for="courseName">Старая цена </label>
-                              <input type="text" id="courseName" placeholder="USD" class="ui-input"/>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="teacher-control__add-course-teachers"> <span class="teacher-control__add-course-teachers-title">Авторы курса</span>
-                          <div class="teacher-control__add-course-teachers-avatar"> 
-                            <div class="teacher-control__add-course-teachers-avatar-img"> <img src="img/teacher-control/teacher-avatar.png" alt=""/></div><span class="teacher-control__add-course-teachers-avatar__name">Приходько Владимир</span>
-                          </div>
-                          <button class="teacher-control__add-course-teachers__btn">Добавить ещё</button>
-                        </div>
-                        <div class="teacher-control__add-course-input-group"> 
-                          <label for="courseName">Чему научатся </label>
-                          <input type="text" id="courseName" placeholder="Теги" class="ui-input"/>
-                          <button class="teacher-control__add-course-teachers__btn">Добавить ещё</button>
-                        </div>
-                      
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="teacher-control__add-course-input-group teacher-control__add-course-input-group-course-descr"> 
-                          <label for="courseDescr">Краткое описание </label>
-                          <div class="ui-textarea-scrolled">
-                            <textarea name="courseDescr" id="courseDescr"></textarea>
-                          </div>
-                          
-                          <button class="teacher-control__add-course-teachers__btn">Добавить превью курса</button>
-                          <button class="teacher-control__add-course-teachers__btn">Добавить промо-видео курса</button>
-                        </div>
-                        <div class="teacher-control__add-course-input-group teacher-control__add-course-input-group-include"> 
-                          <label for="courseDuration">Курс включает </label>
-                          <div class="teacher-control__promo-agreement">
-                            <input class="teacher-control__promo-checkbox" type="checkbox" name="courseVideo" id="courseVideo" checked="checked"/>
-                            <label class="teacher-control__promo-checkbox-label" for="courseVideo">Видео-материалы</label>
-                          </div>
-                          <input type="text" id="courseDuration" placeholder="Количество часов" class="ui-input"/>
-                        </div>
-                        <div class="teacher-control__add-course-input-group teacher-control__add-course-input-group-include"> 
-                          <div class="teacher-control__promo-agreement">
-                            <input class="teacher-control__promo-checkbox" type="checkbox" name="courseDurationCheckbox" id="courseDurationCheckbox" checked="checked"/>
-                            <label class="teacher-control__promo-checkbox-label" for="courseDurationCheckbox">Доступен до</label>
-                          </div>
-                          <input type="text" id="courseEndDate" placeholder="Дата" class="ui-input"/>
-                          <div class="teacher-control__promo-agreement">
-                            <input class="teacher-control__promo-checkbox" type="checkbox" name="courseExtraMaterials" id="courseExtraMaterials" checked="checked"/>
-                            <label class="teacher-control__promo-checkbox-label" for="courseExtraMaterials">Дополнительные материалы</label>
-                          </div>
-                          <div class="teacher-control__promo-agreement" id="courseTests-wrap">
-                            <input class="teacher-control__promo-checkbox" type="checkbox" name="courseTests" id="courseTests" checked="checked"/>
-                            <label class="teacher-control__promo-checkbox-label" for="courseTests">Тесты</label>
-                          </div>
-                          <div class="teacher-control__promo-agreement" id="courseSubtitles-wrap">
-                            <input class="teacher-control__promo-checkbox" type="checkbox" name="courseSubtitles" id="courseSubtitles" checked="checked"/>
-                            <label class="teacher-control__promo-checkbox-label" for="courseSubtitles">Субтитры</label>
-                          </div>
-                        </div>
-                        <div class="teacher-control__add-course-input-group"> 
-                          <select name="courseCategory" id="courseCategory" class="ui-styler">
-                            <option value="ИТ и ПО" disabled="disabled" selected="selected">Русский  </option>
-                            <option value="ИТ и ПО">Русский</option>
-                            <option value="Фасоль"> Фасоль</option>
-                          </select>
-                        </div>
-                        <div class="teacher-control__add-course-input-group teacher-control__add-course-input-group-include"> 
-                          <div class="teacher-control__promo-agreement">
-                            <input class="teacher-control__promo-checkbox" type="checkbox" name="courseAuthorComm" id="courseAuthorComm" checked="checked"/>
-                            <label class="teacher-control__promo-checkbox-label" for="courseAuthorComm">Общение с автором</label>
-                          </div>
-                        </div>
-                        <div class="teacher-control__add-course-input-group"> 
-                          <label for="courseName">Предполагаемая длительность </label>
-                          <input type="text" id="courseName" placeholder="Количество недель" class="ui-input"/>
-                        </div>
-                      
-                    </div>
-                  </div><!--.row-->
-
-                  
-                 
-                  <div class="teacher-control__add-course-general-fluid">
-                    <h3 class="teacher-control__add-course-general-title">Общая информация</h3>
-                    <div class="teacher-control__add-course-input-group teacher-control__add-course-input-group-course-descr teacher-control__add-course-input-group-course-descr--fluid"> 
-                      <label for="courseConditions">Требования </label>
-                      <div class="ui-textarea-scrolled">
-                        <textarea name="courseConditions" id="courseConditions" rows="5"> </textarea>
-                      </div>
-                      
-                    </div>
-                    <div class="teacher-control__add-course-input-group teacher-control__add-course-input-group-course-descr teacher-control__add-course-input-group-course-descr--fluid"> 
-                      <label for="courseDescrFull">Описание </label>
-                      <div class="ui-textarea-scrolled"><textarea name="courseDescrFull" id="courseDescrFull" rows="5"> </textarea></div>
-                    </div>
-                  </div>
-                  <div class="teacher-control__add-course-general-fluid-btn-block"> 
-                    <button class="ui-btn ui-btn-gray teacher-control__btn-cancel">Отменить</button>
-                    <div class="teacher-control__add-course-general-fluid-btn-block-wrap">
-                      <button class="teacher-control__btn-save ui-btn" type="submit">Сохранить</button><a class="ui-btn popup-with-form" href="#add-course-next">Далее</a>
-                    </div>
-                  </div>
-                </form>
-              </div><!--.add-course-->
-              
-            </div>
+<main>
+  <section> 
+    <div class="container"> 
+      <div class="teacher-control teacher-control-add-course">
+        <div class="teacher-control__nav">
+          <div class="teacher-control__header"> 
+            <div class="teacher-control__header-img"> <img src="img/teacher-control/teacher-avatar.png" alt=""/></div>
+            <h2 class="teacher-control__header-name">Приходько<br/>Владимир</h2>
           </div>
+          <nav class="teacher-control__nav-block"> 
+            <ul class="teacher-control__nav-list">
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link teacher-control__nav-list-item-link--active" href="#">Личные данные</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Мои курсы</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Избранное</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Баланс</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Сообщения</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Справка и поддержка</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Безопасность</a></li>
+              <li class="teacher-control__nav-list-item"><a class="teacher-control__nav-list-item-link" href="#">Выйти</a></li>
+            </ul>
+          </nav>
         </div>
-      </section>
-    </main>
-    
+        <div class="teacher-control__content">
+          <h2 class="teacher-control__personal-title">Создание курса</h2>
+
+          <div class="ui-checkbox">
+            <input type="checkbox" checked class="ui-checkbox-input" id="signUpCheckbox">
+            <label for="signUpCheckbox" class="ui-checkbox-label">Я согласен участвовать в промо-акциях ресурса</label>
+          </div>
+
+
+          <div class="teacher-control__add-course">
+            <form class="teacher-control__form" action="#">
+              <h3 class="teacher-control__add-course-general-title">Общая информация</h3>
+
+              <div class="row">
+                <div class="col-sm-6">
+                    
+                    <div class="ui-field"> 
+                      <label class="ui-label" for="courseName">Название курса </label>
+                      <input type="text" id="courseName" class="ui-input"/>
+                    </div>
+                    <div class="ui-field"> 
+                      <label class="ui-label" for="courseCategory">Категория курса </label>
+                      <select name="courseCategory" id="courseCategory" class="ui-styler">
+                        <option value="ИТ и ПО" disabled="disabled" selected="selected">ИТ и ПО  </option>
+                        <option value="ИТ и ПО">ИТ и ПО</option>
+                        <option value="Фасоль"> Фасоль</option>
+                      </select>
+                    </div>
+                    <div class="ui-field"> 
+                      <label class="ui-label" for="courseCategory">Подкатегория курса </label>
+                      <select name="courseCategory" id="courseCategory" class="ui-styler">
+                        <option value="ИТ и ПО" disabled="disabled" selected="selected">Вёрстка</option>
+                        <option value="ИТ и ПО">Вёрстка</option>
+                        <option value="Фасоль"> Фасоль</option>
+                      </select>
+                    </div>
+                    <div class="ui-field"> 
+                      <label class="ui-label" for="courseCategory">Уровень курса </label>
+                      <select name="courseCategory" id="courseCategory" class="ui-styler">
+                        <option value="ИТ и ПО" disabled="disabled" selected="selected">Любой</option>
+                        <option value="ИТ и ПО">Любой</option>
+                        <option value="Фасоль"> Фасоль</option>
+                      </select>
+                    </div>
+                    <div class="ui-field"> 
+                      <label class="ui-label" for="courseCategory">Язык курса </label>
+                      <select name="courseCategory" id="courseCategory" class="ui-styler">
+                        <option value="ИТ и ПО" disabled="disabled" selected="selected">Русский  </option>
+                        <option value="ИТ и ПО">Русский</option>
+                        <option value="Фасоль"> Фасоль</option>
+                      </select>
+                    </div>
+                    <div class="ui-field">
+
+                      <div class="row">
+                        <div class="col-6">
+                          <label class="ui-label" for="courseName">Цена </label>
+                          <input type="text" id="courseName" placeholder="BYN"/ class="ui-input">
+                        </div>
+                        <div class="col-6">
+                          <label class="ui-label" for="courseName">Старая цена </label>
+                          <input type="text" id="courseName" placeholder="BYN"/ class="ui-input">
+                        </div>
+                      </div> 
+                    </div>
+
+                    <div class="ui-field">
+                      <div class="row">
+                        <div class="col-6">
+                          <label class="ui-label" for="courseName">Цена </label>
+                          <input type="text" id="courseName" placeholder="USD" class="ui-input"/>
+                        </div>
+                        <div class="col-6">
+                          <label class="ui-label" for="courseName">Старая цена </label>
+                          <input type="text" id="courseName" placeholder="USD" class="ui-input"/>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="teacher-control__add-course-teachers"> <span class="teacher-control__add-course-teachers-title">Авторы курса</span>
+                      <div class="teacher-control__add-course-teachers-avatar"> 
+                        <div class="teacher-control__add-course-teachers-avatar-img"> <img src="img/teacher-control/teacher-avatar.png" alt=""/></div><span class="teacher-control__add-course-teachers-avatar__name">Приходько Владимир</span>
+                      </div>
+                      <a class="teacher-control__add-course-teachers__btn popup-with-form" href="#add-course-authors">Добавить ещё</a>
+                    </div>
+                    <div class="ui-field"> 
+                      <label class="ui-label" for="courseName">Чему научатся (теги)</label>
+                      <select class="ui-tags" name="tags[]" multiple="multiple">
+                        <option value="1">HTML</option>
+                        <option value="2">CSS</option>
+                        <option value="3">JavaScript</option>
+                        <option value="4">Vue.js</option>
+                        <option value="5">React.js</option>
+                        <option value="6">PHP</option>
+                        <option value="7">Python</option>
+                      </select>
+                    </div>
+                  
+                </div>
+                <div class="col-sm-6">
+                    
+
+                  <div class="ui-field">
+                    <label class="ui-label" for="courseDescr" class="ui-label">Краткое описание </label>
+                    <div class="ui-textarea-scrolled">
+                      <textarea name="courseDescr" id="courseDescr"></textarea>
+                    </div>
+                  </div>
+                  
+
+                  <div class="ui-field">
+                    <div class="ui-file">
+                      <input type="file" name="field_file_preview" id="field_file_preview" class="ui-file-input" accept=".jpg,.jpeg,.png">
+                      <label for="field_file_preview" class="ui-file-label" data-label="Добавить превью курса">Добавить превью курса</label>
+                    </div>
+                  </div>
+
+                  <div class="ui-field">
+                    <div class="ui-file">
+                      <input type="file" name="field_file_promovideo" id="field_file_promovideo" class="ui-file-input" accept=".avi,.mp4,.3gp,.mov,.mkv">
+                      <label for="field_file_promovideo" class="ui-file-label" data-label="Добавить промовидео курса">Добавить промо-видео курса</label>
+                    </div>
+                  </div>
+                      
+                    
+                  <div class="ui-field"> 
+                    <label class="ui-label" for="courseDuration">Курс включает </label>
+                    <div class="ui-checkbox">
+                      <input type="checkbox" checked="" class="ui-checkbox-input" id="courseVideo">
+                      <label for="courseVideo" class="ui-checkbox-label">Видео-материалы</label>
+                    </div>
+                    <input type="text" id="courseDuration" placeholder="Количество часов" class="ui-input"/>
+                  </div>
+                    
+                  <div class="ui-field">
+                    <div class="ui-checkbox">
+                      <input type="checkbox" checked="" class="ui-checkbox-input" id="courseDurationCheckbox">
+                      <label for="courseDurationCheckbox" class="ui-checkbox-label">Доступен до</label>
+                    </div>
+                    <input type="text" id="courseEndDate" placeholder="Дата" class="ui-input"/>
+                  </div>
+
+                  <div class="ui-checkbox">
+                    <input type="checkbox" checked="" class="ui-checkbox-input" id="courseExtraMaterials">
+                    <label for="courseExtraMaterials" class="ui-checkbox-label">Дополнительные материалы</label>
+                  </div>
+
+                  <div class="ui-checkbox">
+                    <input type="checkbox" checked="" class="ui-checkbox-input" id="courseTests">
+                    <label for="courseTests" class="ui-checkbox-label">Тесты</label>
+                  </div>
+
+                  <div class="ui-checkbox">
+                    <input type="checkbox" checked="" class="ui-checkbox-input" id="courseSubtitles">
+                    <label for="courseSubtitles" class="ui-checkbox-label">Субтитры</label>
+                  </div>
+                  
+                  <div class="ui-field"> 
+                    <select name="courseCategory" id="courseCategory" class="ui-styler">
+                      <option value="ИТ и ПО" disabled="disabled" selected="selected">Русский  </option>
+                      <option value="ИТ и ПО">Русский</option>
+                      <option value="Фасоль"> Фасоль</option>
+                    </select>
+                  </div>
+
+                  <div class="ui-checkbox">
+                    <input type="checkbox" checked="" class="ui-checkbox-input" id="courseAuthorComm">
+                    <label for="courseAuthorComm" class="ui-checkbox-label">Общение с автором</label>
+                  </div>
+                 
+                  <div class="ui-field"> 
+                    <label class="ui-label" for="courseName">Предполагаемая длительность </label>
+                    <input type="text" id="courseName" placeholder="Количество недель" class="ui-input"/>
+                  </div>
+                  
+                </div>
+              </div><!--.row-->
+
+              
+             
+              <div class="ui-field-group">
+                <h3 class="teacher-control__add-course-general-title">Общая информация</h3>
+                <div class="ui-field"> 
+                  <label class="ui-label" for="courseConditions">Требования </label>
+                  <div class="ui-textarea-scrolled">
+                    <textarea name="courseConditions" id="courseConditions" rows="5"> </textarea>
+                  </div>
+                </div>
+                <div class="ui-field"> 
+                  <label class="ui-label" for="courseDescrFull">Описание </label>
+                  <div class="ui-textarea-scrolled"><textarea name="courseDescrFull" id="courseDescrFull" rows="5"> </textarea></div>
+                </div>
+              </div>
+
+              <div class="teacher-control__add-course-general-fluid-btn-block"> 
+                <button class="ui-btn ui-btn-gray teacher-control__btn-cancel">Отменить</button>
+                <div class="teacher-control__add-course-general-fluid-btn-block-wrap">
+                  <button class="teacher-control__btn-save ui-btn" type="submit">Сохранить</button><a class="ui-btn popup-with-form" href="#add-course-next">Далее</a>
+                </div>
+              </div>
+            </form>
+          </div><!--.add-course-->
+          
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<div class="ui-modal modal_window" id="add-course-authors">
+  <div class="h2 ui-modal-title">Добавить автора</div>
+
+  <form action="">
+    <div class="authors-list">
+      <label class="author-item" for="author_item_1">
+        <div class="author-item-ava"><img src="img/teacher-control/teacher-avatar.png" alt=""></div>
+        <div class="author-item-name">Полищук Сергей</div>
+        <input type="checkbox" name="author_item_1" id="author_item_1" class="author-item-input">
+        <div class="author-item-check"></div>
+      </label>
+      <label class="author-item" for="author_item_4">
+        <div class="author-item-ava"><img src="https://via.placeholder.com/50x50" alt=""></div>
+        <div class="author-item-name">Теодорас Андедотокококумпо</div>
+        <input type="checkbox" name="author_item_4" id="author_item_4" class="author-item-input">
+        <div class="author-item-check"></div>
+      </label>
+      <label class="author-item" for="author_item_2">
+        <div class="author-item-ava"><img src="img/teacher-control/teacher-avatar.png" alt=""></div>
+        <div class="author-item-name">Прокопенко Дмитрий</div>
+        <input type="checkbox" name="author_item_2" id="author_item_2" class="author-item-input">
+        <div class="author-item-check"></div>
+      </label>
+      <label class="author-item" for="author_item_3">
+        <div class="author-item-ava"><img src="img/teacher-control/teacher-avatar.png" alt=""></div>
+        <div class="author-item-name">Варламов Александр</div>
+        <input type="checkbox" name="author_item_3" id="author_item_3" class="author-item-input">
+        <div class="author-item-check"></div>
+      </label>
+      <label class="author-item" for="author_item_5">
+        <div class="author-item-ava"><img src="https://via.placeholder.com/50x50" alt=""></div>
+        <div class="author-item-name">Жан Лука Базилика</div>
+        <input type="checkbox" name="author_item_5" id="author_item_5" class="author-item-input">
+        <div class="author-item-check"></div>
+      </label>
+      <label class="author-item" for="author_item_6">
+        <div class="author-item-ava"><img src="https://via.placeholder.com/50x50" alt=""></div>
+        <div class="author-item-name">Кристина Маковий</div>
+        <input type="checkbox" name="author_item_6" id="author_item_6" class="author-item-input">
+        <div class="author-item-check"></div>
+      </label>
+    </div>
+
+    <div class="ui-centered">
+      <button class="ui-btn">Добавть выбранных</button>
+    </div>
+  </form>
+</div>
 <!--#include file="inc/inc-footer.html"-->

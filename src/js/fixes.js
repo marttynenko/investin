@@ -15,40 +15,43 @@ const FARBA = {
 
 		script.onload = callback
 	},
+
 	//закрытие магнифика
 	customMagnificClose() {
 		$.magnificPopup.close()
+	},
+
+	tabs(selector) {
+		// var selector = this;
+
+		this.each(function() {
+			var obj = $(this); 
+			$(obj.attr('href')).hide();
+			$(obj).click(function() {
+				$(selector).removeClass('selected');
+				
+				$(selector).each(function(i, element) {
+					$($(element).attr('href')).hide();
+				});
+				
+				$(this).addClass('selected');
+				$($(this).attr('href')).fadeIn();
+				return false;
+			});
+		});
+
+		$(this).show();
+		$(this).first().click();
+		if(location.hash!='' && $('a[href="' + location.hash + '"]').length) {
+			$('a[href="' + location.hash + '"]').click();	
+		}
 	}
 }
 
 
 
 $(document).ready(function(){
-	$.fn.Tabs = function() {
-	var selector = this;
 
-	this.each(function() {
-		var obj = $(this); 
-		$(obj.attr('href')).hide();
-		$(obj).click(function() {
-			$(selector).removeClass('selected');
-			
-			$(selector).each(function(i, element) {
-				$($(element).attr('href')).hide();
-			});
-			
-			$(this).addClass('selected');
-			$($(this).attr('href')).fadeIn();
-			return false;
-		});
-	});
-
-	$(this).show();
-	$(this).first().click();
-	if(location.hash!='' && $('a[href="' + location.hash + '"]').length) {
-		$('a[href="' + location.hash + '"]').click();	
-	}
-};
 
 	//лениво тянем магнифик и инитим его
 	if ($('.ui-styler').length) {
@@ -67,6 +70,18 @@ $(document).ready(function(){
 		FARBA.customMagnificClose()
 	})
 
-	
+
+	$(document).on('change','.ui-file-input',function(e) {
+		const target = $(e.target)
+		const label = target.next('label')
+		if (e.target.files && e.target.files[0]) {
+			label.html(`<span class="ui-file-hint">Файл:</span> ${e.target.files[0].name}; <span class="ui-file-hint">Размер:</span> ${(e.target.files[0].size / 1024 / 1024).toFixed(2)}Mb`)
+		} else {
+			label.html(label.attr('data-label'))
+		}
+	})
+
+	$('select.ui-tags').select2();
+	$('select.ui-tags + .select2-container').addClass('ui-select2-tags')
 
 });

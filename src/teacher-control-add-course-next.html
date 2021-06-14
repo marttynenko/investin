@@ -21,147 +21,371 @@
           </ul>
         </nav>
       </div>
-      <div class="teacher-control__content">  
-        <h2 class="teacher-control__personal-title">Английский для начинающих</h2>
-        <p class="teacher-control__header-text">Создавайте темы, занятия, вопросы и ответы на них. Не забывайте про ограничения: размер загружаемых картинок не может быть более 5 Мб, размер загружаемого видео не может быть более 50 Мб. В случае необходимости используйте электронные хранилища данных (Google drive...). Для выбора правильных вариантов ответа, поставьте галочку напротив них</p><a class="ui-btn popup-with-form teacher-control__add-topic" href="#add-topic-modal">Создать тему </a>
-        <div class="materials">
-          <div class="materials_group act">
-            <div class="materials_group_header">
-              <div class="d_flex">
-                <div class="materials_group_title"><span>Введение</span></div>
+      <div class="teacher-control__content">
+        <div id="create_course">
+          <h2 class="teacher-control__personal-title">Английский для начинающих</h2>
+          <p class="teacher-control__header-text">Создавайте темы, занятия, вопросы и ответы на них. Не забывайте про ограничения: размер загружаемых картинок не может быть более 5 Мб, размер загружаемого видео не может быть более 50 Мб. В случае необходимости используйте электронные хранилища данных (Google drive...). Для выбора правильных вариантов ответа, поставьте галочку напротив них</p>
+
+          <a href="javascript:void(0)" class="ui-btn teacher-control__add-topic" @click.prevent="openPopup('addTheme')">Создать тему</a>
+
+          <div class="materials">
+            <div class="materials_group act"
+              v-for="(theme, index) in themes"
+              v-key="index"
+            >
+              <div class="materials_group_header">
+                <div class="d_flex">
+                  <div class="materials_group_title"><span>{{theme.title}}</span></div>
+                </div>
+                <div class="count"> 
+                  <button @click.prevent="openPopup('editTheme',index)" class="teacher-control__add-course-teachers__btn">Редактировать</button>
+                </div>
               </div>
-              <div class="count"> 
-                <button class="teacher-control__add-course-teachers__btn">Редактировать</button>
+
+              <div class="materials_group_body materials_group_create">
+                <ul class="materials_list"
+                  v-if="theme.lessons.length"
+                >
+                  <li
+                    v-for="(lesson, idx) in theme.lessons"
+                    v-key="idx"
+                  >
+                    <div class="d_flex">
+                      <div class="material_name">
+                        <i class="material_name_icon" :class="[lesson.type]"></i>
+                        <span>{{lesson.title}}</span>
+                      </div>
+                    </div>
+                    <div class="time">{{lesson.time}}<img class="lesson-edit" src="img/icons/Edit.svg" alt=""/  @click.prevent="openPopup('editLesson',index,idx)"></div>
+                  </li>
+                </ul>
+
+                <ul class="materials_list" v-if="theme.test">
+                  <li>
+                    <div class="d_flex">
+                      <div class="material_name">
+                        <i class="material_name_icon test"></i>
+                        <span>{{theme.test.testTitle}}</span>
+                      </div>
+                    </div>
+
+                    <div class="time">{{theme.test.questions.length}} вопроса<img class="lesson-edit" src="img/icons/Edit.svg" alt=""  @click.prevent="editTest(index)"/></div>
+                  </li>
+                </ul>
+
+                <div class="materials_actions">
+                  <button class="teacher-control__add-course-teachers__btn" @click.prevent="openPopup('addLesson',index)">Создать занятие</button>
+                  
+                  <button class="teacher-control__add-course-teachers__btn " v-if="!theme.test" @click.prevent="addTest(index, theme.title)">Создать тестирование</button>
+                </div>
               </div>
-            </div>
-            <div class="materials_group_body">
-              <ul class="materials_list">
-                <li>
-                  <div class="d_flex">
-                    <div class="material_name">
-                      <picture><img src="img/icons/Document.svg"/>
-                      </picture><span>Present Simple Настоящее Простое</span>
-                    </div>
-                  </div>
-                  <div class="time">02:35<img src="img/icons/Edit.svg" alt=""/></div>
-                </li>
-                <li>
-                  <div class="d_flex">
-                    <div class="material_name">
-                      <picture><img src="img/icons/approval.svg"/>
-                      </picture><span>Present Simple вопросы и отрицания</span>
-                    </div>
-                  </div>
-                  <div class="time">02:35<img src="img/icons/Edit.svg" alt=""/></div>
-                </li>
-                <li>
-                  <div class="d_flex">
-                    <div class="material_name">
-                      <picture><img src="img/icons/play-button.svg"/>
-                      </picture><span>This That These Those указательные местоимения</span>
-                    </div>
-                  </div>
-                  <div class="time">02:35<img src="img/icons/Edit.svg" alt=""/></div>
-                </li>
-                <li>
-                  <div class="d_flex">
-                    <div class="material_name">
-                      <picture><img src="img/icons/approval.svg"/>
-                      </picture><span>Еще немного о Present Simple</span>
-                    </div>
-                  </div>
-                  <div class="time">02:35<img src="img/icons/Edit.svg" alt=""/></div>
-                </li>
-                <li>
-                  <div class="d_flex">
-                    <div class="material_name">
-                      <picture><img src="img/icons/Document.svg"/>
-                      </picture><span>Предлоги и Союзы</span>
-                    </div>
-                  </div>
-                  <div class="time">02:35<img src="img/icons/Edit.svg" alt=""/></div>
-                </li>
-              </ul>
-              <ul class="materials_list">
-                <li> 
-                  <div class="d_flex">
-                    <div class="material_name">
-                      <button class="teacher-control__add-course-teachers__btn popup-with-form" href="#teacher-control-create-lesson">Создать занятие</button>
-                    </div>
-                  </div>
-                  <div class="time"> 
-                    <button class="teacher-control__add-course-teachers__btn popup-with-test" href="#teacher-control-create-test">Создать тестирование</button>
-                  </div>
-                </li>
-              </ul>
-            </div>
+
+            </div><!--.group-->
+
           </div>
-          <div class="materials_group">
-            <div class="materials_group_header">
-              <div class="d_flex">
-                <div class="materials_group_title"><span>Произношение</span></div>
-              </div>
-            </div>
-            <div class="materials_group_body">
-              <ul class="materials_list">
-                <li>
-                  <div class="d_flex">
-                    <div class="material_name">
-                      <button class="teacher-control__add-course-teachers__btn popup-with-form" href="#teacher-control-create-lesson">Создать занятие</button>
-                    </div>
-                  </div>
-                  <div class="time"> 
-                    <button class="teacher-control__add-course-teachers__btn popup-with-test" href="#teacher-control-create-test">Создать тестирование</button>
-                  </div>
-                </li>
-              </ul>
-            </div>
+          <div class="teacher-control__add-topic--icon"> 
+            <button class="teacher-control__add-course-teachers__btn" @click.prevent="openPopup('addTheme')">Создать тему</button>
           </div>
-        </div>
-        <div class="teacher-control__add-topic--icon"> 
-          <button class="teacher-control__add-course-teachers__btn popup-with-form" href="#add-topic-modal">Создать тему</button>
-        </div>
-        <div class="teacher-control__material-control-group">
-          <button class="teacher-control__return-btn ui-btn ui-btn-gray">Назад</button><a class="ui-btn" href="#">Создать курс</a>
-        </div>
+          <div class="teacher-control__material-control-group">
+            <button class="teacher-control__return-btn ui-btn ui-btn-gray">Назад</button>
+            <a class="ui-btn" href="javascript:void(0)" @click.prevent="saveCourse">Создать курс</a>
+          </div>
+
+
+          <div class="create-course-popups">
+            <div class="mfp-bg" v-if="isPopup" @click.prevent="closeCoursePopups"></div>
+            <div class="mfp-wrap" v-if="isPopup">
+              <div class="mfp-container mfp-inline-holder">
+                <div class="mfp-content">
+
+                  <!-- создание/редактирование тем -->
+                  <div class="modal_window add-topic-modal" v-if="addThemePopup || editThemePopup">
+                    <button type="button" class="mfp-close" @click.prevent="closeCoursePopups"></button>
+                    <h1>{{addThemePopup ? 'Создание темы' : 'Редактирование темы'}}</h1>
+                    <form action="#">
+                      <div class="ui-field"> 
+                        <input type="text" placeholder="Название темы" name="teacherControlAddTopic" class="ui-input ui-input-block" v-model="tempTheme.title"/>
+                      </div>
+                      <button v-if="addThemePopup" class="ui-btn ui-btn-block" @click.prevent="addTheme">Создать тему</button>
+                      <button class="ui-btn ui-btn-block" @click.prevent="editTheme" v-else>Редактировать</button>
+                    </form>
+                  </div>
+
+                  <!-- создание/редактирование занятий -->
+                  <div class="modal_window teacher-control-create-lesson" v-if="addLessonPopup || editLessonPopup">
+                    <button class="mfp-close" title="Close (Esc)" @click.prevent="closeCoursePopups">×</button>
+                    <h1>{{addLessonPopup ? 'Создание занятия' : 'Редактирование занятия'}}</h1>
+                    <form action="#"> 
+                      <div class="ui-field"> 
+                        <input type="text" class="ui-input" placeholder="Название занятия" name="teacherControlAddTopic" v-model="tempLesson.title"/>
+                      </div>
+                      <div class="ui-field"> 
+                        <label class="ui-label" for="create-lesson-area">Описание занятия</label>
+                        <textarea id="create-lesson-area" class="ui-input" rows="6" name="create-lesson-area" v-model="tempLesson.description"></textarea>
+                      </div>
+                      <div class="file-input-group">
+                        <label for="create-lesson-area-file-upload">
+                          <div class="file-input-group__img" v-if="!tempLesson.files"> <img src="img/icons/folder.svg" alt=""/></div>
+                          <div class="file-vue-preview" v-else>Выбрано: {{tempLesson.files.name}}, Размер: {{((tempLesson.files.size)/1024/1024).toFixed(2)}} Мб</div>
+                          <p><span>Нажмите сюда</span> - чтобы выбрать файлы или <br/>перетащите их в выделенную область</p>
+                          <input type="file" id="create-lesson-area-file-upload" name="create-lesson-area-file-upload" accept=".jpg,.jpeg,.png,.doc,.docx,.mp4,.webm" @change="chooseFile" />
+                        </label>
+                      </div><span class="file-input-group-subtitle">
+                         Файлы должны быть в форматах: .jpg, .jpeg,.png, .doc,.docx, .mp4, .webm</span>
+
+                      <button class="ui-btn ui-btn-block" @click.prevent="addLesson" v-if="addLessonPopup">Создать занятие</button>
+                      <button class="ui-btn ui-btn-block" @click.prevent="editLesson" v-else>Редактировать</button>
+                    </form>
+                  </div>
+
+
+                </div>
+              </div>
+            </div><!--.mfp-wrap-->
+          </div>
+
+        </div><!-- #create_course -->
       </div>
     </div>
   </div>
 </section>
 
 
-<div class="modal_window" id="add-topic-modal"><button title="Close (Esc)" type="button" class="mfp-close">×</button>
-  <h1>Создание темы</h1>
-  <form action="#">
-    <div class="input-group"> 
-      <input type="text" placeholder="Название темы" name="teacherControlAddTopic" class="ui-input ui-input-block"/>
-    </div>
-    <button class="ui-btn ui-btn-block">Создать тему</button>
-  </form>
-</div>
+<script>
+  function initVueCourse(id) {
+    return new Vue({
+      el: id,
+      data: {
+        coursName: 'Английский для начинающих',
 
-<div class="modal_window" id="teacher-control-create-lesson">
-  <button class="mfp-close" title="Close (Esc)" type="button">×</button>
-  <h1>Создание занятия</h1>
-  <form action="#"> 
-    <div class="input-group"> 
-      <input type="text" placeholder="Название занятия" name="teacherControlAddTopic"/>
-    </div>
-    <div class="input-group"> 
-      <label for="create-lesson-area">Описание занятия</label>
-      <textarea id="create-lesson-area" name="create-lesson-area"></textarea>
-    </div>
-    <div class="file-input-group">
-      <label for="create-lesson-area-file-upload">
-        <div class="file-input-group__img"> <img src="img/icons/folder.svg" alt=""/></div>
-        <p><span>Нажмите сюда</span> - чтобы выбрать файлы или <br/>перетащите их в выделенную область</p>
-        <input type="file" id="create-lesson-area-file-upload" name="create-lesson-area-file-upload" accept=".jpg,.doc,.mp4" />
-      </label>
-    </div><span class="file-input-group-subtitle">
-       Файлы должны быть в форматах: .doc, .jpg, .mp4 </span>
-    <button class="btn btn_blue">Создать занятие</button>
-  </form>
-</div>
+        addThemePopup: false,
+        editThemePopup: false,
+        addLessonPopup: false,
+        editLessonPopup: false,
+
+        //массив тем с занятиями и тестами, это поле отправляем на бэк при сохранении
+        themes: [
+          {title: 'Введение', lessons: []}
+        ],
+
+        //временное поле для создания/обновления тем
+        tempTheme: {
+          title: '',
+          index: ''
+        },
+
+        //временное поле для создания/обновления занятий
+        tempLesson: {
+          title: '',
+          description: '',
+          files: '',
+          type: '',
+          index: ''
+        }
+      },
+      computed: {
+        //чекаем есть ли открытый попап
+        isPopup() {
+          return this.addThemePopup || this.editThemePopup || this.addLessonPopup || this.editLessonPopup
+        }
+      },
+      methods: {
+        //создаем тему
+        addTheme() {
+          if (this.tempTheme.title.trim().length) {
+            this.themes.push({title: this.tempTheme.title.trim(), lessons: []})
+
+            //если нужно сразу сохранить введенное значение
+            //fetch('url', {
+            //   method: 'POST',
+            //   headers: {
+            //     'Content-Type': 'application/json;charset=utf-8'
+            //   },
+            //   body: this.tempTheme.title.trim()
+            // )
+            
+            
+            //закрываем попапы, очищаем временные данные
+            this.closeCoursePopups()
+            this.clearTempData()
+          }
+        },
+
+        //редактируем тему
+        editTheme() {
+          //меняем данные
+          this.themes[this.tempTheme.index].title = this.tempTheme.title
+
+          //закрываем попапы, очищаем временные данные
+          this.closeCoursePopups()
+          this.clearTempData()
+        },
+
+        //создаем занятие
+        addLesson() {
+          //добавляем данные
+          const lesson = {}
+          lesson.title = this.tempLesson.title
+          lesson.description = this.tempLesson.description
+          lesson.files = this.tempLesson.files
+          lesson.type = this.tempLesson.type
+          
+          this.themes[this.tempLesson.index].lessons.push(lesson)
+
+          //если нужно сразу сохранить введенное значение
+          //fetch('url', {
+          //   method: 'POST',
+          //   headers: {
+          //     'Content-Type': 'application/json;charset=utf-8'
+          //   },
+          //   body: данные
+          // )
+
+          //закрываем попапы, очищаем временные данные
+          this.closeCoursePopups()
+          this.clearTempData()
+        },
+
+        //редактируем занятие
+        editLesson() {
+          const lesson = {}
+          lesson.title = this.tempLesson.title
+          lesson.description = this.tempLesson.description
+          lesson.files = this.tempLesson.files
+          lesson.type = this.tempLesson.type
+
+          //изменяем данные
+          this.themes[this.tempTheme.index].lessons.splice(this.tempLesson.index, 1, lesson)
+
+          //закрываем попапы, очищаем временные данные
+          this.closeCoursePopups()
+          this.clearTempData()
+        },
+
+        addTest(themeIndex, themeTitle) {
+          this.tempTheme.index = themeIndex
+          
+          //програмно открываем попап
+          $.magnificPopup.open({
+            items: {
+              src: '#teacher-control-create-test'
+            },
+            type: 'inline'
+          });
+
+          //подготавливаем объект данных для передачи в дочерний компонент
+          const data = {
+            testTheme: themeTitle,
+            testCourse: this.coursName,
+            // testTitle: '',
+            // testCorrectAnswers: '',
+            // questions: [
+            //   {}
+            // ]
+          }
+
+          //чистим дочернюю форму
+          VUE_modal_test.resetForm()
+          //передаем данные в дочерний компонент
+          VUE_modal_test.parseDataFromParent(data)
+        },
+
+        editTest(themeIndex) {
+          this.tempTheme.index = themeIndex
+
+          //програмно открываем попап
+          $.magnificPopup.open({
+            items: {
+              src: '#teacher-control-create-test'
+            },
+            type: 'inline'
+          });
+
+          
+          //передаем данные в дочерний компонент
+          VUE_modal_test.parseDataFromParent(this.themes[themeIndex].test)
+        },
+
+        openPopup(popupType, themeIndex, lessonIndex) {
+          document.querySelector('html').classList.add('no-scroll')
+          switch (popupType) {
+            case 'addTheme':
+              this.addThemePopup = true
+              break
+
+            case 'editTheme':
+              this.editThemePopup = true
+              this.tempTheme.title = this.themes[themeIndex].title
+              this.tempTheme.index = themeIndex
+              break
+
+            case 'addLesson':
+              this.addLessonPopup = true
+              this.tempLesson.index = themeIndex
+              break
+
+            case 'editLesson':
+              this.editLessonPopup = true
+              this.tempTheme.index = themeIndex
+              this.tempLesson.index = lessonIndex
+
+              this.tempLesson.title = this.themes[themeIndex].lessons[lessonIndex].title
+              this.tempLesson.description = this.themes[themeIndex].lessons[lessonIndex].description
+              this.tempLesson.files = this.themes[themeIndex].lessons[lessonIndex].files
+          }
+        },
+
+        closeCoursePopups() {
+          document.querySelector('html').classList.remove('no-scroll')
+
+          this.addThemePopup = false
+          this.editThemePopup = false
+          this.addLessonPopup = false
+          this.editLessonPopup = false
+        },
+
+        clearTempData() {
+          this.tempTheme.title = ''
+          this.tempTheme.index = ''
+
+          this.tempLesson.title = ''
+          this.tempLesson.description = ''
+          this.tempLesson.files = ''
+          this.tempLesson.type = ''
+          this.tempLesson.index = ''
+        },
+
+        chooseFile(event) {
+          const files = event.target.files
+          if (files && files[0]) {
+            const type = files[0].type.split('/')[0]
+
+            this.tempLesson.type = type
+            this.tempLesson.files = files[0]
+          }
+        },
+
+        saveCourse() {
+          // const formData = new FormData()
+          console.log(this.themes)
+          //fetch('url', {
+          //   method: 'POST',
+          //   headers: {
+          //     'Content-Type': 'application/json;charset=utf-8'
+          //   },
+          //   body: this.themes
+          // )
+
+        }
+      }
+    })
+  }
+  let VUE_course;
+  document.addEventListener('DOMContentLoaded',function(){
+    VUE_course = initVueCourse('#create_course')
+  })
+</script>
+
 
 <div class="modal_window" id="teacher-control-create-test">
   <div class="container" id="modal_create_test">
@@ -169,8 +393,8 @@
       <h1>Создание теста</h1>
 
       <div class="create-test-modal__header"> 
-        <p class="create-test-modal__header-topic">Тема:  <span>Название темы</span></p>
-        <p class="create-test-modal__header-course">Курс:  <span>Название курса</span></p>
+        <p class="create-test-modal__header-topic">Тема:  <span>{{testTheme != '' ? testTheme : 'Название темы'}}</span></p>
+        <p class="create-test-modal__header-course">Курс: <span>{{testCourse != '' ? testCourse : 'Название курса'}}</span></p>
       </div>
 
       <div class="create-test-modal__content"> 
@@ -262,6 +486,8 @@
         data: {
           testTitle: '',
           testCorrectAnswers: '',
+          testTheme: '',
+          testCourse: '',
           questions: [
             {question: '', answers: ['','']},
             {question: '', answers: ['','']}
@@ -282,9 +508,11 @@
           },
           async saveTest(isClose) {
             const fetchData = {
-              title: this.testTitle,
-              correctAnswers: this.testCorrectAnswers,
-              questions: this.questions
+              testTitle: this.testTitle,
+              testCorrectAnswers: this.testCorrectAnswers,
+              questions: this.questions,
+              testTheme: this.testTheme,
+              testCourse: this.testCourse
             }
             console.log(fetchData)
             // await fetch('url', {
@@ -297,19 +525,51 @@
             if(isClose && isClose === 'yes') {
               FARBA.customMagnificClose()
             }
+
+
+            // передаем данные в родительский экземпляр
+            const currentTheme = VUE_course.tempTheme.index
+            Vue.set(VUE_course.themes[currentTheme], 'test', fetchData)
+            this.resetForm()
           },
           resetForm() {
+            this.testTitle = '',
+            this.testCorrectAnswers = '',
             this.questions = [
               {question: '', answers: ['','']},
               {question: '', answers: ['','']}
             ]
+          },
+          parseDataFromParent(data) {
+            const testTitle = data?.testTitle
+            const testCorrectAnswers = data?.testCorrectAnswers
+            const testTheme = data?.testTheme
+            const testCourse = data?.testCourse
+            const questions = data?.questions
+
+            if (testTitle !== undefined) {
+              this.testTitle = testTitle
+            }
+            if (testCorrectAnswers !== undefined) {
+              this.testCorrectAnswers = testCorrectAnswers
+            }
+            if (testTheme !== undefined) {
+              this.testTheme = testTheme
+            }
+            if (testCourse !== undefined) {
+              this.testCourse = testCourse
+            }
+            if (questions !== undefined) {
+              this.questions = questions
+            }
           }
         }
       })
     }
+    let VUE_modal_test;
 
     document.addEventListener('DOMContentLoaded',function(){
-      const VUE_modal_test = initVueTest('#modal_create_test');
+      VUE_modal_test = initVueTest('#modal_create_test');
     })
   </script>
 </div>

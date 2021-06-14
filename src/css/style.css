@@ -2407,7 +2407,7 @@ textarea.form_control { height: 120px; }
 
 .materials .materials_group .materials_group_body .materials_list li:last-child { border-bottom: 0; }
 
-.materials .materials_group .materials_group_body .materials_list li .d_flex { display: flex; display: -webkit-flex; align-items: center; -webkit-align-items: center; width: calc(100% - 120px); }
+.materials .materials_group .materials_group_body .materials_list li .d_flex { display: flex; display: -webkit-flex; align-items: center; -webkit-align-items: center; width: calc(100% - 150px); }
 
 @media (max-width: 767px) { .materials .materials_group .materials_group_body .materials_list li .d_flex { width: calc(100% - 55px); } }
 
@@ -2767,6 +2767,10 @@ button.mfp-close:active { top: 30px; }
 button.mfp-close:hover { background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='25' height='26' viewBox='0 0 25 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M14.7904 13.4303L24.5249 3.69553C25.1584 3.06232 25.1584 2.03851 24.5249 1.4053C23.8917 0.772095 22.8679 0.772095 22.2347 1.4053L12.4999 11.1401L2.76536 1.4053C2.13185 0.772095 1.10834 0.772095 0.475129 1.4053C-0.158376 2.03851 -0.158376 3.06232 0.475129 3.69553L10.2096 13.4303L0.475129 23.1651C-0.158376 23.7983 -0.158376 24.8221 0.475129 25.4554C0.790696 25.7712 1.20562 25.9299 1.62024 25.9299C2.03487 25.9299 2.4495 25.7712 2.76536 25.4554L12.4999 15.7206L22.2347 25.4554C22.5506 25.7712 22.9652 25.9299 23.3798 25.9299C23.7944 25.9299 24.2091 25.7712 24.5249 25.4554C25.1584 24.8221 25.1584 23.7983 24.5249 23.1651L14.7904 13.4303Z' fill='black' fill-opacity='0.8'/%3e%3c/svg%3e ") no-repeat; background-size: contain; }
 
 @media (max-width: 1200px) { button.mfp-close { top: 10px; right: 10px; } }
+
+.no-scroll { overflow: hidden; }
+
+.mfp-wrap { overflow: hidden scroll; }
 
 .mfp-bg { position: fixed !important; height: 100% !important; }
 
@@ -3428,47 +3432,47 @@ button.mfp-close:hover { background: url("data:image/svg+xml;charset=UTF-8,%3csv
 
 .personal-info-input-iconed-icon img { object-fit: contain; width: 3em; height: 3em; }
 
-#add-topic-modal.modal_window { max-width: 640px; }
+#add-topic-modal.modal_window, .add-topic-modal.modal_window { max-width: 640px; }
 
-#add-topic-modal.modal_window form { padding-left: 27px; padding-right: 27px; }
+#add-topic-modal.modal_window form, .add-topic-modal.modal_window form { padding-left: 27px; padding-right: 27px; }
 
-#add-topic-modal.modal_window h1 { text-align: center; font-weight: 600; line-height: 1.4; margin-bottom: 20px; margin-top: 20px; }
+#add-topic-modal.modal_window h1, .add-topic-modal.modal_window h1 { text-align: center; font-weight: 600; line-height: 1.4; margin-bottom: 20px; margin-top: 20px; }
 
-#add-topic-modal.modal_window .input-group { width: 100%; margin-bottom: 18px; }
+#add-topic-modal.modal_window .input-group, .add-topic-modal.modal_window .input-group { width: 100%; margin-bottom: 18px; }
 
-#teacher-control-create-lesson.modal_window { max-width: 900px; }
+#teacher-control-create-lesson.modal_window, .teacher-control-create-lesson.modal_window { max-width: 900px; }
 
-#teacher-control-create-lesson.modal_window form { padding-left: 27px; padding-right: 27px; }
+#teacher-control-create-lesson.modal_window form, .teacher-control-create-lesson.modal_window form { padding-left: 27px; padding-right: 27px; }
 
-#teacher-control-create-lesson.modal_window h1 { text-align: center; font-weight: 600; font-size: 40px; line-height: 1.4; margin-bottom: 20px; margin-top: 20px; }
+#teacher-control-create-lesson.modal_window h1, .teacher-control-create-lesson.modal_window h1 { text-align: center; font-weight: 600; font-size: 40px; line-height: 1.4; margin-bottom: 20px; margin-top: 20px; }
 
-#teacher-control-create-lesson.modal_window .input-group { width: 100%; margin-bottom: 18px; display: flex; flex-direction: column; }
+#teacher-control-create-lesson.modal_window .input-group, .teacher-control-create-lesson.modal_window .input-group { width: 100%; margin-bottom: 18px; display: flex; flex-direction: column; }
 
-#teacher-control-create-lesson.modal_window .input-group label { font-size: 16px; color: #747474; line-height: 1.68; margin-bottom: 10px; }
+#teacher-control-create-lesson.modal_window .input-group label, .teacher-control-create-lesson.modal_window .input-group label { font-size: 16px; color: #747474; line-height: 1.68; margin-bottom: 10px; }
 
-#teacher-control-create-lesson.modal_window .input-group textarea { height: 200px; resize: none; color: #8D8D8D; font-size: 19px; line-height: 1.66; font-weight: 40; border: 1px solid #DFDEE2; border-radius: 5px; width: 100%; padding: 16.5px 20px; }
+#teacher-control-create-lesson.modal_window .input-group textarea, .teacher-control-create-lesson.modal_window .input-group textarea { height: 200px; resize: none; color: #8D8D8D; font-size: 19px; line-height: 1.66; font-weight: 40; border: 1px solid #DFDEE2; border-radius: 5px; width: 100%; padding: 16.5px 20px; }
 
-#teacher-control-create-lesson.modal_window .input-group input { color: #8D8D8D; font-size: 19px; line-height: 1.66; font-weight: 40; border: 1px solid #DFDEE2; border-radius: 5px; width: 100%; padding: 16.5px 20px; }
+#teacher-control-create-lesson.modal_window .input-group input, .teacher-control-create-lesson.modal_window .input-group input { color: #8D8D8D; font-size: 19px; line-height: 1.66; font-weight: 40; border: 1px solid #DFDEE2; border-radius: 5px; width: 100%; padding: 16.5px 20px; }
 
-#teacher-control-create-lesson.modal_window .input-group input::placeholder { color: #8D8D8D; font-size: 19px; line-height: 1.66; font-weight: 40; }
+#teacher-control-create-lesson.modal_window .input-group input::placeholder, .teacher-control-create-lesson.modal_window .input-group input::placeholder { color: #8D8D8D; font-size: 19px; line-height: 1.66; font-weight: 40; }
 
-#teacher-control-create-lesson.modal_window .file-input-group { border: 1px dashed #DFDEE2; border-radius: 5px; background: #F6F8FC; height: 260px; margin-bottom: 10px; display: flex; justify-content: center; align-items: center; flex-direction: column; cursor: pointer; }
+#teacher-control-create-lesson.modal_window .file-input-group, .teacher-control-create-lesson.modal_window .file-input-group { border: 1px dashed #DFDEE2; border-radius: 5px; background: #F6F8FC; height: 180px; margin-bottom: 10px; display: flex; justify-content: center; align-items: center; flex-direction: column; cursor: pointer; }
 
-#teacher-control-create-lesson.modal_window .file-input-group__img { font-size: 10px; width: 5.8em; height: 5.8em; position: relative; margin-top: 40px; display: inline-block; margin-bottom: 20px; }
+#teacher-control-create-lesson.modal_window .file-input-group__img, .teacher-control-create-lesson.modal_window .file-input-group__img { font-size: 10px; width: 5.8em; height: 5.8em; position: relative; margin-top: 40px; display: inline-block; margin-bottom: 20px; }
 
-#teacher-control-create-lesson.modal_window .file-input-group__img::after { content: ''; display: block; font-size: 10px; width: 3.5em; height: 3.5em; position: absolute; bottom: 0; right: 0; background: center/cover no-repeat url("../img/icons/Folder-file.svg"); transform: translate(30%, 30%); }
+#teacher-control-create-lesson.modal_window .file-input-group__img::after, .teacher-control-create-lesson.modal_window .file-input-group__img::after { content: ''; display: block; font-size: 10px; width: 3.5em; height: 3.5em; position: absolute; bottom: 0; right: 0; background: center/cover no-repeat url("../img/icons/Folder-file.svg"); transform: translate(30%, 30%); }
 
-#teacher-control-create-lesson.modal_window .file-input-group__img img { width: 100%; height: 100%; object-fit: cover; }
+#teacher-control-create-lesson.modal_window .file-input-group__img img, .teacher-control-create-lesson.modal_window .file-input-group__img img { width: 100%; height: 100%; object-fit: cover; }
 
-#teacher-control-create-lesson.modal_window .file-input-group-subtitle { color: #333333; font-size: 13px; font-weight: 400; line-height: 1.23; margin-bottom: 20px; text-align: center; display: block; }
+#teacher-control-create-lesson.modal_window .file-input-group-subtitle, .teacher-control-create-lesson.modal_window .file-input-group-subtitle { color: #333333; font-size: 13px; font-weight: 400; line-height: 1.23; margin-bottom: 20px; text-align: center; display: block; }
 
-#teacher-control-create-lesson.modal_window .file-input-group label { font-size: 16px; line-height: 1.68; color: #7A89A6; text-align: center; width: 100%; height: 100%; cursor: pointer; display: flex; justify-content: center; align-items: center; flex-direction: column; }
+#teacher-control-create-lesson.modal_window .file-input-group label, .teacher-control-create-lesson.modal_window .file-input-group label { font-size: 16px; line-height: 1.68; color: #7A89A6; text-align: center; width: 100%; height: 100%; cursor: pointer; display: flex; justify-content: center; align-items: center; flex-direction: column; }
 
-#teacher-control-create-lesson.modal_window .file-input-group label span { font-weight: 700; }
+#teacher-control-create-lesson.modal_window .file-input-group label span, .teacher-control-create-lesson.modal_window .file-input-group label span { font-weight: 700; }
 
-#teacher-control-create-lesson.modal_window .file-input-group input { outline: 0; opacity: 0; pointer-events: none; user-select: none; }
+#teacher-control-create-lesson.modal_window .file-input-group input, .teacher-control-create-lesson.modal_window .file-input-group input { outline: 0; opacity: 0; pointer-events: none; user-select: none; }
 
-#teacher-control-create-lesson.modal_window .btn_blue { width: 100%; font-size: 20px; line-height: 1.2; font-weight: 700; }
+#teacher-control-create-lesson.modal_window .btn_blue, .teacher-control-create-lesson.modal_window .btn_blue { width: 100%; font-size: 20px; line-height: 1.2; font-weight: 700; }
 
 #teacher-control-create-test.modal_window { overflow-x: hidden; max-width: 1400px; }
 
@@ -3681,6 +3685,28 @@ button.mfp-close:hover { background: url("data:image/svg+xml;charset=UTF-8,%3csv
 .icon-manage-archive { background-image: url(../img/icons/archive.svg); }
 
 .education-cards .card_item { margin-bottom: 30px; min-height: calc(100% - 30px); }
+
+.materials_group_header .teacher-control__add-course-teachers__btn { margin-top: 0; }
+
+.material_name_icon { width: 20px; height: 20px; margin-top: 4px; margin-right: 15px; background-size: contain; background-repeat: no-repeat; background-position: center; background-image: url(../img/icons/Document.svg); }
+
+.material_name_icon.video { background-image: url(../img/icons/play-button.svg); }
+
+.material_name_icon.test { background-image: url(../img/icons/approval.svg); }
+
+.materials_actions { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #eee; padding-bottom: 20px; }
+
+.materials_actions .teacher-control__add-course-teachers__btn { margin-top: 0px; }
+
+.materials_group_create { padding-top: 10px !important; }
+
+.file-vue-preview { margin-bottom: 15px; }
+
+.file-input-group label { position: relative; }
+
+.file-input-group label input { position: absolute; opacity: 0; width: 100%; height: 100%; }
+
+.lesson-edit { position: relative; top: 2px; }
 
 .header-login__title { font-weight: 600; font-size: 40px; line-height: 1.4; margin: 0 !important; margin-bottom: 7px !important; }
 

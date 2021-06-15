@@ -389,15 +389,19 @@ span.invalid {
 		line-height: 52px - ($btn_border_width * 2);
 	}
 
-	
+	&:disabled {
+		cursor: not-allowed;
+		background-color: #cacaca;
+    	color: #827e7e;
+	}
 
-	&:hover {
+	&:not(:disabled):hover {
 		background-color: $primary_hover;
 		border-color: $primary_hover;
 		color: #FFF;
 		text-decoration: none;
 	}
-	&:active {
+	&:not(:disabled):active {
 		color: #FFF;
 		background-color: $primary_active;
 		border-color: $primary_active;

@@ -110,8 +110,8 @@ $(document).ready(function(){
     });
 
 
-    $('.materials_group_header').click(function(){
-       $(this).parent().toggleClass('act');
+    $('.materials_group_title').click(function(){
+       $(this).closest('.materials_group').toggleClass('act');
         return false;
     });
 

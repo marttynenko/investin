@@ -37,28 +37,33 @@
                 <div class="d_flex">
                   <div class="materials_group_title"><span>{{theme.title}}</span></div>
                 </div>
-                <div class="count"> 
+                <div class="count materials_group_header_actions"> 
                   <button @click.prevent="openPopup('editTheme',index)" class="teacher-control__add-course-teachers__btn">Редактировать</button>
+                  <a href="#" title="Удалить тему" @click.prevent="removeTheme(index)" class="materials_remove_theme"></a>
                 </div>
               </div>
 
               <div class="materials_group_body materials_group_create">
-                <ul class="materials_list"
+                <div class="course-lessons"
                   v-if="theme.lessons.length"
                 >
-                  <li
+                  <div
                     v-for="(lesson, idx) in theme.lessons"
                     v-key="idx"
+                    class="course-lesson"
                   >
-                    <div class="d_flex">
-                      <div class="material_name">
-                        <i class="material_name_icon" :class="[lesson.type]"></i>
-                        <span>{{lesson.title}}</span>
-                      </div>
+                    
+                    <div class="course-lesson-name">
+                      <i class="course-lesson-icon" :class="[lesson.type]"></i>
+                      <span>{{lesson.title}}</span>
                     </div>
-                    <div class="time">{{lesson.time}}<img class="lesson-edit" src="img/icons/Edit.svg" alt=""/  @click.prevent="openPopup('editLesson',index,idx)"></div>
-                  </li>
-                </ul>
+                    
+                    <div class="course-lesson-right">{{lesson.time}}
+                      <img class="course-lesson-edit" src="img/icons/Edit.svg" alt=""/  @click.prevent="openPopup('editLesson',index,idx)">
+                      <a href="#" @click.prevent="removeLesson(index,idx)" class="course-lesson-remove"></a>
+                    </div>
+                  </div>
+                </div>
 
                 <ul class="materials_list" v-if="theme.test">
                   <li>
@@ -221,6 +226,10 @@
           this.clearTempData()
         },
 
+        removeTheme(index) {
+          this.themes.splice(index, 1)
+        },
+
         //создаем занятие
         addLesson() {
           //добавляем данные
@@ -260,6 +269,11 @@
           //закрываем попапы, очищаем временные данные
           this.closeCoursePopups()
           this.clearTempData()
+        },
+
+        //удаляем занятие
+        removeLesson(themeIndex, lessonIndex) {
+          this.themes[themeIndex].lessons.splice(lessonIndex, 1)
         },
 
         addTest(themeIndex, themeTitle) {
@@ -422,13 +436,16 @@
           v-for="(item,index) in questions"
           :key="index"
         >
+          <div class="create-test-modal-number-error" v-if="item.numbersError">{{item.numbersError}}</div>
           <div class="row">
             <div class="col-md-6">
               <div class="create-test-modal__col">
                 <div class="create-test-modal__col-item">
-                  <div class="create-test-modal-counter">{{index+1}}</div>
+                  <div class="create-test-modal-counter box">
+                    <input type="text" class="ui-input" v-model="item.number" @input="validateQuestionNumbers">
+                  </div>
                   <div class="create-test-modal__input-group-area"> 
-                    <textarea placeholder="Вопрос" rows="3" class="ui-input ui-input-block" v-model="item.question"></textarea>
+                    <textarea placeholder="Вопрос" rows="3" class="ui-input ui-input-block" v-model.number="item.question"></textarea>
                   </div>
                   <button class="create-test-modal__garbage" @click.prevent="removeQuestion(index)"></button>
                 </div>
@@ -442,9 +459,9 @@
                   v-for="(answer,idx) in item.answers"
                   :key="idx+'str'"
                 >
-                  <div class="create-test-modal-counter">{{index+1}}.{{idx+1}}</div>
+                  <div class="create-test-modal-counter">{{item.number}}.{{idx+1}}</div>
                   <div class="create-test-modal__input-group"> 
-                    <input type="text" class="ui-input ui-input-block" :placeholder="'Вариант ответа '+(index+1)+'.'+(idx+1)" v-model="item.answers[idx]"/>
+                    <input type="text" class="ui-input ui-input-block" :placeholder="'Вариант ответа '+(item.number)+'.'+(idx+1)" v-model="item.answers[idx]"/>
                   </div>
                   <button class="create-test-modal__garbage" @click.prevent="removeAnswer(index,idx)"></button>
                 </div>
@@ -464,8 +481,8 @@
             </div>
             <div class="col-md-7">
               <div class="create-test-modal__submit-btns">
-                <button class="ui-btn" @click.prevent="saveTest">Применить</button>
-                <button class="ui-btn" @click.prevent="saveTest('yes')">Завершить</button>
+                <button class="ui-btn" :disabled="!isValid" @click.prevent="saveTest">Применить</button>
+                <button class="ui-btn" :disabled="!isValid" @click.prevent="saveTest('yes')">Завершить</button>
               </div>
             </div>
           </div><!--.row-->
@@ -489,13 +506,15 @@
           testTheme: '',
           testCourse: '',
           questions: [
-            {question: '', answers: ['','']},
-            {question: '', answers: ['','']}
-          ]
+            {question: '', number: 1, answers: ['','']},
+            {question: '', number: 2, answers: ['','']}
+          ],
+          isValid: true
         },
         methods: {
           addQuestion() {
-            this.questions.push({question: '', answers: ['','']})
+            const nextItem = this.questions.length + 1
+            this.questions.push({question: '', number: nextItem, answers: ['','']})
           },
           removeQuestion(id) {
             this.questions.splice(id,1)
@@ -536,8 +555,8 @@
             this.testTitle = '',
             this.testCorrectAnswers = '',
             this.questions = [
-              {question: '', answers: ['','']},
-              {question: '', answers: ['','']}
+              {question: '', number: 1, answers: ['','']},
+              {question: '', number: 2, answers: ['','']}
             ]
           },
           parseDataFromParent(data) {
@@ -547,21 +566,46 @@
             const testCourse = data?.testCourse
             const questions = data?.questions
 
-            if (testTitle !== undefined) {
+            if (testTitle) {
               this.testTitle = testTitle
             }
-            if (testCorrectAnswers !== undefined) {
+            if (testCorrectAnswers) {
               this.testCorrectAnswers = testCorrectAnswers
             }
-            if (testTheme !== undefined) {
+            if (testTheme) {
               this.testTheme = testTheme
             }
-            if (testCourse !== undefined) {
+            if (testCourse) {
               this.testCourse = testCourse
             }
-            if (questions !== undefined) {
+            if (questions) {
               this.questions = questions
             }
+          },
+          validateQuestionNumbers() {
+            const _this = this
+            function s() {
+              const nonUniqueNumbers = []
+              for (let i = 0; i < _this.questions.length; i++) {
+                for (let j = 0; j < _this.questions.length; j++) {
+                  if (i != j && _this.questions[i].number == _this.questions[j].number) {
+                    nonUniqueNumbers.push(j);
+                  }
+                }
+              }
+              return nonUniqueNumbers
+            }
+            const repeats = s()
+
+            this.questions.forEach(el => {
+              delete el.numbersError
+              this.isValid = true
+            })
+
+            repeats.forEach((el)=>  {
+              this.questions[el].numbersError = 'Ошибка. Номера вопросов не могут повторяться'
+              this.isValid = false
+            })
           }
         }
       })

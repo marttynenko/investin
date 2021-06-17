@@ -1115,9 +1115,11 @@
     #create_course .materials .materials_group .materials_group_header .d_flex
         margin-bottom: 0
 
-.course-lessons
+.course-lessons,
+.course-tests
     padding-bottom: 10px
-.course-lesson
+.course-lesson,
+.course-test
     padding: 13px 0
     border-bottom: 1px dashed #EEE
     display: flex
@@ -1151,6 +1153,7 @@
 
     &-edit
         vertical-align: middle
+        margin-left: 7px
     &-remove
         display: inline-block
         vertical-align: middle
@@ -1158,3 +1161,34 @@
         width: 15px
         height: 24px
         margin-left: 10px
+
+.create-test-modal__input-group
+    position: relative
+    .ui-input
+        padding-right: 50px
+.create-test-modal-correct
+    position: absolute
+    right: 15px
+    top: 50%
+    width: 30px
+    height: 30px
+    margin-top: -15px
+    z-index: 9
+    cursor: pointer
+    i
+        &:after
+            content: ""
+            position: absolute
+            background: url(../img/icons/checked.svg) center no-repeat
+            background-size: contain
+            width: 100%
+            height: 100%
+            top: 0
+            left: 0
+    input
+        opacity: 0
+        position: absolute
+    &:hover i:after,
+    input:checked + i:after
+        background: url(../img/icons/checked-active.svg) center no-repeat
+        background-size: contain

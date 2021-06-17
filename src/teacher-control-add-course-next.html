@@ -65,18 +65,21 @@
                   </div>
                 </div>
 
-                <ul class="materials_list" v-if="theme.test">
-                  <li>
-                    <div class="d_flex">
-                      <div class="material_name">
-                        <i class="material_name_icon test"></i>
-                        <span>{{theme.test.testTitle}}</span>
-                      </div>
+                <div class="course-tests" v-if="theme.test">
+                  <div class="course-test">
+                    
+                    <div class="course-test-name">
+                      <i class="course-test-icon test"></i>
+                      <span>{{theme.test.testTitle}}</span>
                     </div>
-
-                    <div class="time">{{theme.test.questions.length}} вопроса<img class="lesson-edit" src="img/icons/Edit.svg" alt=""  @click.prevent="editTest(index)"/></div>
-                  </li>
-                </ul>
+                    
+                    <div class="course-test-right">
+                      {{theme.test.questions.length}} вопроса 
+                      <img class="course-test-edit" src="img/icons/Edit.svg" alt="редактировать тест"  @click.prevent="editTest(index)"/>
+                      <a href="#" @click.prevent="removeTest(index)" class="course-test-remove"></a>
+                    </div>
+                  </div>
+                </div>
 
                 <div class="materials_actions">
                   <button class="teacher-control__add-course-teachers__btn" @click.prevent="openPopup('addLesson',index)">Создать занятие</button>
@@ -290,12 +293,7 @@
           //подготавливаем объект данных для передачи в дочерний компонент
           const data = {
             testTheme: themeTitle,
-            testCourse: this.coursName,
-            // testTitle: '',
-            // testCorrectAnswers: '',
-            // questions: [
-            //   {}
-            // ]
+            testCourse: this.coursName
           }
 
           //чистим дочернюю форму
@@ -318,6 +316,13 @@
           
           //передаем данные в дочерний компонент
           VUE_modal_test.parseDataFromParent(this.themes[themeIndex].test)
+        },
+
+        //удаление теста
+        removeTest(themeIndex) {
+          const tempTheme = this.themes[themeIndex]
+          delete tempTheme.test
+          this.themes.splice(themeIndex, 1, tempTheme)
         },
 
         openPopup(popupType, themeIndex, lessonIndex) {
@@ -462,6 +467,10 @@
                   <div class="create-test-modal-counter">{{item.number}}.{{idx+1}}</div>
                   <div class="create-test-modal__input-group"> 
                     <input type="text" class="ui-input ui-input-block" :placeholder="'Вариант ответа '+(item.number)+'.'+(idx+1)" v-model="item.answers[idx]"/>
+                    <label title="Правильный ответ" :for="'correct_answer_'+index+'_'+idx" class="create-test-modal-correct">
+                      <input type="radio" :name="'correct_answer_'+index" :id="'correct_answer_'+index+'_'+idx" v-model="item.correctAnswer" :value="idx">
+                      <i></i>
+                    </label>
                   </div>
                   <button class="create-test-modal__garbage" @click.prevent="removeAnswer(index,idx)"></button>
                 </div>
@@ -506,8 +515,8 @@
           testTheme: '',
           testCourse: '',
           questions: [
-            {question: '', number: 1, answers: ['','']},
-            {question: '', number: 2, answers: ['','']}
+            {question: '', number: 1, answers: ['',''], correctAnswer: ''},
+            {question: '', number: 2, answers: ['',''], correctAnswer: ''}
           ],
           isValid: true
         },
@@ -555,8 +564,8 @@
             this.testTitle = '',
             this.testCorrectAnswers = '',
             this.questions = [
-              {question: '', number: 1, answers: ['','']},
-              {question: '', number: 2, answers: ['','']}
+              {question: '', number: 1, answers: ['',''], correctAnswer: ''},
+              {question: '', number: 2, answers: ['',''], correctAnswer: ''}
             ]
           },
           parseDataFromParent(data) {

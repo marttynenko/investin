@@ -401,6 +401,7 @@
         background: #F6F8FC
         min-height: 180px
         margin-bottom: 10px
+        padding: 10px 25px
         display: flex
         justify-content: center
         align-items: center
@@ -450,8 +451,7 @@
             justify-content: center
             align-items: center
             flex-direction: column
-            span
-                font-weight: 700
+            
         input
             outline: 0
             opacity: 0
@@ -1058,6 +1058,22 @@
 
 .file-vue-preview
     margin-bottom: 15px
+    
+    &-label
+        font-weight: 700
+        margin-right: 7px
+
+    &-file
+        margin-right: 10px
+        &:before
+            content: ""
+            display: inline-block
+            vertical-align: middle
+            width: 5px
+            height: 5px
+            margin-right: 1px
+            border-radius: 50px
+            background: $primary
 
 
 .file-input-group label
@@ -1118,6 +1134,45 @@
 .course-lessons,
 .course-tests
     padding-bottom: 10px
+
+.course-test
+    &-name
+        position: relative
+        padding-left: 30px
+        max-width: calc(100% - 150px)
+        font-size: 18px
+        @media (max-width: 480px)
+            max-width: calc(100% - 80px)
+.course-lesson
+    &-left
+        position: relative
+        padding-left: 30px
+        max-width: calc(100% - 60px)
+    &-name
+        margin-bottom: 5px
+    &-files
+        font-size: 16px
+        &-label
+            display: inline-block
+            margin-right: 10px
+            vertical-align: top
+            color: #8d8d8d
+            font-size: 16px
+        &-list
+            display: inline-block
+            vertical-align: top
+    &-file
+        &-name
+            margin-right: 7px
+            vertical-align: middle
+        &-delete
+            display: inline-block
+            vertical-align: middle
+            background: center/cover no-repeat url(../img/icons/Garbage.svg)
+            width: 12px
+            height: 18px
+            cursor: pointer
+
 .course-lesson,
 .course-test
     padding: 13px 0
@@ -1128,13 +1183,6 @@
     -webkit-justify-content: space-between
     &:last-child
         border-bottom: 0
-    &-name
-        position: relative
-        padding-left: 30px
-        max-width: calc(100% - 150px)
-        font-size: 18px
-        @media (max-width: 480px)
-            max-width: calc(100% - 80px)
     &-icon
         position: absolute
         left: 0

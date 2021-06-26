@@ -1,0 +1,56 @@
+[
+	{
+		"id":"000111",
+		"title": "Введение",
+		"lessons": [
+			{
+				"id":"821fff",
+				"title": "Занятие 1",
+				"description": "Описание занятия 1",
+				"type": "image",
+				"files":[
+					{
+						"id":"file00001",
+						"name":"image1.jpeg"
+					},
+					{
+						"id":"file00300",
+						"name":"image2.jpeg"
+					}
+				]
+			},
+			{
+				"id":"822ffb",
+				"title": "Занятие 2",
+				"description": "Описание занятия 2",
+				"type": "image",
+				"files":[]
+			}
+		],
+		"test": {
+			"id":"fsf232",
+			"testTitle": "Тест 1",
+			"testCorrectAnswers": "10",
+			"testTheme": "Введение",
+			"testCourse": "Английский для начинающих",
+			"questions": [
+				{
+					"number": 1,
+					"question": "Какое предназначение у артиклей в английском языке?",
+					"answers": [
+						"Никакое", "Второй вариант", "Третий вариант"
+					],
+					"correctAnswer": 0
+				},
+				{
+					"number": 2,
+					"question": "Сколько времен в английском языке?",
+					"answers": [
+						"Два", "Пять", "Шесть", "Семь"
+					],
+					"correctAnswer": 3
+				}
+			]
+		}
+	}
+]

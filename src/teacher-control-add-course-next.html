@@ -53,13 +53,30 @@
                     class="course-lesson"
                   >
                     
-                    <div class="course-lesson-name">
-                      <i class="course-lesson-icon" :class="[lesson.type]"></i>
-                      <span>{{lesson.title}}</span>
+                    <div class="course-lesson-left">
+                      <div class="course-lesson-name">
+                        <i class="course-lesson-icon" :class="[lesson.type]"></i>
+                        <span>{{lesson.title}}</span>
+                      </div>
+
+                      <div class="course-lesson-files" v-if="lesson.files.length">
+                        <div class="course-lesson-files-label">Файлы:</div>
+                        <div class="course-lesson-files-list">
+                          <div class="course-lesson-file"
+                            v-for="(file,i) in lesson.files"
+                            :key="file.name"
+                            v-if="!file.deleted"
+                          >
+                            <span class="course-lesson-file-name">{{file.name}}</span>
+                            <span class="course-lesson-file-delete" @click.prevent="removeFile(index,idx,i)"></span>
+                          </div>
+                        </div>
+                      </div><!--.files-->
                     </div>
                     
-                    <div class="course-lesson-right">{{lesson.time}}
-                      <img class="course-lesson-edit" src="img/icons/Edit.svg" alt=""/  @click.prevent="openPopup('editLesson',index,idx)">
+                    
+                    <div class="course-lesson-right">
+                      <img class="course-lesson-edit" src="img/icons/Edit.svg" alt="редактировать" title="редактировать занятие" @click.prevent="openPopup('editLesson',index,idx)" />
                       <a href="#" @click.prevent="removeLesson(index,idx)" class="course-lesson-remove"></a>
                     </div>
                   </div>
@@ -133,10 +150,19 @@
                       </div>
                       <div class="file-input-group">
                         <label for="create-lesson-area-file-upload">
-                          <div class="file-input-group__img" v-if="!tempLesson.files"> <img src="img/icons/folder.svg" alt=""/></div>
-                          <div class="file-vue-preview" v-else>Выбрано: {{tempLesson.files.name}}, Размер: {{((tempLesson.files.size)/1024/1024).toFixed(2)}} Мб</div>
-                          <p><span>Нажмите сюда</span> - чтобы выбрать файлы или <br/>перетащите их в выделенную область</p>
-                          <input type="file" id="create-lesson-area-file-upload" name="create-lesson-area-file-upload" accept=".jpg,.jpeg,.png,.doc,.docx,.mp4,.webm" @change="chooseFile" />
+                          <div class="file-input-group__img" v-if="!tempLesson.files.length"> <img src="img/icons/folder.svg" alt=""/></div>
+                          
+                          <div class="file-vue-preview" v-else>
+                            <span class="file-vue-preview-label">Файлы:</span>
+                            <span class="file-vue-preview-file"
+                              v-for="file in tempLesson.files"
+                              :key="file.name"
+                            >
+                              {{file.name}}
+                            </span>
+                          </div>
+                          <p><strong>Нажмите сюда</strong> - чтобы выбрать файлы или <br/>перетащите их в выделенную область</p>
+                          <input type="file" multiple id="create-lesson-area-file-upload" name="create-lesson-area-file-upload" accept=".jpg,.jpeg,.png,.doc,.docx,.mp4,.webm" @change="chooseFile" />
                         </label>
                       </div><span class="file-input-group-subtitle">
                          Файлы должны быть в форматах: .jpg, .jpeg,.png, .doc,.docx, .mp4, .webm</span>
@@ -176,6 +202,9 @@
           {title: 'Введение', lessons: []}
         ],
 
+        //поле с id удаленных сущностей
+        deletedItems: {files: [], lessons: [], tests: [], themes: []},
+
         //временное поле для создания/обновления тем
         tempTheme: {
           title: '',
@@ -186,7 +215,7 @@
         tempLesson: {
           title: '',
           description: '',
-          files: '',
+          files: [],
           type: '',
           index: ''
         }
@@ -198,6 +227,15 @@
         }
       },
       methods: {
+        //получаем данные
+        async getData() {
+          const res = await fetch('./data/themes.json')
+          if (!res.ok) { return console.log(res.status) }
+          const data = await res.json()
+          
+          this.themes = data
+           
+        },
         //создаем тему
         addTheme() {
           if (this.tempTheme.title.trim().length) {
@@ -230,6 +268,12 @@
         },
 
         removeTheme(index) {
+          const currentTheme = this.themes[index]
+
+          if(currentTheme.hasOwnProperty('id')) {
+            this.deletedItems.themes.push(currentTheme.id)
+          }
+          
           this.themes.splice(index, 1)
         },
 
@@ -244,15 +288,6 @@
           
           this.themes[this.tempLesson.index].lessons.push(lesson)
 
-          //если нужно сразу сохранить введенное значение
-          //fetch('url', {
-          //   method: 'POST',
-          //   headers: {
-          //     'Content-Type': 'application/json;charset=utf-8'
-          //   },
-          //   body: данные
-          // )
-
           //закрываем попапы, очищаем временные данные
           this.closeCoursePopups()
           this.clearTempData()
@@ -265,7 +300,10 @@
           lesson.description = this.tempLesson.description
           lesson.files = this.tempLesson.files
           lesson.type = this.tempLesson.type
-
+          if (this.tempLesson.hasOwnProperty('id')) {
+            lesson.id = this.tempLesson.id
+          }
+        
           //изменяем данные
           this.themes[this.tempTheme.index].lessons.splice(this.tempLesson.index, 1, lesson)
 
@@ -276,6 +314,12 @@
 
         //удаляем занятие
         removeLesson(themeIndex, lessonIndex) {
+          const currentLesson = this.themes[themeIndex].lessons[lessonIndex]
+
+          if(currentLesson.hasOwnProperty('id')) {
+            this.deletedItems.lessons.push(currentLesson.id)
+          }
+
           this.themes[themeIndex].lessons.splice(lessonIndex, 1)
         },
 
@@ -320,8 +364,18 @@
 
         //удаление теста
         removeTest(themeIndex) {
+          // const tempTheme = this.themes[themeIndex]
+          // delete tempTheme.test
+          // this.themes.splice(themeIndex, 1, tempTheme)
+
+          //текущий тест
           const tempTheme = this.themes[themeIndex]
           delete tempTheme.test
+          //если есть id, помещаем его в удаленные
+          if (tempTheme.hasOwnProperty('id')) {
+            this.deletedItems.tests.push(tempTheme.id)
+          }
+          //удаляем поле
           this.themes.splice(themeIndex, 1, tempTheme)
         },
 
@@ -336,6 +390,11 @@
               this.editThemePopup = true
               this.tempTheme.title = this.themes[themeIndex].title
               this.tempTheme.index = themeIndex
+
+              if (this.themes[themeIndex].hasOwnProperty('id') && this.themes[themeIndex].hasOwnProperty('id') != '') {
+                this.tempTheme.id = this.themes[themeIndex].id
+              }
+
               break
 
             case 'addLesson':
@@ -351,6 +410,11 @@
               this.tempLesson.title = this.themes[themeIndex].lessons[lessonIndex].title
               this.tempLesson.description = this.themes[themeIndex].lessons[lessonIndex].description
               this.tempLesson.files = this.themes[themeIndex].lessons[lessonIndex].files
+
+              if (this.themes[themeIndex].lessons[lessonIndex].hasOwnProperty('id') && this.themes[themeIndex].lessons[lessonIndex].hasOwnProperty('id') != '') {
+                this.tempLesson.id = this.themes[themeIndex].lessons[lessonIndex].id
+              }
+              break
           }
         },
 
@@ -366,27 +430,55 @@
         clearTempData() {
           this.tempTheme.title = ''
           this.tempTheme.index = ''
+          delete this.tempTheme.id
 
           this.tempLesson.title = ''
           this.tempLesson.description = ''
-          this.tempLesson.files = ''
+          this.tempLesson.files = []
           this.tempLesson.type = ''
           this.tempLesson.index = ''
+          delete this.tempLesson.id
         },
 
         chooseFile(event) {
           const files = event.target.files
-          if (files && files[0]) {
-            const type = files[0].type.split('/')[0]
 
-            this.tempLesson.type = type
-            this.tempLesson.files = files[0]
+          //массив типов файлов
+          const types = []
+
+          if (files && files.length) {
+            for (let i = 0; i < files.length; i++) {
+              const type = files[i].type.split('/')[0]
+              this.tempLesson.type = type
+              types.push(type)
+
+              this.tempLesson.files.push(files[i])
+            }
           }
+
+          //если в массиве есть видео, присваиваем именно этот тип
+          if (types.includes('video')) {
+            this.tempLesson.type = 'video'
+          }
+        },
+
+        removeFile(themeIndex, lessonIndex, fileIndex) {
+          //текущий файл
+          const currentFile = this.themes[themeIndex].lessons[lessonIndex].files[fileIndex]
+          //если есть id, т.е. если файл сохранен на сервере
+          if (currentFile.hasOwnProperty('id')) {
+            //вешаем флаг deleted
+            // currentFile.deleted = true
+            // this.themes[themeIndex].lessons[lessonIndex].files.splice(fileIndex, 1, currentFile)
+            this.deletedItems.files.push(currentFile.id)
+          }
+          //удаляем поле
+          this.themes[themeIndex].lessons[lessonIndex].files.splice(fileIndex, 1)
         },
 
         saveCourse() {
           // const formData = new FormData()
-          console.log(this.themes)
+          console.log(this.themes, this.deletedItems)
           //fetch('url', {
           //   method: 'POST',
           //   headers: {
@@ -396,6 +488,9 @@
           // )
 
         }
+      },
+      mounted() {
+        this.getData();
       }
     })
   }

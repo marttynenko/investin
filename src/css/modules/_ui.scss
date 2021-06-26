@@ -1022,9 +1022,9 @@ span.invalid {
 	width: 100% !important;
 
 	.select2-selection--multiple {
-		height: 64px;
+		min-height: 64px;
 		border: 1px solid $border;
-		padding: 11px 20px;
+		padding: 11px 20px 3px;
 		border-radius: 5px;
 		font-size: 18px;
 	}

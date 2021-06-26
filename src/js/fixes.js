@@ -81,7 +81,20 @@ $(document).ready(function(){
 		}
 	})
 
-	$('select.ui-tags').select2();
+	$('select.ui-tags').select2({
+		tags: true
+	});
 	$('select.ui-tags + .select2-container').addClass('ui-select2-tags')
+
+
+	$(document).on('click','.add-course-author',function(e) {
+		e.preventDefault();
+		const count = $(this).attr('data-count') || 0;
+		if (parseInt(count,10) < 2) {
+			$(this).before(`<div class="ui-field"><input type="text" class="ui-input" name="course-author-${+count+1}" placeholder="Введите имя автора"></div>`);
+			$(this).attr('data-count',+count+1)
+			if (+count === 1) { $(this).remove() }
+		}
+	})
 
 });

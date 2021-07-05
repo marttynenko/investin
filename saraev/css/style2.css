@@ -1,0 +1,366 @@
+.modal-feedback {
+  width: 1230px;
+  background: #ffffff;
+  border-radius: 20px;
+  margin: 20px auto;
+  padding: 60px 70px;
+  position: relative;
+}
+
+
+.mfp-close-btn-in .mfp-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.modal-feedback-left-column {
+  width: 43.333%;
+}
+
+.modal-feedback-right-column {
+  width: 56.666%;
+}
+
+
+.modal-feedback-left-column h2 {
+  margin-bottom: 12px;
+}
+
+.modal-feedback-left-column p {
+  font-size: 18px;
+  line-height: 1.70;
+  color: #333333;
+}
+
+.modal-feedback-text {
+  width: 100%;
+  border: none;
+  height: 40px;
+  border-bottom: 1px solid #DFDEE2;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #8D8D8D;
+  margin-bottom: 44px;
+}
+
+.modal-feedback-text::placeholder {
+  font-family: "Montserrat-Regular";
+  color: #8D8D8D;
+}
+
+.modal-feedback-textarea::placeholder {
+  font-family: "Montserrat-Regular";
+  font-size: 18px;
+  line-height: 1.7;
+  color: #8D8D8D;
+  height: auto;
+  resize: none;
+}
+
+.modal-feedback-textarea {
+  resize: none;
+}
+
+.modal-feedback-contacts {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.modal-feedback-tel,
+.modal-feedback-email {
+  width: 275px;
+}
+
+.modal-feedback-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-feedback-button p {
+  font-size: 13px;
+  line-height: 1.2;
+  color: #333333;
+  margin-top: 15px;
+}
+
+.modal-feedback-button a {
+  color: #333333;
+  text-decoration: underline;
+}
+
+.modal-feedback-button-send {
+  padding: 20px 96px;
+  background: #168EC4;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #FFFFFF;
+  border: none;
+}
+
+.modal-feedback-button-send:hover {
+  background: #007bb3;
+}
+
+.message-to-author {
+  padding: 65px 70px;
+  background: #ffffff;
+  border-radius: 20px;
+  margin: 20px auto;
+  width: 900px;
+  position: relative;
+}
+
+.message-to-author h2 {
+  text-align: center;
+  margin-bottom: 31px;
+  color: #262626
+}
+
+.mta-profile {
+  position: relative;
+}
+
+.mta-profile-avatar {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  left: 0;
+  top: 0;
+}
+
+.mta-profile-avatar img {
+  width: 100%;
+}
+
+.mta-profile-text {
+  padding-left: 80px;
+}
+
+.mta-profile-text {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #262626;
+  margin-bottom: 30px;
+}
+
+.mta-profile-text p {
+  font-size: 18px;
+  line-height: 1.4;
+  color: #8D8D8D;
+  margin-bottom: 5px;
+}
+
+.mta-course {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #262626;
+  margin-bottom: 46px;
+}
+
+.mta-course p {
+  font-size: 18px;
+  line-height: 1.4;
+  color: #8D8D8D;
+  margin-bottom: 5px;
+}
+
+.mta-profile {
+  position: relative;
+}
+
+.mta-profile textarea {
+  font-family: "Montserrat-Regular";
+  resize: none;
+  width: 100%;
+  height: 250px;
+  border: 1px solid #DFDEE2;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+
+}
+
+.mta-profile textarea::placeholder {
+  font-size: 18px;
+  line-height: 1.7;
+  font-family: "Montserrat-Regular";
+  color: #8D8D8D;
+  padding-top: 20px;
+  padding-left: 30px;
+}
+
+
+.mta-profile textarea::-webkit-scrollbar-button {
+  background-image: url('');
+  background-repeat: no-repeat;
+  width: 8px;
+  height: 0px
+}
+
+.mta-profile textarea::-webkit-scrollbar-track {
+  background-color: #C4C4C4;
+}
+
+.mta-profile textarea::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #F47920;
+}
+
+.mta-profile textarea::-webkit-scrollbar-thumb:hover {
+  background-color: #c2631f;
+}
+
+.mta-profile textarea::-webkit-resizer {
+  background-image: url('');
+  background-repeat: no-repeat;
+  width: 8px;
+  height: 0px
+}
+
+.mta-profile textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+
+.mta-limit {
+  position: absolute;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #8D8D8D;
+  bottom: 50px;
+  right: 30px;
+}
+
+.mta-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.certificate-wrapper {
+  position: relative;
+  margin: 50px auto;
+  width: 1123px;
+  height: 793px;
+}
+
+.certificate-frame {
+  background-image: url(../img/certificate-frame.png);
+  background-color: transparent;
+  width: 1123px;
+  height: 793px;
+  position: absolute;
+}
+
+.certificate-content {
+  padding-top: 19px;
+  border: 2px solid #E2C07E;
+  margin: 0 auto;
+  margin-top: 131px;
+  width: 860px;
+  height: 536px;
+  text-align: center;
+  position: relative;
+}
+
+
+.certificate-title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.4;
+  color: #3A5570;
+  margin-bottom: 8px;
+}
+
+.certificate-course {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.4;
+  color: #DC5922;
+  margin-bottom: 80px;
+}
+
+.certificate-text {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #3A5570;
+  margin-bottom: 10px;
+}
+
+.certificate-username {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1;
+  color: #DC5922;
+  display: inline-block;
+  border-bottom: 3px solid #DC5922;
+  padding-bottom: 0;
+  margin-bottom: 15px;
+}
+
+.certificate-description {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #3A5570;
+  margin-bottom: 45px;
+}
+
+
+
+.certificate-date-data,
+.certificate-teacher-data,
+.certificate-number-data {
+  border-bottom: 1px solid #496883;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #DC5922;
+  width: 223px;
+}
+
+.certificate-date {
+  position: absolute;
+  text-align: center;
+  bottom: 47px;
+  left: 56px;
+
+}
+
+.certificate-teacher {
+  position: absolute;
+  text-align: center;
+  bottom: 106px;
+  left: 320px;
+}
+
+
+.certificate-number {
+  position: absolute;
+  text-align: center;
+  bottom: 47px;
+  right: 56px;
+}
+
+
+
+.certificate-teacher-title,
+.certificate-date-title,
+.certificate-number-title {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #496883;
+}

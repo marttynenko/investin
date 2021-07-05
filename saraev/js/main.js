@@ -189,5 +189,36 @@ $(document).ready(function(){
 
 
 
+$(document).ready(function() {
+	$('.feedback-form').magnificPopup({
+		type: 'inline',
+		preloader: false,
+		focus: '#name',
+		callbacks: {
+			beforeOpen: function() {
+				if($(window).width() < 700) {
+					this.st.focus = false;
+				} else {
+					this.st.focus = '#name';
+				}
+			}
+		}
+	});
+});
 
-
+$(document).ready(function() {
+	$('.message-to-author-button').magnificPopup({
+		type: 'inline',
+		preloader: false,
+		focus: '#name',
+		callbacks: {
+			beforeOpen: function() {
+				if($(window).width() < 700) {
+					this.st.focus = false;
+				} else {
+					this.st.focus = '#name';
+				}
+			}
+		}
+	});
+});
